@@ -1,6 +1,8 @@
-<html>
-
+<!DOCTYPE html>
+<html  lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>lesson7</title>
     <style>
         * {
             /*这个连各个浏览器的不同body（padding，margin）样式都统一了*/
@@ -20,12 +22,13 @@
         .top-bar {
             /*顶部，头部区域为100%宽的一个深色背景*/
             background-color: rgb(51, 51, 51);
+            flex: 0 50px;
         }
         
         .top-center {
             /*头部中间一块960px的定宽居中区域*/
             background-color: 333333;
-            height: 50px;
+           
             color: white;
             /*文字白色，可以作用于logo文字和链接文字*/
             max-width: 960px;
@@ -61,8 +64,9 @@
         
         .show-area {
             background-color: rgb(102, 187, 51);
-            height: 200px;
+           /* height: 200px;*/
             position: relative;
+             flex: 0 200px;
         }
         
         .switch-btn {
@@ -93,6 +97,11 @@
             background-color: rgba(255, 255, 255, .4);
             padding-top: 20px;
             /*鼠标悬停也有被选中的样子*/
+        }
+        
+        .middle{
+             flex: 1 ;
+            
         }
         
         .nav_container {
@@ -160,8 +169,14 @@
             margin-right: 0;
         }
         
+        
+        
         .footer {
-            height: 50px;
+           
+             flex:50px;
+            
+      
+           /* height: 50px;*/
             background-color: rgb(102, 102, 102);
             line-height: 50px;
             text-align: center;
@@ -191,7 +206,8 @@
 
         </div>
 
-
+  <div class="middle">
+       
         <div class="nav">
             <div class="nav_container">
                 <ul>
@@ -220,6 +236,7 @@
                     <div>Content10</div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="footer">
             <span>&copy;2019 ife.baidu.com</span>
