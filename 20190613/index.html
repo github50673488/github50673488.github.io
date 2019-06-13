@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>lesson7</title>
@@ -10,7 +11,7 @@
             margin: 0;
         }
         
-        .main {
+        body {
             /*以body为父类的div*/
             display: flex;
             flex-direction: column;
@@ -23,12 +24,12 @@
             /*顶部，头部区域为100%宽的一个深色背景*/
             background-color: rgb(51, 51, 51);
             flex: 0 50px;
+            /*占据50px*/
         }
         
         .top-center {
             /*头部中间一块960px的定宽居中区域*/
             background-color: 333333;
-           
             color: white;
             /*文字白色，可以作用于logo文字和链接文字*/
             max-width: 960px;
@@ -64,9 +65,9 @@
         
         .show-area {
             background-color: rgb(102, 187, 51);
-           /* height: 200px;*/
             position: relative;
-             flex: 0 200px;
+            flex: 0 200px;
+            /*占据200px*/
         }
         
         .switch-btn {
@@ -99,64 +100,62 @@
             /*鼠标悬停也有被选中的样子*/
         }
         
-        .middle{
-             flex: 1 ;
-            
+        .main {
+            flex: 1;
+            /*主体部分占据剩余空间*/
         }
         
-        .nav_container {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        
-        .nav {
-            width: 100%;
+        .tab_bar {
             border-bottom: 1px solid #ddd;
+            /*由外层（宽度百分百）的div显示底部的灰色线*/
         }
         
-        .nav_container ul {
-            position: relative;
-            top: 1px;
-            list-style: none;
-            margin-top: 14px;
-            border: none;
-            font-size: 0;
+        .tab_bar ul {
+             max-width: 960px;
+            /*中间960px区域是导航菜单tab，其实用ul来实现*/
+            margin: 0 auto;/*居中*/
+            position: relative;/*当position设置为relative时，top属性指定了元素的上边界离开其正常位置的偏移*/
+            top: 1px;/*偏移1,把上层的灰色底线给盖掉*/
+            list-style: none;/*把缺省的点号去掉*/
+            margin-top: 14px;/*离上面部分远一点*/
+            font-size: 0;/*下面li用了inline-block打横显示，但是现在的浏览器会出未知间隙，现在比较靠谱的解决方案是父容器（ul）来个font-size: 0*/
         }
         
-        .nav_container li {
-            display: inline-block;
+        .tab_bar li {
+            display: inline-block;/*用了inline-block打横显示*/
             height: 45px;
-            line-height: 45px;
-            padding: 0 20px;
+            line-height: 45px;/*垂直居中*/
+            padding: 0 20px;/*内边距*/
             border: 1px solid #ddd;
-            border-right: 0;
-            border-radius: 15px 15px 0 0;
+            border-right: 0;/*贴近一点，有点覆盖的立体感*/
+            border-radius: 15px 15px 0 0;/*上面两个角搞圆形*/
             font-size: 12px;
             background-color: #eee;
         }
         
-        .nav_container li:last-child {
-            border-right: 1px solid #ddd;
-            ;
+        .tab_bar li:last-child {
+            border-right: 1px solid #ddd;/*最后一个li恢复右边框*/
         }
         
-        .nav_container #nav_selected {
-            border-bottom: 1px solid #fff;
+        .tab_bar li:first-child {/*这里假设选中第一个*/
+            border-bottom: 1px solid #fff;/*把和父元素重合的底线border设成白色盖掉灰色*/
             background-color: #fff;
         }
         
-        .content_container {
+        
+        /* 主体内容部分用flex布局还是很简单实现的*/
+        .content {
+            max-width: 960px;
+            /*最大长度960*/
             margin: 0 auto;
-        }
-        
-        .cell {
+            /*居中*/
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
+            flex-flow: row wrap;
+            /*允许flexitem换行*/
         }
         
-        .cell div {
+        .content div {
+            margin-top: 10px;
             flex: 1;
             box-sizing: border-box;
             border: 1px solid #ddd;
@@ -165,20 +164,13 @@
             text-align: center;
         }
         
-        .cell div:last-child {
-            margin-right: 0;
-        }
-        
-        
-        
         .footer {
-           
-             flex:50px;
-            
-      
-           /* height: 50px;*/
+            margin-top: 10px;
+            /*上面主体部分没有margin-bottom,要设定这个避免上面部分的border和这部分重合*/
+            flex: 80px 0;
+            /*底部占据50px*/
             background-color: rgb(102, 102, 102);
-            line-height: 50px;
+            line-height: 25px;
             text-align: center;
             color: #fff;
         }
@@ -186,62 +178,50 @@
 </head>
 
 <body>
+
+    <div class="top-bar">
+        <div class="top-center">
+            <div>Logo</div>
+            <div><a href="">Github</a>
+                <a href="">Register</a>
+                <a href="">Login</a>
+            </div>
+        </div>
+    </div>
+    <div class="show-area">
+        <div class="switch-btn">
+            <label>1</label>
+            <label>2</label>
+            <label>3</label>
+            <label>4</label>
+        </div>
+
+    </div>
     <div class="main">
-        <div class="top-bar">
-            <div class="top-center">
-                <div>Logo</div>
-                <div><a href="">Github</a>
-                    <a href="">Register</a>
-                    <a href="">Login</a>
-                </div>
-            </div>
-        </div>
-        <div class="show-area">
-            <div class="switch-btn">
-                <label>1</label>
-                <label>2</label>
-                <label>3</label>
-                <label>4</label>
-            </div>
-
-        </div>
-
-  <div class="middle">
-       
-        <div class="nav">
-            <div class="nav_container">
+        <div class="tab_bar">
                 <ul>
-                    <li id="nav_selected">HOME</li>
+                    <li >HOME</li>
                     <li>PROFILE</li>
                     <li>ABOUT</li>
                 </ul>
-            </div>
         </div>
         <div class="content">
-            <div class="content_container">
-                <div class="cell">
-                    <div>This is Content1</div>
-                    <div>Maybe Content2</div>
-                    <div>Content3</div>
-                </div>
-                <div class="cell">
-                    <div>Content4</div>
-                    <div>Content5</div>
-                    <div>Content6</div>
-                    <div>Content7</div>
-                </div>
-                <div class="cell">
-                    <div>Content8</div>
-                    <div>Content9</div>
-                    <div>Content10</div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="footer">
-            <span>&copy;2019 ife.baidu.com</span>
+            <div>This is Content11111111111111111ee</div>
+            <div>Maybe Content2</div>
+            <div>C</div>
+            <div>C</div>
+            <div>C</div>
+            <div>C6</div>
+            <div>C7</div>
+            <div>C8</div>
+            <div>Content9</div>
+            <div>Content10</div>
         </div>
     </div>
+    <div class="footer">
+        <span>&copy;2019 ife.baidu.com</span>
+    </div>
+
 </body>
 
 </html>
