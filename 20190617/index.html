@@ -133,9 +133,9 @@
             <span>XXX大学</span>
         </div>
         <div>
-            <span>爱好：</span>
+            <button id="show">爱好:</button>
             <span id="interest"></span>
-            <button id="show">显示</button> <button id="clear">清除</button>
+            
         </div>
     </div>
 
@@ -167,11 +167,9 @@
     <script>
        let interest=  document.getElementById("interest");
        document.getElementById("show").addEventListener('click', function() {   
-interest.innerHTML = "足球，围棋";
+interest.innerHTML = (interest.innerHTML==="")?"足球，围棋":"";
         });
-          document.getElementById("clear").addEventListener('click', function() {   
-interest.innerHTML = "";
-        });
+          
     </script>
 </body>
 
