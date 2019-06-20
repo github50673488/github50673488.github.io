@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures MDN 闭包 在循环中创建闭包：一个常见错误
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function showHelp(help) {
+                document.getElementById('help').innerHTML = help;
+            }
+
+ //  如果保持 var item = helpText[i];的写法 方法A 就要多加一个闭包 makeHelpCallback
+// function makeHelpCallback(help) {
+//  return function() {
+//    showHelp(help);
+//  };
+//}
+            function setupHelp() {
+                var helpText = [
+                    {'id': 'email', 'help': 'Your e-mail address'},
+                    {'id': 'name', 'help': 'Your full name'},
+                    {'id': 'age', 'help': 'Your age (you must be over 16)'}
+                ];
+
+//                for (var i = 0; i < helpText.length; i++) {
+//                    var item = helpText[i];//闭包的局部变量，在本例中这是错误的写法，由于闭包工厂只执行了一次，item只有一份！  当onfocus发生，回调到showhelp的时候，item.help是第三次的值！。
+//                   // let item = helpText[i];//闭包的局部变量，正确的写法，因此每个闭包都绑定了块作用域的变量item ，（helpText，item有三份！分别属于不同的闭包） ，每次回调到showhelp的时候，item.help是想定的值
+//                   
+//            document.getElementById(item.id)//即使是用var item.id并没有什么问题，它不是onfocus发生的时候用的而是定义事件处理函数用的
+//                    .onfocus = function () {//定义事件处理函数，一个匿名函数
+//                        showHelp(item.help);//这个匿名函数将会调用公共函数，并传入item.help, 问题是onfocus发生，回调到showhelp的时候，item.help是第三次的值（工厂setupHelp只执行了一次）
+//                    }
+//                    
+//                  // document.getElementById(item.id).onfocus = makeHelpCallback(item.help);// 如果保持上面的 var item = helpText[i];的写法，
+//                  // 方法A 就要多加一个闭包，除掉注释替换上面的语句并
+//                  //除掉上面 function makeHelpCallback的注释，可以使每次的item.help的值保存到makeHelpCallback闭包工厂里头(保存在闭包工厂makeHelpCallback的help)
+//                  
+//                }
+                
+                
+         // 如果保持上面的 var item = helpText[i];的写法，方法B，用下面的代码替换上头的for循环
+                
+  for (var i = 0; i < helpText.length; i++) {
+    (function() {// 
+        var item = helpText[i];
+       document.getElementById(item.id).onfocus = function() {
+         showHelp(item.help);
+       }
+       
+    })(); // 马上把当前循环项的item与事件回调相关联起来
+    
+    //or
+    
+//    var dfdfd=function() {
+//       var item = helpText[i];
+//       document.getElementById(item.id).onfocus = function() {
+//         showHelp(item.help);
+//       }
+//    }(); // 马上把当前循环项的item与事件回调相关联起来
+    
+    
+    (function() {
+       ;//dosomething
+       ;//dosomething
+     })();//用匿名函数包住一些语句然后执行一次，  这种写法是强行吧语义环境里头的变量闭包化， 当然，在新的语法中用let即可
+    
+  }
+                
+            }
+            
+            function afterWinLoad()
+            {
+//                document.querySelector('#btn1').addEventListener('click', function () {
+//                    setupHelp();
+//                });
+                
+                //由于setupHelp没有参数，写成下面的形式也是可以的
+                document.querySelector('#btn1').addEventListener('click',setupHelp);
+            }
+            window.onload = afterWinLoad;//如果代码放入body的后面，可以不这么做
+
+        </script>
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <p id="help">Helpful notes will appear here</p>
+        <p>E-mail: <input type="text" id="email" name="email"></p>
+        <p>Name: <input type="text" id="name" name="name"></p>
+        <p>Age: <input type="text" id="age" name="age"></p>
+    </body>
+</html>

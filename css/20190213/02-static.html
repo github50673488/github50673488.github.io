@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            .elem {
+                border: solid  #6AC5AC 3px;
+                position: relative;
+            }
+            .endlabel {
+                right: 0;
+                bottom: 0;
+                padding: 3px 0 0 3px;
+            }
+            .label, .endlabel {
+                position: absolute;
+                background-color: #6AC5AC;
+                color: #414142;
+                line-height: 1em;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="elem">
+            <span class="label">&lt;div class="static"&gt;</span>
+            <p>
+                <code>static</code> 是默认值。任意 <code>position: static;</code> 的元素不会被特殊的定位。一个 static 元素表示它<em>不会被“positioned”</em>，一个 position 属性被设置为其他值的元素表示它<em>会被“positioned”</em>。
+            </p>
+            <span class="endlabel">&lt;/div&gt;</span>
+        </div>
+    </body>
+</html>

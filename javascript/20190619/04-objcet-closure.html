@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="文件路径"/>-->
+    <!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+    <style></style>
+</head>
+
+<body>
+    <div><button id="btn1">run1</button></div>
+    <div><button id="btn2">run2</button></div>
+    <div><button id="btn3">run3</button></div>
+    <div><button id="btn4">run4</button></div>
+    <script>
+        function Person(firstname, lastname, age, eyecolor) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.age = age;
+            this.eyecolor = eyecolor;
+            this.changeName = changeName;
+            function changeName(name) {
+                this.lastname = name;
+            }
+        }
+
+
+        function Person1(firstname, lastname, age, eyecolor) {
+            this.firstname1 = firstname;
+            this.lastname1 = lastname;
+            this.age1 = age;
+            this.eyecolor1 = eyecolor;
+
+            return function sdf(name) {
+                //lastname = name; //这是一个闭包，参数lastname是一个局部变量
+                //  lastname1 = name;//这不是一个闭包，lastname1是公共的windows变量
+                //  lastname2 = name;//这不是一个闭包lastname1是公共的windows变量
+                let lastname= name;//这不是一个闭包lastname函数本身局部变量，并不是创建函数的环境（Person1）的局部变量lastname
+                
+            }
+
+        }
+
+
+        function Student(value) {
+            let name1 = value;
+            //            JavaScript中的函数会形成闭包。 闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量
+
+            return function(value) {
+                // name = value;//这个不是闭包
+                //    name1 = value; 这个是闭包
+                let name1 = value; //这个不是是闭包
+
+            };
+        }
+
+
+        var a = 0;
+        let f1 = function() {
+            a++; //不是闭包，a不是局部变量
+        }
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+            document.querySelector('#btn1').addEventListener('click', function() {
+
+                let p1 = new Person("liu", "GJ", 43, "black");
+                debugger;
+                p1.changeName("niu");
+
+            });
+
+
+            document.querySelector('#btn2').addEventListener('click', function() {
+
+                let p1 = Person1("liu", "GJ", 43, "black");
+                debugger;
+                p1("A niu"); //这是一个闭包调用吗？
+
+            });
+
+            document.querySelector('#btn3').addEventListener('click', function() {
+
+                let stu1 = Student("liu");
+                debugger;
+                stu1("A niu"); //这是一个闭包调用吗？
+
+            });
+
+            document.querySelector('#btn4').addEventListener('click', function() {
+
+
+                debugger;
+                f1("A niu"); //这是一个闭包调用吗？
+
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

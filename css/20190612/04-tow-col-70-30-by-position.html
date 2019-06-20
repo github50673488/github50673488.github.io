@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            padding: 15px 20px;
+            border: 1px dashed #ff6c60;
+            min-height: 500px;
+            position: relative;
+        }
+
+       
+        .left {
+            width: 30%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: antiquewhite;
+            
+            min-height: 500px;
+        }
+
+        .right {
+             width: 70%;/*完全脱离文档流的百分之70，父容器的pading没有用？*/
+             position: absolute;
+            top: 0;
+            right: 0;
+            background-color: aqua;
+             min-height: 500px;
+           
+        }
+    </style>
+</head>
+
+<body>
+   adfdsf
+    <div class="wrapper" id="wrapper">
+        <div class="left">
+            30%
+        </div>
+        <div class="right">
+            70%
+        </div>
+    </div>
+</body>
+
+</html>

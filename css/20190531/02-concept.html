@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        @import 'custom.css';/*at-rule (@规则)*/
+        
+        @media (min-width: 801px) {/*只有在特定条件匹配时才会应用到文档上的@规则 */
+/*            上述的嵌套语句只有在页面宽度超过801像素时才会应用。*/
+  body {
+    margin: 0 auto;
+    width: 800px;
+  }
+}
+        
+        　  /*规则集，简称规则↓*/
+            p  /*选择器*/
+             /*声明块↓*/
+             {
+                padding : 1em;/*这是一个声明，包括属性，冒号和值,最后是一个分*/
+                border  : 1px solid black;/*这是一个声明，包括属性，冒号和值,最后是一个分号*/
+            }
+            /*声明块↑*/
+            /*规则集，简称规则↑*/    
+            span {
+                padding : 0.5em;
+                border  : 1px solid green;
+                /* That makes the box visible, regardless of its type */
+                background-color: yellow;
+            }
+            .inline       { display: inline;       }
+            .block        { display: block;        }
+            .inline-block { display: inline-block; }
+
+        </style>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <span class="inline">Mauris tempus turpis id ante mollis dignissim.</span>
+            Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <span class="block">Mauris tempus turpis id ante mollis dignissim.</span>
+            Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <span class="inline-block">Mauris tempus turpis id ante mollis dignissim.</span>
+            Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+        </p>
+    </body>
+</html>

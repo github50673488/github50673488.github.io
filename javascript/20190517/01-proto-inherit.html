@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--https://www.evernote.com/l/AYcjpefWHVhO4pDyswIHHfjjqree87rqdpQ/ -->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+            function Employee() {
+                this.name = "";
+                this.dept = "general";
+            }
+            Employee.prototype.name2="nameOfEmployeeProto";
+            function Manager() {
+                Employee.call(this);
+                this.reports = [];
+            }
+            Manager.prototype = Object.create(Employee.prototype);
+            
+            var  manager1=new Manager();
+            console.log(manager1);
+            console.log(manager1.__proto__===Manager.prototype);// true
+            console.log(manager1.__proto__.__proto__===Employee.prototype);// true
+            console.log(manager1.__proto__.__proto__.__proto__===Object.prototype);//true
+            console.log(manager1.__proto__.__proto__.__proto__.__proto__);// null
+            
+            console.log(manager1.name2);//"nameOfEmployeeProto"
+     
+            //console.log(Employee.prototype.name);
+            
+            function Person() {
+                this.name = "";
+             
+            }
+            var  person1=new Person();
+            console.log(person1);
+            console.log(person1.constructor)
+            
+
+            function afterWinLoad()
+            {
+                
+                
+                
+                document.querySelector('#btn1').addEventListener('click', function () {
+                  
+                    
+                });
+            }
+
+
+            window.onload = afterWinLoad;//如果代码放入body的后面，可以不这么做
+        </script>
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+    </body>
+</html>

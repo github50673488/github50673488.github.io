@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            .elem {
+                border: solid  #6AC5AC 3px;
+                position: relative;
+            }
+            .endlabel {
+                right: 0;
+                bottom: 0;
+                padding: 3px 0 0 3px;
+            }
+            .label, .endlabel {
+                position: absolute;
+                background-color: #6AC5AC;
+                color: #414142;
+                line-height: 1em;
+            }
+
+            .fixed {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width: 200px;
+                background-color: white;
+                z-index: 9999;
+            }
+            .elem-green {
+                border: solid #FDC72F 3px;
+            }
+            .elem-green > .label, .elem-green > .endlabel{
+                background-color: #FDC72F;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="fixed elem elem-green">
+            <span class="label">&lt;div class="fixed"&gt;</span>
+            <p>
+                Hello！暂时不要太关注我哦。
+            </p>
+            <span class="endlabel">&lt;/div&gt;</span>
+        </div>
+    </body>
+</html>

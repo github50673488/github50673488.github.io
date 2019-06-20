@@ -1,0 +1,74 @@
+<html>
+    <body>
+        <input type="button" value="closure" id="btn1"/>
+        <script type="text/javascript">
+
+            document.querySelector('#btn1').addEventListener('click', function () {
+/*
+            var obj = //得到闭包
+            function ()//闭包工厂，一个匿名函数
+            {
+                var MyFunc = function ()
+                {
+                    alert("hello world");
+                }
+                return function ()//返回闭包
+                {
+                    return MyFunc;//闭包的函数体是闭包工厂的一个内部函数，由于闭包工厂被调用过一次并产生了闭包，MyFunc是保留住的。(闭包工厂只被调用了一次，MyFunc只有一份)
+                    //在这个语句中他被返回了。（也就是说如果有谁调用闭包，将会得到MyFunc，进一步谁调用这个MyFunc会显示"hello world"）
+                }
+            }()//闭包工厂被调用，当然返回闭包
+            var f3 = obj();//调用闭包，得到MyFunc
+            var f4 = obj();//再次调用闭包，还是得到MyFunc，
+            alert(f3 === f4);//由于MyFunc只有一份,这里的结果是true
+            //本例中MyFunc至此至终没有被执行，除非解除下面任意一行代码的注释
+            //f3();
+            //f4();
+            
+*/
+                
+//                var obj = //闭包工厂被赋给了obj
+//                        function ()//闭包工厂
+//                {
+//                    var MyFunc = function ()//闭包工厂的局部变量，闭包工厂被调用多少次，他就有多少份
+//                    {
+//                        alert("hello world");
+//                    }
+//                    return function ()
+//                    {
+//                        return MyFunc;
+//                    }
+//                }
+//                var f3 = obj();//执行了一次闭包工厂后，得到一个闭包，该闭包的内容是返回闭包工厂的一个局部变量（放着一个匿名函数）， 
+//                var f4 = obj();//执行了一次闭包工厂后，得到一个另外闭包，该闭包的内容是返回闭包工厂的一个局部变量（放着一个匿名函数）
+//                alert(f3 === f4);//f3和f4都放着MyFunc，但可不是一份，因为他是分别调用闭包工厂产生的。
+               //本例中MyFunc至此至终没有被执行，除非解除下面任意一行代码的注释
+            //f3()();
+            //f4()();
+               
+            var obj = //闭包工厂被赋给了obj
+                function ()//闭包工厂
+                {
+                    var MyFunc = function ()
+                    {
+                        alert("hello world");
+                    }
+                    return MyFunc;
+                }
+                var f3 = obj();//执行了一次闭包工厂后，得到一个闭包，该闭包的内容是 alert("hello world");
+                var f4 = obj();//执行了一次闭包工厂后，得到一个闭包，该闭包的内容是 alert("hello world");
+                
+                var f5=f3();//调用闭包，显示"hello world"， f5是undefined
+                var f6=f4();//调用闭包，显示"hello world"，f6是undefined
+                
+                alert(f5 === f6);//true
+                alert(undefined === undefined);//true
+
+
+
+
+            });
+
+        </script>
+    </body>
+</html>

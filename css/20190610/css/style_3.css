@@ -1,0 +1,44 @@
+  .bold {
+      font-weight: bold;
+      padding-left: 10px;
+  }
+  .pl10 {
+      padding-left: 10px;
+  }
+  .pl30 {
+      font-weight: bold;
+      padding-left: 30px;
+  }
+  h4 {
+      line-height: 0.1;
+  }
+  .father>div:first-child {
+      background: rgb(133, 133, 133);
+      font-size: 8px;
+      padding: 10px;
+      color: white;
+      height: 40px;
+  }
+  .detail_row>div:first-child {
+      float: left;
+      font-size: 10px;
+      text-align: center;
+      width: 150px;
+      height: 100px;
+      line-height: 5;
+      background-color: rgb(214, 214, 214);
+  }
+  .detail_row>div:last-child {
+      height: 100px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgb(214, 214, 214);
+      margin-left: 150px;
+  }
+  .clearfix:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }

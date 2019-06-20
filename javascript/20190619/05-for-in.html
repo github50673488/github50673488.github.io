@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <p></p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    let person = {fname: "Liu", lname: "GJ", age: 45};
+                    let txt="";
+                    for (x in person)
+                    {
+                        
+                         txt += person[x];
+                    }
+                    document.querySelector("p").innerHTML=txt;
+                    
+                });
+            }
+            );
+        </script>
+    </body>
+</html>

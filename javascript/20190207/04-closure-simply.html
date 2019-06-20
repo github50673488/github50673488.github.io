@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <script type="text/javascript">
+            
+//             function add() {
+//                var counter = 0;
+//                counter += 1;
+//                 alert(counter);
+//                   
+//            }
+//            add();
+//            add();
+//            add();
+            
+            
+             function add() {
+                var counter = 0;
+                     return function () {
+                         counter += 1;
+                         alert(counter);
+                         return counter;
+                     }
+                 }
+                 ;
+
+                 var add_closure = add();
+                 add_closure();
+                 add_closure();
+                 add_closure();
+
+        </script>
+
+        <!--        <input type="button" value="closure2" onclick="fff()" />-->
+
+    </body>
+
+
+
+</html>

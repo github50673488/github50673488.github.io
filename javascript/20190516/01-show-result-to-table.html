@@ -1,0 +1,49 @@
+<!--    https://jingyan.baidu.com/article/acf728fd5c2baaf8e510a387.html-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" /> 
+        <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script> 
+        <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+        <script>
+            function afterWinLoad()
+            {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    document.querySelector("#tbl").rows[1].cells[1].innerHTML = "aaa";
+                  //14招搞定JavaScript调试  ----14 监控节点元素变化并中断
+                  //https://www.evernote.com/shard/s391/nl/67721592/76abb0b7-89b4-489a-b41c-a3124fef458f
+                  // 在谷歌检查器下，右键选中的元素（在表格元素那里），然后选定要监控的变化类型：Subtree Modifications, Attributes Modifications, Node Removal。上面的代码会暂停的
+                });
+            }
+            window.onload = afterWinLoad;//如果代码放入body的后面，可以不这么做
+        </script>
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <table id ="tbl" class="table table-bordered table-striped table-hover table-condensed"> 
+            <caption>
+                输出结果
+            </caption> 
+            <thead> 
+                <tr> <!--                row0-->
+                    <th>编号</th> 
+                    <th>内容</th> 
+                    <th>说明</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr> <!--        row1-->
+                    <td>1</td> <!--              col0-->
+                    <td>内容1</td> <!--              col1-->
+                    <td>备注1</td> <!--              col2-->
+                </tr> 
+            </tbody>
+        </table>
+    </body>
+
+</html>
+<!--    https://jingyan.baidu.com/article/acf728fd5c2baaf8e510a387.html-->
