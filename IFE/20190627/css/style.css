@@ -1,0 +1,499 @@
+* {
+	padding: 0;
+	margin: 0;
+	/*清除浏览器缺省padding margin 差异*/
+}
+
+body {
+	height: 100%;
+	/* 最小宽度设置为1280像素，当浏览器宽度小于该值时，body不再自适应，而是部分元素被遮挡住。*/
+	min-width: 1280px;
+
+}
+
+button {
+	/* 按钮鼠标手型 */
+	cursor: pointer;
+}
+
+header {
+	/* overflow: hidden; */
+	/* 没有这句,由于h1的上margin为180px搞得上面一片白 */
+	height: 990px;
+	background: #000;
+	background: url(../img/header-bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.title {
+	max-width: 970px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+header h1 {
+	color: white;
+	font-size: 50px;
+	max-width: 730px;
+	text-align: center;
+	/* margin: 180px auto 90px auto; */
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 180px;
+}
+
+header p {
+	color: white;
+	max-width: 730px;
+	font-size: 20px;
+	margin: 90px auto 90px auto;
+}
+
+header form {
+	margin: 0 auto;
+	width: 970px;
+	border: 1px solid #43413d;
+	text-align: center;
+	/* overflow: hidden; */
+}
+
+header h4 {
+	color: white;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+header h6 {
+	color: white;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 42px;
+	font-weight: normal;
+}
+
+h4 {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+
+
+
+h6 {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.register_input {
+	margin: 40px 0 50px 0;
+}
+
+.register_input input {
+	width: 292px;
+	height: 50px;
+	margin: 0 15px;
+	padding: 0 20px;
+	border: 1px solid #43413d;
+	font-size: 14px;
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0);
+	/* 透明!! */
+}
+
+.register_input button {
+	width: 125px;
+	height: 50px;
+	margin: 0 15px;
+	border: 0;
+	background-color: #fff;
+
+}
+
+.part1 {
+	padding: 90px 0;
+}
+
+.part1 h6 {
+	text-transform: uppercase;
+}
+
+.part1 h1 {
+	max-width: 670px;
+	font-size: 42px;
+	margin: 40px auto 10px auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.banner_container {
+	width: 970px;
+	/* 一个宽度一个margin: 0 auto; 块状元素居中老套路 */
+	margin: 0 auto;
+}
+
+.banner_cell {
+	height: 120px;
+	width: 440px;
+	margin-top: 80px;
+
+}
+
+.banner_cell.cell_left {
+	float: left;
+}
+
+.banner_cell.cell_right {
+	float: right;
+}
+
+.banner_cell .cell_part {
+	margin-left: 60px;
+}
+
+.banner_cell img {
+	float: left;
+	height: 40px;
+}
+
+.banner_cell p {
+	font-size: 16px;
+}
+
+.title {
+	min-width: 970px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+.inline-b li {
+	display: inline-block;
+	margin-right: 20px;
+	margin-top: 0;
+	/* 为了margin合并 */
+}
+
+.part2 {
+	position: relative;
+	/* overflow: hidden;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box; */
+	height: 800px;
+	padding: 100px 0;
+	background: url(../img/part2-bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.part2 section {
+	max-width: 970px;
+	margin: 0 auto;
+}
+
+.part2 p {
+	width: 370px;
+	color: #d4d6d4;
+	margin: 100px 0 60px 0;
+}
+
+.part2 button {
+	width: 240px;
+	height: 60px;
+	background-color: white;
+	border: 1px solid #808080;
+}
+
+.part2 button:last-child {
+	color: white;
+	background-color: transparent;
+}
+
+.part2 h1 {
+	max-width: 370px;
+	font-size: 36px;
+	margin: 80px 0 100px 0;
+	font-weight: normal;
+	color: white;
+}
+
+.part2 div {
+	position: absolute;
+	top: 100px;
+	left: 55%;
+}
+
+.part3{
+	padding: 100px 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.part3_container{
+	display: flex;/* 这里练习了flex布局 */
+	width: 970px;
+	margin: 90px auto 0 auto ;
+	text-align:  center;
+	justify-content: space-between;/* 均匀排列每个元素
+                                   首个元素放置于起点，末尾元素放置于终点 */
+}
+
+.part3_cell{
+	flex-grow: 0;/* 这里练习了flex布局 */
+	flex-shrink: 0;
+	flex-basis: 270px;
+}
+
+.part3 img{
+	height: 30px;
+	margin-bottom: 45px;
+}
+
+.part4{
+
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.part4_container{
+	width: 970px;margin: 0 auto;
+	padding: 100px 0;
+}
+
+.part4 section{
+	display: flex;
+	justify-content: space-between;/*  没有这个文字会向左靠*/
+	align-items: center; /* 文字垂直方向居中对齐 */
+}
+.part4 section img{
+	flex: 0 0 570px;
+}
+
+.part4 section div{ 
+	flex: 0 0 320px;
+}
+
+.part4 section:last-child{ 
+	margin-top: 80px;
+}
+
+.part4 p{
+	margin-top: 35px;
+}
+
+
+
+.part5{
+	padding: 100px 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+p.part5_title{
+	width: 670px;
+	margin: 40px auto 70px auto;
+}
+
+.part5_container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	
+	width: 970px;
+	/* height: 1090px; */
+	margin: 0 auto;
+}
+.part5_cell{
+	flex: 0 0 470px;
+	height: 350px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+
+
+.part5_hover{
+	position: absolute;/* 把.part5_hover div　的内容放入位置, */
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+ 	opacity: 0;/* 并设为元素内容本身透明,不可见 */ 
+	background-color: transparent;/* 背景透明 */
+	text-align: center;
+}
+
+  .part5_cell:hover .part5_hover {/* 鼠标悬停的时候半透明显示.part5_hover的内容 */
+            opacity: .7;
+            background-color: rgba(0, 0, 0, .7);
+            transition: all .5s;
+        }
+
+.part5_hover p{
+	color:  #8a8a8a;
+}
+
+.part5_hover ul{
+	list-style: none;
+	margin-top: 40px;
+}
+
+.part5_hover li{
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+	width: 55px;
+	height: 55px;
+	line-height: 60px;/* 垂直居中 */
+	margin: 0 20px;
+	border: 1px solid  #8a8a8a;
+	border-radius: 55px;
+}
+
+.part5_hover a{
+	display: block;
+	width: 55px;height: 55px;
+}
+
+.part5_hover img{
+	height: 22px;
+}
+
+.part6{
+	padding: 70px 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+.part6_container{
+	width: 970px;
+	margin:  0 auto;
+}
+
+.part6 form{
+	float: left;
+	box-sizing: border-box;
+	width: 470px;
+	padding: 50px 0;
+	text-align: center;
+}
+
+
+
+.part6 form h5{
+	margin-bottom: 50px;
+	text-transform: uppercase;
+}
+
+.part6_container div{
+	margin-left: 600px;
+	padding: 90px 0;	
+}
+
+.part6 input{
+	box-sizing: border-box;
+	width: 370px;
+	height: 50px;
+	padding: 0 20px;
+	margin-bottom: 30px;
+	border: #F2F2F2 solid 1px;
+}
+
+.part6 textarea{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	resize: none;
+	width: 370px;
+	height: 144px;
+	padding: 20px;
+	margin: 30px;
+	
+}
+
+.part6 button{
+	
+	width: 370px;
+	height: 50px;color: white;
+	background-color: #000;
+}
+
+
+
+.part6_container p{
+	margin: 40px 0 70px 0;
+}
+
+
+ul.contacts{/* 类为contacts的ul */
+	list-style: none;
+}
+
+.contacts li
+{
+  display: block;
+  width: 270px;
+  margin-bottom: 30px;
+
+}
+.contacts img{
+	float: left;
+}
+.contacts h5{
+	margin-left: 40px;
+	
+}
+
+
+
+footer {
+	padding: 90px 0;
+	background-color: #000;
+}
+
+footer nav {
+	width: 1280px;
+	margin: 0 auto;
+
+}
+
+footer h5 {
+	color: white;
+}
+
+footer a {
+	color: #484848;
+
+}
+
+footer p {
+	color: #484848;
+	margin: 30px 0;
+}
+
+footer li {
+	margin: 30px 0;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer div {
+	width: 320px;
+	/* display: inline-block; */
+	float: left;
+}
