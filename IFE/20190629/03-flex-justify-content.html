@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+		<style>
+			#item-container {
+				display: flex;
+
+				background-color: hsl(34, 88%, 90%);
+			}
+
+			/* “Block”，“inline”，“float” 和 “text-align” 在 flex-item 的环境下无意义；
+默认情况，所有的 flex-item 会按照 flex 容器的顶部和左侧对齐 */
+
+			.square {
+				width: 200px;
+				height: 200px;
+				background-color: hsl(50, 88%, 50%);
+			}
+
+
+			.circle {
+				border-radius: 50%;
+				width: 150px;
+				height: 150px;
+				background-color: hsl(22, 88%, 50%);
+			}
+		</style>
+	</head>
+	<body>
+		 justify-content 属性定义了浏览器如何分配顺着父容器主轴的弹性元素之间及其周围的空间。
+
+		<div class="justify-content">
+			<button >flex-start</button>
+			<button >flex-end</button>
+			<button >center</button>
+			<button >space-between</button>
+			<button >space-around</button>
+		</div>
+		<p></p>
+	align-items属性将所有直接子节点上的align-self值设置为一个组。 align-self属性设置项目在其包含块中在交叉轴方向上的对齐方式。
+		<div class="align-items">
+			<button>stretch</button>
+			<button>center</button>
+			<button>flex-start</button>
+			<button>flex-end</button>
+			<button>baseline</button>
+		</div>
+<p></p>
+图例:
+		<div id="item-container">
+			<div class="circle"></div>
+			<div class="square"></div>
+			<div class="circle"></div>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				let btns = document.querySelectorAll('.justify-content>button');
+				let i=0;
+				for (; i < btns.length; ++i) {
+					btns[i].addEventListener('click', function() {
+						document.querySelector("#item-container").style.justifyContent = this.innerHTML;
+					});
+				}
+				btns = document.querySelectorAll('.align-items>button');
+				for (i = 0; i < btns.length; ++i) {
+					btns[i].addEventListener('click', function() {
+						document.querySelector("#item-container").style.alignItems =  this.innerHTML;
+					});
+				}
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>
