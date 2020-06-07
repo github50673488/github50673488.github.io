@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin:0; padding: 0;}
+        ul {
+            list-style-type: none;
+        }
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .hd {
+            height: 45px;
+        }
+        .hd span {
+            display:inline-block;
+            width: 90px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .hd span.current {
+            background-color: purple;
+        }
+        .bd div {
+            height: 255px;
+            background-color: purple;
+            display: none;
+        }
+        .bd div.current {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div class="hd" id="hd">
+            <span class="current">体育</span>
+            <span >娱乐</span>
+            <span>新闻</span>
+            <span>综合</span>
+        </div>
+        <div class="bd" id="bd">
+            <div class="current">我是体育模块</div>
+            <div >我是娱乐模块</div>
+            <div>我是新闻模块</div>
+            <div>我是综合模块</div>
+        </div>
+    </div>
+    <script src="common.js"></script>
+    <script>
+        // 1 鼠标放到tab栏高亮显示，其它tab栏取消高亮
+		// 2 tab栏对应的div 显示，其它div隐藏
+      let spans=document.querySelectorAll(".box .hd span");
+	  let divs=document.querySelectorAll(".box .bd div");
+	  for(let i=0;i<spans.length;i++)
+	  {
+		  spans[i].addEventListener("mouseover",function(){
+			 let idx=0;
+			  for(let i=0;i<spans.length;i++)
+			  {
+				  if(spans[i]===this){
+					  spans[i].className="current";
+					  idx=i;
+				  }
+				  else{
+					  spans[i].className="";
+				  }
+			  }
+			  for(let i=0;i<divs.length;i++)
+			  {
+			  	divs[i].className=i==idx?"current":"";
+			  }
+		  });
+	  }
+    </script>
+</body>
+</html>

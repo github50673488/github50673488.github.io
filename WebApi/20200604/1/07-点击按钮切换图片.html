@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="点我" id="btn">
+  <br>
+  <img src="images/a.jpg" id="mv" alt="" width="400" height="300">
+
+  <script>
+    let btn = document.querySelector("#btn");
+    let isImgA = true;
+    btn.addEventListener("click", function () {
+      document.querySelector("#mv").src = isImgA ? "images/b.jpg" : "images/a.jpg";
+      isImgA = !isImgA;
+    });
+  </script>
+</body>
+
+</html>

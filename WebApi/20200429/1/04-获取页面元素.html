@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+    <div id='id11111'>11111</div>
+    <div>22222</div>
+    <p>ppppp</p>
+    <span>span</span>
+  </div>
+  <div>hello</div>
+  <div id="main">world</div>
+  <div>heima</div>
+  <p>heihei</p>
+  <span>111</span>
+  <script>
+    var container = document.getElementById('container');
+	console.dir(container);
+	var container1=document.querySelector('#container');
+	console.dir(container1);
+	//container1.getElementById('id11111');//getElementById 只能通过 document来调用
+    var divs = container.getElementsByTagName('div');
+    console.dir(divs);
+	var divs1 = container1.querySelectorAll('div');
+	
+	console.dir(divs);
+	console.dir(container1.querySelector('#id11111'));
+	
+	console.dir(container1.querySelector('#id2222'));//null
+	//container1.gete
+	console.dir(container1.querySelectorAll('#id2222'));//Nodelist(0)
+	
+	//document.getElementsByName()//getElementsByName 在不同浏览器动作不同，基本不用
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<style>
+			select {
+            width:200px;
+            height: 200px;
+            background-color: #33cccc;
+            font-size: 20px;
+        }
+    </style>
+	</head>
+	<body>
+		<select id="all" multiple="multiple">
+			<option>苹果</option>
+			<option>橘子</option>
+			<option>梨</option>
+			<option>西瓜</option>
+			<option>水蜜桃</option>
+		</select>
+
+		<input type="button" value=">>" id="btn1">
+		<input type="button" value="<<" id="btn2">
+		<input type="button" value=">" id="btn3">
+		<input type="button" value="<" id="btn4">
+
+		<select id="select1" multiple="multiple">
+
+		</select>
+
+		<script src="common.js"></script>
+		<script>
+			let btn1 = document.querySelector("#btn1");
+			let btn2 = document.querySelector("#btn2");
+			let btn3 = document.querySelector("#btn3");
+			let btn4 = document.querySelector("#btn4");
+
+			let all = document.querySelector("#all");
+			let select1 = document.querySelector("#select1");
+
+			//>>
+			btn1.addEventListener("click", function() {
+				let lenOfAll = all.length;
+				for (let i = 0; i < lenOfAll; i++) {
+					let option = all.children[0];
+					select1.appendChild(option);
+				}
+			});
+			//<<
+			btn2.addEventListener("click", function() {
+
+			});
+			btn3.addEventListener("click", function() {
+
+			});
+			//<
+			btn4.addEventListener("click", function() {
+				let arr = [];
+				for (let i = 0; i < select1.length; i++) {
+					if (select1[i].selected) {
+						arr.push(select1[i]);
+						select1[i].selected = false;
+					}
+				}
+				let arrLength = arr.length;
+				for (let i = 0; i < arrLength; i++) {
+					all.appendChild(arr[i]);
+				}
+
+			});
+		</script>
+	</body>
+</html>
