@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="b1"><button id="btn1"> 在控制台打印正方形</button></div>
+  <br>
+  <div id="b2"><button> 在控制台打印三角形
+    </button></div>
+  <br>
+  <div id="b3">
+    <button>99乘法表</button></div>
+
+
+</body>
+<script>
+  document.querySelector('#b1 button').addEventListener('click',
+    function () {
+      console.log("");
+      console.log("---------1-------------");
+
+      let readyToPrint = "";
+      for (let i = 1; i <= 10; i++) {
+        let line = "";
+        for (let j = 1; j <= i; j++) {
+          line += "*";
+
+        }
+        readyToPrint += line;
+        readyToPrint += "\n";
+      }
+      console.log(readyToPrint);
+
+    }
+  );
+
+  document.querySelector('#b2 button').addEventListener('click',
+    function () {
+
+      console.log("");
+      console.log("---------2-------------");
+
+      let readyToPrint = "";
+      for (let i = 1; i <= 10; i++) {
+        let line = "";
+        for (let j = 1; j <= 10; j++) {
+          line += "* ";
+
+        }
+        readyToPrint += line;
+        readyToPrint += "\n";
+      }
+      console.log(readyToPrint);
+    }
+  );
+
+  document.querySelector('#b3 button').addEventListener('click',
+    function () {
+
+      console.log("");
+      console.log("---------3-------------");
+
+      let readyToPrint = "";
+      for (let i = 1; i <= 9; i++) {
+        let line = "";
+        for (let j = i; j <= 9; j++) {
+          line += (i + "*" + j + "=" + (i * j) + "\t");
+
+        }
+        readyToPrint += line;
+        readyToPrint += "\n";
+      }
+      console.log(readyToPrint);
+
+    }
+  );
+
+  document.querySelector('#b1 button').click();
+  document.querySelector('#b2 button').click();
+  document.querySelector('#b3 button').click();
+</script>
+
+</html>

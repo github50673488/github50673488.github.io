@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* 	p:first-child{ */
+	p:first-of-type{
+		color:indianred;
+	}
+/* p:first-of-type
+p:last-of-type */
+</style>
+	</head>
+	<body>
+		<div><button id="btn1">run</button></div>
+		<p></p>
+		<p></p>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				document.querySelector('#btn1').addEventListener('click', function() {
+					
+					var w = window.innerWidth ||
+						document.documentElement.clientWidth ||
+						document.body.clientWidth;
+					var h = window.innerHeight ||
+						document.documentElement.clientHeight ||
+						document.body.clientHeight;
+		
+					//document.querySelector("p:first-child").innerHTML = "浏览器window宽度: " + w + ", 高度: " + h + "。";//错误的用法,first-child是父元素的第一个子元素的意思,在本例中第一个元素可不是p,而是div
+					//详细见 https://www.cnblogs.com/christong/p/6930258.html
+					//window.close();
+					
+					document.querySelector("p:first-of-type").innerHTML = "浏览器window宽度: " + w + ", 高度: " + h + "。";
+					document.querySelector("p:last-of-type").innerHTML = "屏幕宽度: " + window.screen.availWidth;
+					
+				});
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>

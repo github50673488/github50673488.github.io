@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+		<!--<style></style>-->
+	</head>
+	<body>
+		<div><button id="btn1">run</button></div>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				document.querySelector('#btn1').addEventListener('click', function() {
+					
+					// var Person = function(name) {
+					// 	this.name = name;
+					// };
+					// Person.prototype.sex = "nan";
+					// var p1 = new Person("Liu");
+					// console.log(p1);
+					// console.log(p1.name);
+					// console.log(p1.sex);
+					// 
+					// let p2=new Person("Wang");
+					// console.log(p2);
+					// console.log(p2.name);
+					// console.log(p2.sex);
+					
+					let p9={"name":"Li"};
+					//p9.__proto__.sex="nan";//一般不这么写,这么写让人认为只是影响了p9,其实已经影响了其他元素的构造.
+					Object.prototype.sex= "nan";//上面的意思其实就是 Object.prototype.sex ="nan"
+					console.log(p9);
+					console.log(p9.name);
+					console.log(p9.sex);
+					
+					let p4={};//其实就是 let p4
+					console.log(p4);
+					console.log(p4.name);
+					console.log(p4.sex);
+					
+				});
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>

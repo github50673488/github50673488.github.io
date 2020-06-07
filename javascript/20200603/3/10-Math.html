@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(100, 100, 100);
+    }
+  </style>
+  <script>
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    console.log(random(10, 20));
+    // - 随机生成颜色RGB   [0, 255] 整数
+    function randomRGB(min, max) {
+      var color1 = random(min, max);
+      var color2 = random(min, max);
+      var color3 = random(min, max);
+
+      return 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
+    }
+
+
+    window.onload = function () {
+      document.body.style.backgroundColor = randomRGB(0, 255);
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

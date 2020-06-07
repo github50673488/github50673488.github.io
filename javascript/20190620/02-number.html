@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    let x=0.2+0.1;
+					console.info(x);
+					let myNumber=128;
+					console.info(myNumber.toString(16));
+					console.info(isNaN(-3/0) );
+					
+					let a=new Number(123);
+					console.info(a.MAX_VALUE);//undefined
+					console.info(Number.MAX_VALUE);//1.7976931348623157e+308
+					
+                });
+            }
+            );
+        </script>
+        <!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+    </body>
+</html>

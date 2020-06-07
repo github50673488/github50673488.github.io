@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <input type="button" value="closure" id="btn1"/>
+        <script type="text/javascript">
+            function fun_creat_closure() {//闭包工厂函数
+                var n = 999;//定义一个局部变量
+                fun_nadd_it_is_public = function () {//这里的fun_nadd_it_is_public没有var ，定义的是一个全局 （函数）变量fun_nadd_it_is_public可以在全局调用
+                    n += 1
+                };
+               return function () {//定义匿名函数并返回，fun_creat_closure每调用一次，就返回一次这个匿名函数，（产生一个闭包）
+                    alert(n);//函数体
+                };
+            }
+
+            document.querySelector('#btn1').addEventListener('click', function () {
+                var my_closure = fun_creat_closure();//调用闭包工厂函数产生一个闭包，n被保留下来，但注意工厂函数只是被调用了一次，n只有一份
+                my_closure(); //调用闭包， 显示一下创建闭包时候的内部变量的值999
+                fun_nadd_it_is_public();//调用全局函数fun_nadd_it_is_public， 累加了内部变量n
+                my_closure(); // 调用闭包， 显示一下创建闭包时候的内部变量的值1000
+            });
+        </script>
+    </body>
+</html>

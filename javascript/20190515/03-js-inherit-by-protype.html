@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            function ParentConstructor() {
+                this.parentProp = "parentProp";// 实例属性,用new 构造函数制造出来的对象会复制他并 分配本对象专门的空间。
+            }
+            ParentConstructor.prototype = {
+                prototypeProp : 'prototypeProp',
+                parentPrototypeMethod: function () {// 原型方法
+                    console.info("parentMethod method!!");
+                }
+            };
+            
+            
+            function SonConstructor() {}
+            
+            function afterWinLoad()
+            {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                  
+                    SonConstructor.prototype = new ParentConstructor();// 设置Bar的prototype属性为Foo的实例对象
+                    SonConstructor.prototype.prototypeProp = 'prototypeProp';
+                    SonConstructor.prototype.constructor = SonConstructor;// 修正Bar.prototype.constructor为Bar本身
+
+                    var sonObj1 = new SonConstructor() // 创建Bar的一个新实例    
+                    var sonObj2 = new SonConstructor() // 创建Bar的一个新实例    
+                    sonObj1.parentPrototypeMethod();// 
+                    sonObj2.parentPrototypeMethod();// 
+                    
+                    sonObj1.__proto__.parentProp= "sonObj1_parentProp";
+                    console.info("sonObj1.parentProp:" + sonObj1.parentProp);
+                    console.info("sonObj2.parentProp:" + sonObj2.parentProp);
+                    
+                    sonObj1.__proto__.prototypeProp= "sonObj1_prototypeProp";
+                    console.info("sonObj1.prototypeProp:" + sonObj1.prototypeProp);
+                    console.info("sonObj2.prototypeProp:" + sonObj2.prototypeProp);
+                    
+                    //console.info(bar1);
+
+// 原型链  ↓                
+//sonObj1,sonObj2 [SonConstructor的实例]
+//    SonConstructor.prototype [ParentConstructor的实例] 
+//        { prototypeProp: 'prototypeProp' }
+//        ParentConstructor.prototype
+//            {parentPrototypeMethod: ...};
+//            Object.prototype
+//                {toString: ... /* etc. */};
+                    
+                    //note  https://www.evernote.com/l/AYd2Qhs5l6hL3qiB1EzPQARTbeUxrS9iBvQ/
+                    
+                });
+            }
+            window.onload = afterWinLoad;
+
+        </script>
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">test</button></div>
+    </body>
+</html>

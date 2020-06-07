@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    // 全局作用域 -- 0级作用域链
+    // var num = 5;
+    function f1() {
+      // f1 局部作用域   -- 1级作用域链
+       // var num = 15;
+      function f2() { 
+        // f2 局部作用域  -- 2级作用域链
+        console.log(num);//这里的num是什么呢，---- 从内到外的作用域链去找num的声明吧
+      }
+      f2();
+    }
+    f1();
+	var num=5;//如果这一行也注释， console.log当然会出错，因为 num连声明都没有。
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

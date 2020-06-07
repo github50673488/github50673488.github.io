@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div><button id="btn1">冒泡排序 61, 5, 3, 14, 4 从小到大 </button></div>
+  <br>
+  <div id="result">结果:</div>
+  <script>
+    document.querySelector("#btn1").addEventListener(
+      "click",
+      function () {
+        let arr = [61, 45, 3, 14, 4];
+        for (let i = 0; i < arr.length - 1; i++) {
+          let isExeExange = false;
+          for (let j = arr.length - 1; j > i; j--) {
+            if (arr[j] < arr[j - 1]) {
+              let temp = arr[j - 1];
+              arr[j - 1] = arr[j];
+              arr[j] = temp;
+              isExeExange = true;
+            }
+          }
+          if (!isExeExange) {
+            break; //没有交换了，没必要再排序
+          }
+        }
+        let readyToPrint = "";
+        for (let i = 0; i < arr.length; i++) {
+          readyToPrint += arr[i] + ",";
+        }
+        readyToPrint = readyToPrint.substring(0, readyToPrint.lastIndexOf(','));
+        document.querySelector("#result").innerHTML = "结果:" + readyToPrint;
+      }
+    );
+  </script>
+</body>
+
+
+
+</html>

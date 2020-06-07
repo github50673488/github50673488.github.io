@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><button id="btn1">btn1</button></div>
+        <div><button id="btn2">btn2</button></div>
+        <div><button id="btn3">btn3</button></div>
+        <script>
+            var add = //生产了一个闭包赋给add变量
+                    (function () {
+                let counter = 0;
+                return function () {
+                    alert(counter);
+                    return counter += 1;
+                }
+            })//闭包工厂函数
+            ()//调用（闭包工厂函数）
+            ;
+
+
+function Student(value) {
+    let name = value;
+    this.getName = function() { return name; };
+    this.setName = function(value) {name = value; };
+}
+
+function Student1(value) {
+    let name = value;
+    //this.getName = function() { return name; };
+    return function(value) {
+        name = value;
+       
+    };
+}
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    debugger;
+                    add();//调用闭包，访问被封装好的内部变量 counter
+
+                });
+                document.querySelector('#btn2').addEventListener('click', function () {
+                   let student= new Student("Liu");
+                   debugger;
+                   student.setName("Wang");
+                   alert(student.getName());
+                });
+                 document.querySelector('#btn3').addEventListener('click', function () {
+                 //  let student= new Student1("Liu");
+                     let student=  Student1("Liu");
+                   debugger;
+                   student("Wang");
+                   
+                });
+            }
+            );
+        </script>
+    </body>
+</html>

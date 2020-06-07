@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			let arr = [];
+			let obj = {};
+
+			console.log(typeof arr); //object 
+			console.log(typeof null); //object
+			console.log(typeof obj); //object
+			let fun = function() {}
+			console.log(typeof fun); //function、
+
+
+			console.log("---------------------------");
+			let u;
+			console.log(u === undefined);
+			let t = null;
+			console.log(t === null);
+
+
+			console.log("---------------------------");
+
+			console.log(Object.prototype.toString.call(1)); //[object Number]
+			console.log(Object.prototype.toString.call(true)); //[object Boolean]
+			console.log(Object.prototype.toString.call("abc")); //[object String]
+			//console.log(Object.prototype.toString.call(undefined));//[object Undefined]
+
+			//console.log(Object.prototype.toString.call(null));//[object Null]
+			console.log(Object.prototype.toString.call(obj)); //[object Object]
+			console.log(Object.prototype.toString.call(arr)); //[object Array]
+			console.log(Object.prototype.toString.call(fun)); //[object Function]
+
+
+			function testTypeof(obj) {
+				let ztype = {
+					"undefined": "undefined",
+					"number": "number",
+					"string": "string",
+					"boolean": "boolean",
+					"function": "function",
+					"[object Null]": "null",
+					"[object RegExp]": "regexp",
+					"[object Array]": "array",
+					"[object Date]": "date",
+					"[object Error]": "error",
+					"[object Object]": "object",
+				}
+
+				return (ztype[typeof(obj)]) || (ztype[Object.prototype.toString.call(obj)]);
+
+			};
+
+			console.log("---------------------------");
+			console.log(window.testTypeof(1)); //[object Number]
+			console.log(testTypeof(true)); //[object Boolean]
+			console.log(testTypeof("abc")); //[object String]
+			console.log(testTypeof(undefined)); //[object Undefined]
+
+			console.log(testTypeof(null)); //[object Null]
+			console.log(testTypeof(obj)); //[object Object]
+			console.log(testTypeof(arr)); //[object Array]
+			console.log(testTypeof(fun)); //[object Function]
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

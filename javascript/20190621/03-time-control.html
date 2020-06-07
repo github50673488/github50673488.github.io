@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div><button id="btn1">run</button></div>
+		<div><button id="btn2">stop</button></div>
+		<p></p>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				document.querySelector('#btn1').addEventListener('click', function() {
+				myInterval=	window.setInterval(function() {//在 函数内部不用 var的变量其实是全局变量
+						document.querySelector("p:first-of-type").innerHTML = new Date().toLocaleTimeString()
+					}, 1000);
+				});
+				debugger;
+				document.querySelector('#btn2').addEventListener('click', function() {
+					window.clearInterval(myInterval);
+				});
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>

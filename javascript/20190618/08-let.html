@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style></style>
+</head>
+
+<body>
+    <div><button id="btn1">run</button></div>
+    <script>
+        var carName = "Volvo";
+        alert(window.carName); // 可以使用 window.carName 访问变量
+
+        let carName1 = "Volvo";
+        alert(window.carName1);
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('#btn1').addEventListener('click', function() {
+                let x = 10;
+                // 这里输出 x 为 10
+                {
+                    let x = 2;
+                    // 这里输出 x 为 2
+                }
+                // 这里输出 x 为 10
+                alert(x);
+
+
+                testWinObject();
+
+            });
+        });
+    </script>
+</body>
+
+</html>

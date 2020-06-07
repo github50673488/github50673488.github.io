@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+		<style>
+			p:first-of-type {
+				color: indianred;
+			}
+		</style>
+	</head>
+	<body>
+		<div><button id="btn1">run1</button></div>
+		<div><button id="btn2">run2</button></div>
+		<p></p>
+		<script>
+			var a = 1; //这里的a并不能影响函数内部的a, 在函数内部,a 这个名字和全局的变量a已经没有任何关系
+			document.addEventListener("DOMContentLoaded", function() {
+				document.querySelector('#btn1').addEventListener('click', function() {
+					window.alert(a);
+					var a = 2; // 这里会进行变量提升,但是准确的说,是变量声明提升,初始化不会提升.
+					//https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting
+					window.alert(a);
+					// 上面的语句其实是
+					// var a;
+					// window.alert(a);
+					// a=2;
+					// window.alert(a);
+				});
+				document.querySelector('#btn2').addEventListener('click', function() {
+					var getName = function() {
+						console.log(2);
+					}
+
+					function getName() { //这是一个声明,将会无条件提升
+						console.log(1);
+					}
+					getName(); //  ----2 ;
+
+				});
+
+
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>

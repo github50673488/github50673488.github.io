@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    var x = "Hello \r\n\
+World!";//  \r\n 是字符串内的换行，第三个\是因为字符串有一部分在源程序换行到下一行了，需要加一个\
+                    
+                    console.log(x);
+                });
+            }
+            );
+        </script>
+    </body>
+</html>

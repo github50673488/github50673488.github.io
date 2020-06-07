@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="文件路径"/>-->
+        <!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <script>
+            
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    for (var i = 0; i < 10; i++) {
+  
+}
+console.info(i);// 10 不是 undifined ，出了函数，变量消失可不意味着出了程序块变量消失!
+                });
+            }
+            );
+        </script>
+    </body>
+</html>

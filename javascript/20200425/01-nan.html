@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+		// let a=NaN;
+		// console.log(isNaN(a));
+		// console.log(Number.isNaN(a));
+		
+		// let b=123;
+		// console.log(isNaN(b));
+		// console.log(Number.isNaN(b));
+		
+		var c='A String';
+		console.log(isNaN(c));//ture
+		console.log(window.isNaN(c));//true window.isNaN==isNaN 
+		console.log(Number.isNaN(c));//true
+		
+		console.log(window.isNaN('A String'));//false !!!! is a bug ，应该是true
+		console.log(Number.isNaN('A String'));//true
+			
+			var d = 2 / "foo";        // NaN
+			console.log(Number.isNaN(d));//true
+			console.log(typeof d === "number");    // true
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

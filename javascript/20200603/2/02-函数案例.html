@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    // 求斐波那契数列Fibonacci中的第n个数是多少？      1 1 2 3 5 8 13 21...
+    function getFib(n) {
+
+      let result = 0;
+      let n1 = 1;
+      let n2 = 1;
+      for (let i = 3; i <= n; i++) {
+        result = n1 + n2;
+        n1 = n2;
+        n2 = result;
+      }
+      return result;
+    }
+    var r = getFib(6);
+    console.log(r);
+
+
+    // 翻转数组，返回一个新数组   [5, 4, 3, 2, 1] -> [1, 2, 3, 4, 5]
+    function reverse(array) {
+      let result = [];
+      for (let i = 0; i < array.length; i++) {
+        result[i] = array[array.length - i - 1];
+      }
+      return result;
+    }
+
+    var arr = [5, 3, 2, 1];
+
+    console.log(reverse(arr));
+
+    var arr = ['abc', 'xyz', '123'];
+    console.log(reverse(arr));
+
+
+
+    // 对数组排序， 从小到大--冒泡排序
+    function sort(array) {
+      for (let i = 0; i < array.length; i++) {
+        let isSorted = true;
+        for (let j = array.length - 1; j > i; j--) {
+
+          if (array[j] < array[j - 1]) {
+            isSorted = false;
+            let temp = array[j];
+            array[j] = array[j - 1];
+            array[j - 1] = temp;
+          }
+        }
+        if (isSorted) {
+          break;
+        }
+      }
+      return array;
+
+    }
+
+    var array = [34, 12, 88, 20, 30];
+
+    console.log(sort(array));
+
+    //输入一个年份， 判断是否是闰年[闰年： 能被4整数并且不能被100整数， 或者能被400整数]
+    function isRun(year) {
+
+      return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+
+    }
+    console.log(isRun(2016));
+
+    // 输入某年某月某日，判断这一天是这一年的第几天？
+    // 1998 5 18
+    // 5月份 18
+    // 4月份 30
+    // 3月份 31
+    // 2月份 闰年的时候29天  平年的时候28天
+    // 1月份 31
+    //
+    // 判断年份是否是闰年
+    // 获取年月日 是当前年的多少天
+    function getDays(year, month, day) {
+      let result = day;
+
+
+      for (let i = 1; i < month; i++) {
+        let dayOfMonth = 30;
+        switch (i) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            result += 31;
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            result += 30;
+            break;
+          case 2:
+            result += (isRun(year) ? 29 : 28);
+            break;
+          default:
+            break;
+        }
+
+      }
+      return result;
+
+    }
+
+    console.log(getDays(1998, 2, 2));
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

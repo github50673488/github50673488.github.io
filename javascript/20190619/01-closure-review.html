@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style></style>
+</head>
+
+<body>
+    <p id="help">Helpful notes will appear here</p>
+    <p>E-mail: <input type="text" id="email" name="email"></p>
+    <p>Name: <input type="text" id="name" name="name"></p>
+    <p>Age: <input type="text" id="age" name="age"></p>
+    <script>
+        function setupHelp() { //闭包工厂（产生闭包的外层函数）
+            var helpText = [ //希望保留不被销毁的数据
+                {
+                    'id': 'email',
+                    'help': 'Your e-mail address'
+                },
+                {
+                    'id': 'name',
+                    'help': 'Your full name'
+                },
+                {
+                    'id': 'age',
+                    'help': 'Your age (you must be over 16)'
+                }
+            ];
+            for (var i = 0; i < helpText.length; i++) {
+                // var item = helpText[i];//这个数据有问题，用了var，意味着item只有一份，后头的 helpText[i]覆盖前面的helpText[i]
+                let item = helpText[i];//用let 意味着item是三份，OK
+                document.getElementById(item.id).onfocus = //注册事件处理程序
+                    function() { //事件处理程序是一个闭包
+                    document.getElementById('help').innerHTML = item.help;
+                    //document.getElementById('help').innerHTML = helpText[i]; 这么写更不行，i为3，事件发生后从helpText什么都取不到
+                }
+            }
+        }
+        setupHelp(); //闭包产生器 ，产生三个闭包（可以访问helpText的匿名函数），注册给各个
+    </script>
+</body>
+
+</html>

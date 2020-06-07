@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events MDN 事件介绍 -->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button>Change color</button>
+<!--        <button onclick="bgChange()">Press me</button>    行内事件处理器 - 请勿使用-->
+        <script type="text/javascript">
+            var btn = document.querySelector('button');
+            function random(number) {
+                return Math.floor(Math.random() * (number + 1));
+            }
+            function bgChange() {
+                var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                document.body.style.backgroundColor = rndCol;
+            }
+            ;
+            //btn.onclick = bgChange;
+            btn.addEventListener('click', bgChange);
+            
+//第三种机制（DOM Level 2 Events (addEventListener(), etc.)）的主要优点是，
+//如果需要的话，可以使用removeEventListener()删除事件处理程序代码，
+//而且如果有需要，您可以向同一类型的元素添加多个监听器。
+//例如，您可以在一个元素上多次调用addEventListener('click', function() { ... })，
+//并可在第二个参数中指定不同的函数。对于事件处理程序属性来说，这是不可能的，
+//因为后面任何设置的属性都会尝试覆盖较早的属性
+
+        </script>
+    </body>
+
+</html>
