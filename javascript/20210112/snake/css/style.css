@@ -1,6 +1,8 @@
 #map{
     width: 800px;
-    height: 600px;
-    background-color: lightgray;
+    height:600px;
+    background-color:lightgray;
+    left: 0;
+    top: 0;
     position: relative;
 }
