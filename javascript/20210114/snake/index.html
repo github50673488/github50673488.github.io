@@ -1,10 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snake210114</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-$END$
+<div id="map"></div>
+<button id="btnTest">test</button>
+
+<script src="js/tools.js"></script>
+<script src="js/food.js"></script>
+<script src="js/snake.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+<script>
+    document.querySelector("#btnTest").addEventListener("click",function (e) {
+        //alert(e.toString()+"test");
+        //console.log(Tools.getRandomInt(1,10))
+        // let food = new Food();
+        // food.render(document.querySelector("#map"));
+
+
+        game.snake.move(document.querySelector("#map"));
+    })
+</script>
 </body>
 </html>
