@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var str2 = 'smyhvaevaesmyhvae';
+
+    let obj={};
+    for(let i=0; i<str2.length;i++)
+    {
+        let chr= str2.charAt(i);
+        if(obj[chr]===undefined)
+        {
+            obj[chr]=1;
+        }
+        else {
+            obj[chr]+=1;
+        }
+    }
+
+    console.log('----------');
+
+    let maxKey= '';
+    let maxCount=0;
+    for(key in obj)
+    {
+        if(obj[key]>maxCount)
+        {
+            maxKey=key;
+            maxCount=obj[key];
+        }
+    }
+    console.log('maxKey is:'+maxKey);
+    console.log('maxCount is:'+maxCount);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+
+// encodes characters such as ?,=,/,&,:
+let str=`?x=${encodeURIComponent('test?')}`;
+console.log(str);
+console.log(decodeURIComponent(str));
+// expected output: "?x=test%3F"
+
+let str1=`?x=${encodeURIComponent('шеллы')}`;
+console.log(str1);
+console.log(decodeURIComponent(str1));
+// expected output: "?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B"
+
+
+</script>
+</body>
+</html>

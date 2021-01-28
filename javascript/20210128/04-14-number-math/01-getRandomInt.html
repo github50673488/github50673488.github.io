@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function getRandomIntInclusive(min, max) {//from mdn
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+    }
+    for (let i=1;i<=100;i++)
+    {
+        console.log(""+i+":-------"+getRandomIntInclusive(1,100));
+    }
+</script>
+</body>
+</html>
