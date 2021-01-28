@@ -1,10 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>first</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            ></script>
+
 </head>
 <body>
-$END$
+<button id="btnTest">test</button>
+<div id="divTest"></div>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("#divTest").css({width: "100px", height: "200px", backgroundColor: "green"});
+
+        });
+    })
+</script>
 </body>
 </html>

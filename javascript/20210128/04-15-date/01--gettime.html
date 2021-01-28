@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let mydate= new Date("1970/01/01 0:0:0");
+    console.log(mydate.getTime()); // 获取时间戳  ----why not 0?
+    console.log(new Date().getTime());
+    console.log(Date.now());
+</script>
 </body>
 </html>
