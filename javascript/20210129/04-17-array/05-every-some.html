@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>every</title>
+</head>
+<body>
+<script>
+    var arr1 = ['千古', '宿敌', '南山忆', '素颜'];
+    var bool1 = arr1.every(function (element, index, array) {
+        if (element.length > 2) {
+            return false;
+        }
+        return true;
+    });
+    console.log(bool1); //输出结果：false。只要有一个元素的长度是超过两个字符的，就返回false
+
+    var arr2 = ['千古', '宿敌', '南山', '素颜'];
+    var bool2 = arr2.every(function (element, index, array) {
+        if (element.length > 2) {
+            return false;
+        }
+        return true;
+    });
+    console.log(bool2); //输出结果：true。因为每个元素的长度都是两个字符。
+
+
+//     ## some()
+//
+//         `some()`：对数组中每一个元素运行回调函数，只要有一个元素返回 true，则停止遍历，此方法返回 true。
+//
+// 注意：some()方法的返回值是 boolean 值。
+</script>
+</body>
+</html>

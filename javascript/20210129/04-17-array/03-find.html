@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find</title>
+</head>
+<body>
+<script>
+    let arr = [2, 3, 2, 5, 7, 6];
+
+    let result = arr.find((item, index) => {
+        return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素返回
+    });
+    console.log(result); //打印结果：5
+</script>
+</body>
+</html>

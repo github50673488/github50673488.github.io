@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reduce</title>
+</head>
+<body>
+
+<script>
+    // arr.reduce(function (previousValue, currentValue, currentIndex, arr) {}, initialValue);
+    //
+    // -   previousValue：必填，上一次调用回调函数时的返回值
+    //
+    // -   currentValue：必填，当前正在处理的数组元素
+    //
+    // -   currentIndex：选填，当前正在处理的数组元素下标
+    //
+    // -   arr：选填，调用 reduce()方法的数组
+
+    const arr = [2, 0, 1, 9, 6];
+    // 数组求和
+    const total = arr.reduce((prev, item) => {
+        return prev + item;
+    });
+
+    console.log('total:' + total); // 打印结果：18
+
+
+    function repeatCount(arr, value) {
+        if (!arr || arr.length == 0) return 0;
+
+        return arr.reduce((totalCount, item) => {
+            totalCount += item == value ? 1 : 0;
+            return totalCount;
+        }, 0);
+    }
+
+    let arr1 = [1, 2, 6, 5, 6, 1, 6];
+
+    console.log(repeatCount(arr1, 6)); // 打印结果：3
+
+
+
+
+    const arr3 = [2, 0, 1, 9, 6];
+    // 数组求最大值
+    const maxValue = arr3.reduce((prev, item) => {
+        return prev > item ? prev : item;
+    });
+
+    console.log(maxValue); // 打印结果：9
+
+
+</script>
+
+
+
+</body>
+</html>
