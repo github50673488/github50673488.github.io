@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 代码解释：如果在当前块级作用域中使用了变量 name，并且当前块级作用域中通过 let/const 声明了这个变量，那么，**声明语句必须放在使用之前，也就是所谓的 DTC（暂时性死区）**。DTC 其实是一种保护机制，可以让我们养成良好的编程习惯。
+    //
+    // 关于”暂时性死区“的更多介绍，详本项目的另一篇文章《JavaScript之ES6语法：变量let、const和块级作用域.md》。
+
+    const name = 'qianguyihao';
+
+    function foo() {
+        console.log(name);
+        const name = 'hello';
+    }
+
+    foo(); // 执行函数后，控制台报错：Uncaught ReferenceError: Cannot access 'name' before initialization
+  
+</script>
+</body>
+</html>

@@ -37,8 +37,6 @@
 
     Snake.prototype.move = function (map,food) {
 
-
-
         for(let i= this.body.length-1  ;i>0;i--)
         {
             let bodyNode= this.body[i];
@@ -73,11 +71,7 @@
 
             this.body.push(lastNodeClone);
         }
-
-
         this.render(map);
-
-
     }
 
 

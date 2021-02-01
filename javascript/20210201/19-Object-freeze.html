@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const params = {
+        name: 'qianguyihao',
+        port: '8899'
+    }
+    Object.freeze(params); // 冻结对象 params
+
+    params.port = '8080';// 修改无效 也不出错
+    console.log(JSON.stringify(params));
+</script>
+</body>
+</html>
