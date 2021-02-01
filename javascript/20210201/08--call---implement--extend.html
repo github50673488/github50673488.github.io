@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 给 Father 增加 name 和 age 属性
+    function Father(myName, myAge) {
+        this.name = myName;
+        this.age = myAge;
+    }
+
+    function Son(myName, myAge) {
+        // 【下面这一行，重要代码】
+        // 通过这一步，将 father 里面的 this 修改为 Son 里面的 this；另外，给 Son 加上相应的参数，让 Son 自动拥有 Father 里的属性。最终实现继承
+        Father.call(this, myName, myAge);
+        this.height = 190;
+    }
+
+    const son1 = new Son('liu', 28);
+    console.log(JSON.stringify(son1));
+
+</script>
+</body>
+</html>

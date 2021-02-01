@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fun() {
+        console.log(this);
+        console.log(this.name);
+    }
+
+    var obj1 = {
+        name: 'smyh',
+        sayName: fun,
+    };
+
+    var obj2 = {
+        name: 'vae',
+        sayName: fun,
+    };
+
+    var name = '全局的name属性';
+
+    //以方法的形式调用，this是调用方法的对象
+    obj2.sayName();
+
+</script>
+</body>
+</html>

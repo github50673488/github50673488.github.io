@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //     我们在《JavaScript 基础/函数.md》这篇文章讲过，函数的调用有**六种**形式。
+    //
+    // 根据函数的调用方式的不同，this 会指向不同的对象：
+    //
+    // - 1.以函数的形式（包括普通函数、定时器函数、立即执行函数）调用时，this 的指向永远都是 window。比如`fun();`相当于`window.fun();`
+    //
+    //     - 2.以方法的形式调用时，this 指向调用方法的那个对象
+    //
+    //     - 3.以构造函数的形式调用时，this 指向实例对象
+    //
+    //     - 4.以事件绑定函数的形式调用时，this 指向**绑定事件的对象**
+    //
+    //     - 5.使用 call 和 apply 调用时，this 指向指定的那个对象
+
+
+    function fun() {
+        console.log(this);
+        console.log(this.name);
+    }
+
+    var obj1 = {
+        name: 'smyh',
+        sayName: fun,
+    };
+
+    var obj2 = {
+        name: 'vae',
+        sayName: fun,
+    };
+
+    var name = '全局的name属性';
+
+    //以函数形式调用，this是window
+    fun(); //可以理解成 window.fun()
+
+
+</script>
+</body>
+</html>

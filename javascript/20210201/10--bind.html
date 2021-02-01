@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数
+    const module = {
+        x: 42,
+        getX: function () {
+            console.log(this);
+            return this.x;
+        }
+    };
+
+    console.log(module.getX());//方法调用，this就是对象
+
+    const unboundGetX = module.getX;
+    console.log(unboundGetX()); // 创建新函数unboundGetX但是没有绑定对象module而在全局调用，this是window，找不到x
+    // expected output: undefined
+
+    const boundGetX = unboundGetX.bind(module);
+    console.log(boundGetX());
+    // expected output: 42
+
+</script>
+</body>
+</html>

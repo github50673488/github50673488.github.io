@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const obj1 = {
+        nickName: 'qianguyihao',
+        age: 28,
+    };
+
+    function fn1() {
+        console.log(this);
+        console.log(this.nickName);
+    }
+
+    //以下n条命令都是一样的
+    //fn1();
+    //fn1.call();
+    //fn1.call(undefined);
+    // fn1.call(this); // this的指向并没有被改变，此时相当于 fn1();
+    //fn1(window);
+    //fn1.call(window);
+
+    function fn2(a, b) {
+        console.log(this);
+        console.log(this.nickName);
+        console.log(a + b);
+    }
+
+    fn2.call(obj1, 2, 4); // 先将 this 指向 obj1，然后执行 fn1() 函数
+    fn2.apply(obj1, [2, 4]); // 先将 this 指向 obj1，然后执行 fn1() 函数
+
+
+</script>
+</body>
+</html>

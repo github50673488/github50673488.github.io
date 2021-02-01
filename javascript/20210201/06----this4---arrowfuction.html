@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // const obj = {
+    //     a: function () {
+    //         console.log(this)
+    //     }
+    // }
+    // obj.a()  //打出的是obj对象
+
+    // mdn
+    // 箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或new.target。
+    // 箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。
+
+
+    const obj = {
+        a: () => {
+            console.log(this)
+        }
+    }
+    obj.a()  //打出的是window对象  继承原型链的this
+
+
+    //
+    // 箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。
+    // 因此，在下面的代码中，传递给setInterval的函数内的this与封闭函数中的this值相同：
+    function Person() {
+        this.age = 0;
+        setInterval(() => {
+            this.age++; // |this| 正确地指向 p 实例,每秒age加一
+            console.log(this.age);
+        }, 1000);
+    }
+
+    var p = new Person();
+
+</script>
+</body>
+</html>
