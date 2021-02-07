@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>John Resig</div>
+<div>George Martin</div>
+<div>Malcom John Sinclair</div>
+<div>J. Ohn</div>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("div:contains('John')").css("text-decoration", "underline");
+            });
+        });
+    </script>
+</body>
+</html>

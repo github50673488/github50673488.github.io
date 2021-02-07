@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text">
+<script>
+    document.querySelector('input[type=text]').addEventListener("keydown", function (e) {
+        console.log(e.keyCode);
+        if (e.keyCode >= 48 && e.keyCode <= 57) {
+            console.log(String.fromCharCode(e.keyCode));
+            e.preventDefault();//取消默认行为
+
+            //return false;
+        }
+    });
+4
+</script>
+
+</body>
+</html>

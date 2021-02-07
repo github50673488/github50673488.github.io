@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color: #bca;
+            width: 100px;
+            border: 1px solid green;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+
+<div id="block">Hello!</div>
+
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("#block").animate({
+                    width: "70%",
+                    opacity: 0.4,
+                    marginLeft: "0.6in",
+                    fontSize: "3em",
+                    borderWidth: "10px"
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>

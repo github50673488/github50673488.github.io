@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span.fot {
+            color: red;
+            font-size: 120%;
+            font-style: italic;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div id="log">The root of this document is:</div>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("<b></b>").html($(":root")[0].nodeName).appendTo("#log");
+            });
+        });
+    </script>
+</body>
+</html>

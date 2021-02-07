@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<input name="man-news">
+<input name="milkman">
+<input name="letterman2">
+<input name="newmilk">
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("input[name*='man']").val("has man in it!");
+            });
+        });
+    </script>
+</body>
+</html>

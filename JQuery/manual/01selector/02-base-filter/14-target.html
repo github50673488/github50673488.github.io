@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        // If the document's URI contains a fragment identifier, or hash, ' +
+        // 'then the :target selector will match the element with an ID that matches the identifier. ' +
+        // 'For example, given a document with a URI of https://example.com/#foo, $( "p:target" ) will select the <p id="foo"> element.
+        $(function () {
+            $("#btnTest").click(function () {
+                //console.log($("p:target"));//
+            });
+        });
+    </script>
+</body>
+</html>

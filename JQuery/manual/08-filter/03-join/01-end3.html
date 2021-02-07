@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<ul class="first">
+    <li class="foo">list item 1</li>
+    <li>list item 2</li>
+    <li class="bar">list item 3</li>
+</ul>
+<ul class="second">
+    <li class="foo">list item 1</li>
+    <li>list item 2</li>
+    <li class="bar">list item 3</li>
+</ul>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $('ul.first').find('.foo')
+                    .css('background-color', 'red')
+                    .end().find('.bar')
+                    .css('background-color', 'green')
+                    .end();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nth {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+
+<div>
+    <span>John</span>,
+    <b>Kim</b>,
+    <span>Adam</span>,
+    <b>Rafael</b>,
+    <span>Oleg</span>
+</div>
+<div>
+    <b>Dave</b>,
+    <span>Ann</span>
+</div>
+<div>
+    <i><span>Maurice</span></i>,
+    <span>Richard</span>,
+    <span>Ralph</span>,
+    <span>Jason</span>
+</div>
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("span:nth-of-type(2)")
+                    .append("<span> is 2nd sibling span</span>")
+                    .addClass("nth");
+            });
+        });
+    </script>
+</body>
+</html>

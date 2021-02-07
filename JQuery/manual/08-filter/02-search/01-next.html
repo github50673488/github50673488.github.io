@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>
+    <label>
+        <input type="radio" name="newsletter" value="Hot Fuzz">
+        <span>name?</span>
+    </label>
+</div>
+<div>
+    <label>
+        <input type="radio" name="newsletter" value="Cold Fusion">
+        <span>value?</span>
+    </label>
+</div>
+<div>
+    <label>
+        <input type="radio" name="newsletter" value="Evil Plans">
+        <span>value?</span>
+    </label>
+</div>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("input[value='Hot Fuzz']").next().text("Hot Fuzz");
+            });
+        });
+    </script>
+</body>
+</html>

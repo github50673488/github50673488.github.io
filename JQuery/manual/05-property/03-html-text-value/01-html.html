@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<button>修改所有P元素的内容</button>
+<p>这是一个段落。</p>
+<p>这是另一个段落。</p>
+<script>
+    $(function () {
+        $("button").click(function () {
+            $("p").html("Hello <b>world!</b>");
+        });
+    });
+</script>
+</body>
+</html>

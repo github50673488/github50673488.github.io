@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span.solast {
+            text-decoration: line-through;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>
+    <span>Corey,</span>
+    <span>Yehuda,</span>
+    <span>Adam,</span>
+    <span>Todd</span>
+</div>
+<div>
+    <span>Jörn,</span>
+    <span>Scott,</span>
+    <span>Timo,</span>
+    <b>Nobody</b>
+</div>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("span:last-of-type")
+                    .css({color: "red", fontSize: "80%"})
+                    .hover(function () {
+                        $(this).addClass("solast");
+                    }, function () {
+                        $(this).removeClass("solast");
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

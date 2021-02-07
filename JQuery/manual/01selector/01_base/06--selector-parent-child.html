@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<form>
+    <label>Name:</label>
+    <input id="selected" name="name"/>
+    <fieldset>
+        <label>Newsletter:</label>
+        <input name="newsletter"/>
+    </fieldset>
+</form>
+<input name="none"/>
+<script>
+    $(function () {
+        console.log($("form > input"));
+        console.log($("form > input").val());
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<form>
+    <label>Name:</label>
+    <input id="name" name="name"/>
+    <fieldset>
+        <label>Newsletter:</label>
+        
+        <input id="newsletter" name="newsletter"/>
+        <input id="newsletter2" name="newsletter2"/>
+    </fieldset>
+</form>
+<input name="none"/>
+<script>
+    $(function () {
+        console.log($("label + input"));
+    });
+</script>
+</body>
+</html>

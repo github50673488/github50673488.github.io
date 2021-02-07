@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+            封装 Promise 接口调用
+          */
+    function queryData(url) {
+        return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // 处理正常结果
+                    resolve(xhr.responseText);
+                } else {
+                    // 处理异常结果
+                    reject('服务器错误');
+                }
+            };
+            xhr.open('get', url);
+            xhr.send(null);
+        });
+    }
+
+    var promise1 = queryData('http://localhost:3000/api1');
+    var promise2 = queryData('http://localhost:3000/api2');
+    var promise3 = queryData('http://localhost:3000/api3');
+
+    Promise.all([promise1, promise2, promise3]).then((result) => {
+        console.log(result);
+    });
+</script>
+</body>
+</html>

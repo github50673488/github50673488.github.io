@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background: yellow;
+            border: 1px solid #AAA;
+            width: 80px;
+            height: 80px;
+            margin: 0 5px;
+            float: left;
+        }
+
+        div.colored {
+            background: green;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div></div>
+<div id="mover"></div>
+<div></div>
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("div:animated").toggleClass("colored");
+            });
+        });
+
+        function animateIt() {
+            $("#mover").slideToggle("slow", animateIt);
+            //https://www.runoob.com/jquery/eff-slidetoggle.html
+        }
+
+        animateIt();
+
+    </script>
+</body>
+</html>

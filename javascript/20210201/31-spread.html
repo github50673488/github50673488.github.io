@@ -7,6 +7,13 @@
 <body>
 <script>
     console.log(...[1, 2, 3]);
+    //该运算符将一个数组，变为参数序列
+    let arr1 = [55, 6, 7];
+    let arr2 = [...arr1]; //arr2 会开辟新的内存地址 ,数组复制
+    console.log(arr1);
+    console.log(arr2);
+    console.log(arr1 == arr2);
+
 </script>
 </body>
 </html>

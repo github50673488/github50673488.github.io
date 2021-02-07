@@ -14,20 +14,17 @@
 
 <script>
 
-$(function () {
-    $("#btnTest").click(function () {
-        if($(this).val()=="open")
-        {
-            $(this).val("close");
-            $("body").css({backgroundColor:"black"});
-        }
-        else
-        {
-            $(this).val("open");
-            $("body").css({backgroundColor:"white"});
-        }
-    });
-})
+    $(function () {
+        $("#btnTest").click(function () {
+            if ($(this).val() == "open") {
+                $(this).val("close");
+                $("body").css({backgroundColor: "black"});
+            } else {
+                $(this).val("open");
+                $("body").css({backgroundColor: "white"});
+            }
+        });
+    })
 </script>
 
 </body>

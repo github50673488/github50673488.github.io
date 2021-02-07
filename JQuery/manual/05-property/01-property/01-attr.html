@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>
+    <input type="checkbox" name="a">
+    <span>Mary</span>
+</div>
+<div>
+    <input type="checkbox" name="b">
+    <span>lcm</span>
+</div>
+<div>
+    <input type="checkbox" name="c" checked="checked">
+    <span>Peter</span>
+</div>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("input:not(:checked) + span").css("background-color", "yellow");
+                $("input").attr("disabled", "disabled");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .focused {
+            background: #abcdef;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div id="content">
+    <input tabIndex="1">
+    <input tabIndex="2">
+    <select tabIndex="3">
+        <option>select menu</option>
+    </select>
+    <div tabIndex="4">
+        a div
+    </div>
+</div>
+
+<script>
+    $("#content").delegate("*", "focus blur", function () {//由空格分隔多个事件值。必须是有效的事件。
+        var elem = $(this);
+        setTimeout(function () {
+            elem.toggleClass("focused", elem.is(":focus"));
+        }, 0);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box1"></div>
+
+<script>
+    document.querySelector('#box1').addEventListener('click', function () {
+        this.style.backgroundColor = 'red';
+        this.style.width = '200px';
+        this.style.height = '300px';
+    });
+</script>
+</body>
+</html>

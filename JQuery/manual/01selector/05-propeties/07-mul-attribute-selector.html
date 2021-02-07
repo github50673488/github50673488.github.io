@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<input id="man-news" name="man-news">
+<input name="milkman">
+<input id="letterman" name="new-letterman">
+<input name="newmilk">
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("input[id][name$='man']").val("only this one");
+            });
+        });
+    </script>
+</body>
+</html>

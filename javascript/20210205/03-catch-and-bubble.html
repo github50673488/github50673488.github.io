@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+        }
+
+        .box3 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="box1" id="box1">
+    <div class="box2" id="box2">
+        <div class="box3" id="box3"></div>
+    </div>
+</div>
+<script>
+    //参数为true，代表事件在「捕获」阶段触发；参数为false或者不写参数，代表事件在「冒泡」阶段触发
+    box3.addEventListener("click", function () {
+        alert("捕获 child---box3");
+    }, true);
+
+    box2.addEventListener("click", function () {
+        alert("捕获 father---box2");
+    }, true);
+
+    box1.addEventListener("click", function () {
+        alert("捕获 grandfather---box1");
+    }, true);
+
+    document.documentElement.addEventListener("click", function () {
+        alert("捕获 body");
+    }, true);
+
+    document.addEventListener("click", function () {
+        alert("捕获 html");
+    }, true);
+
+    window.addEventListener("click", function () {
+        alert("捕获 window");
+    }, true);
+
+
+    //事件冒泡
+    box3.onclick = function () {
+        alert("冒泡到child");
+    }
+
+    box2.onclick = function () {
+        alert("冒泡到father");
+    }
+
+    box1.onclick = function () {
+        alert("冒泡到grandfather");
+    }
+
+    document.onclick = function () {
+        alert("冒泡到body");
+    }
+
+</script>
+
+</body>
+</html>
