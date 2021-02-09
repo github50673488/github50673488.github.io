@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            background: #abc;
+            border: 2px solid black;
+            margin: 10px;
+            float: left;
+        }
+
+        div.after {
+            border-color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div>first</div>
+<div>sibling
+    <div>child</div>
+</div>
+<div>sibling</div>
+<div>sibling</div>
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("div").first().nextAll().addClass("after");
+        });
+    });
+
+</script>
+</body>
+</html>

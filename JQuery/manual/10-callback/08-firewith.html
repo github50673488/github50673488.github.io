@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        // 将被添加到列表的一个简单的函数
+        var log = function (value1, value2) {
+            console.log("Received: " + value1 + "," + value2);
+        };
+        var callbacks = $.Callbacks();
+        // 添加函数 "log" 到列表
+        callbacks.add(log);
+
+        callbacks.fireWith(window, ["foo", "bar"]);
+
+        // callbacks.fireWith([context][,args]
+        //访问给定的上下文和参数列表中的所有回调
+        // context: 该列表中的回调被触发的上下文引用
+        // args: 一个参数或参数列表传回给回调列表。
+    })
+</script>
+
+</body>
+</html>

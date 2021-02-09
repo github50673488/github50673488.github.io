@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        // 将被添加到列表的简单函数
+        var foo = function (value1, value2) {
+            alert("foo: " + value1 + "," + value2);
+        }
+        // 另一个将被添加到列表的函数
+        var bar = function (value1, value2) {
+            alert("bar: " + value1 + "," + value2);
+        }
+        var callbacks = $.Callbacks();
+        // 添加两个函数
+        callbacks.add(foo);
+        callbacks.add(bar);
+        //清空回调列表
+        callbacks.empty();
+        // 确认所有回调列表是否被移除
+        alert(callbacks.has(foo));
+        // false
+        alert(callbacks.has(bar));
+        // false
+    })
+
+//     callbacks.empty() 函数用于从列表中删除所有的回调。
+    //
+    // 此方法返回一个回调对象到它绑定的回调列表。
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<p>Hello <a href="https://johnresig.com/">John</a>, how are you doing?</p>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("p")
+                .contents()
+                .filter(function () {
+                    return this.nodeType !== 1;
+                })
+                .wrap("<b></b>");
+
+
+            //$(selector).contents()
+
+//             contents() 方法返回所有直接子元素，包括被选元素的文本和注释节点。
+//
+// 文本节点是由元素显示的实际文本。
+//
+// 该方法与 children() 方法类似，不同的是它返回的是文本和注释节点。如果在相同的域中，contents() 方法也能访问 iframe 的 HTML。
+
+        });
+    });
+</script>
+</body>
+</html>

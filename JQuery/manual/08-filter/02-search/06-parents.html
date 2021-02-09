@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("span").parents("ul").css({"color": "red", "border": "2px solid red"});
+        });
+    </script>
+</head>
+
+<body class="ancestors">body (曾曾祖先节点)
+<div style="width:500px;">div (曾祖先节点)
+    <ul>ul (第二祖先 - 第二祖先节点)
+        <ul>ul (第一祖先 - 第一祖先节点)
+            <li>li (直接父节点)
+                <span>span</span>
+            </li>
+        </ul>
+    </ul>
+</div>
+</body>
+
+<!-- 在这个例子中, $("span").closest("ul") 指我们查找一个span元素的第一个ul祖先。
+最靠近span的祖先是li,但是由于查到一个div，jQuery 跳过li元素继续查找下一个祖先，直到它找出我们要查找的ul.假如我们用parents() 方法替代，它将返回ul的祖先 。 -->
+
+
+
+<!--closest()方法与 parents() 类似，都是向上遍历 DOM 树，不同点是：-->
+
+<!--closest()-->
+
+<!--从当前元素开始-->
+<!--沿 DOM 树向上遍历，并返回匹配所传递的表达式的第一个单一祖先-->
+<!--返回包含零个或一个元素的 jQuery 对象-->
+<!--parents()-->
+
+<!--从父元素开始-->
+<!--沿 DOM 树向上遍历，并返回匹配所传递的表达式的所有祖先-->
+<!--返回包含零个、一个或多个元素的 jQuery 对象-->
+
+</html>

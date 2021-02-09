@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("p").on("custom.someNamespace",function(event){
+                alert(event.namespace);
+            });
+            $("p").click(function(event){
+                $(this).trigger("custom.someNamespace");
+            });
+            $("button").click(function(){
+                $("p").off("custom.someNamespace");
+            });
+
+//             当事件被触发时，event.namespace 属性返回自定义命名空间。
+//
+// 该属性可被插件作者用来根据所使用的命名空间以不同的方式处理任务。
+//
+// 提示：对于 jQuery 而言，以下划线开始的命名空间会被保留。
+
+        });
+    </script>
+</head>
+<body>
+
+<p>点击这个段落。</p>
+<button>移除 namespace</button>
+
+</body>
+</html>

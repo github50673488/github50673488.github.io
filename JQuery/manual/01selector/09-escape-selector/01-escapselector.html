@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>
+    <p id='#target'>一些文本</p>
+    <span id='target'>一些文本</span>
+</div>
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("div").find("#" + $.escapeSelector("#target")).css('color', 'red');// 函数用来转义CSS选择器中有特殊意义的字符或字符串。
+            });
+        });
+    </script>
+</body>
+</html>

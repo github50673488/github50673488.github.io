@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("a").click(function (event) {
+                event.preventDefault();
+                alert("检查 preventDefault() 是否被调用: " + event.isDefaultPrevented());
+
+                //event.isDefaultPrevented() 方法检查指定的事件上是否调用了 preventDefault() 方法。
+            });
+        });
+    </script>
+</head>
+<body>
+
+<a href="//www.runoob.com/">菜鸟教程</a>
+<p>preventDefault() 方法用于防止链接打开 URL。</p>
+<p>点击链接检测默认动作是否被保护。</p>
+
+</body>
+</html>

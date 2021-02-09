@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("div").on("click", "button", function (event) {
+                //childSelector	可选。规定只能添加到指定的子元素上的事件处理程序（且不是选择器本身，比如已废弃的 delegate() 方法）
+                $(event.delegateTarget).css("background-color", "pink");
+
+
+//                 event.delegateTarget 属性返回当前调用的 jQuery 事件处理程序所添加的元素。
+//
+// 该属性对于由 on() 方法添加的委托事件非常有用，事件处理程序是在元素的祖先被处理时添加的。
+//
+// 提示：如果事件直接绑定到元素且没有委托发生，则 event.delegateTarget 等同于 event.currentTarget
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div style="background-color:yellow">
+    <p>点击按钮修改这个 div 元素的背景颜色。</p>
+    <button>点我!</button>
+</div>
+
+<div style="background-color:yellow">
+    <p>点击按钮修改这个 div 元素的背景颜色。</p>
+    <button>点我!</button>
+</div>
+
+</body>
+</html>

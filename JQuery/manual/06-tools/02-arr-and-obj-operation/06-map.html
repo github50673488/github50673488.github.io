@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: blue;
+        }
+
+        p {
+            color: green;
+            margin: 0;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div></div>
+<p></p>
+<span></span>
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            var arr = ["a", "b", "c", "d", "e"];
+            $("div").text(arr.join(", "));
+
+            arr = jQuery.map(arr, function (n, i) {
+                return (n.toUpperCase() + i);
+            });
+            $("p").text(arr.join(", "));
+
+            arr = jQuery.map(arr, function (a) {
+                return a + a;
+            });
+            $("span").text(arr.join(", "));
+        });
+    });
+</script>
+</body>
+</html>

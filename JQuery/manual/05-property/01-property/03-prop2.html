@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            margin: 20px 0 0;
+        }
+
+        b {
+            color: blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+
+<input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+<p id="show-result"></p>
+
+<script>
+    $(function () {
+        var allChecked = $("#check1").prop("checked");// 这里是取选中状态
+
+        $("input").change(function () {// 这里的change 是定义 change 事件的处理函数
+            var $input = $(this);
+
+            $("#show-result").html(
+                ".attr( \"checked\" ): <b>" + $input.attr("checked") + "</b><br>" + //attr()函数的设计目标是用于设置或获取指定DOM元素所对应的文档节点上的属性(attribute)
+                ".prop( \"checked\" ): <b>" + $input.prop("checked") + "</b><br>" + //prop()函数的设计目标是用于设置或获取指定DOM元素(指的是JS对象，Element类型)
+                ".is( \":checked\" ): <b>" + $input.is(":checked") + "</b>");
+        })
+            // .attr("checked", 'false')
+            .prop("checked", !allChecked)//这个是改变选中状态
+            .change()//  .change() 是触发change事件
+        ;
+    });
+</script>
+</body>
+</html>

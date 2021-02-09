@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            margin-left: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<p>Hello</p>
+<p>2nd Paragraph</p>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            var p = $("p").last();
+            var offset = p.offset();
+            p.html("left: " + offset.left + ", top: " + offset.top);
+        });
+    });
+</script>
+</body>
+</html>

@@ -50,7 +50,7 @@
             $("#btnTest").click(function () {
                 // In some browsers :hidden includes head, title, script, etc...
                 var hiddenElements = $("body").find(":hidden").not("script");
-
+                // filter() 方法是与 not() 方法相对的。
                 $("span").first().text("Found " + hiddenElements.length + " hidden elements total.");
                 $("div:hidden").show(3000);
                 $("span").last().text("Found " + $("input:hidden").length + " hidden inputs.");

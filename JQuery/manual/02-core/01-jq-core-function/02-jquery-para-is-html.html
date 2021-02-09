@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("<div><p>Hello</p></div>").appendTo("body");
+                // $("<input type='checkbox'>");//创建一个 <input> 元素必须同时设定 type 属性
+                $("<div>", {
+                    "class": "test",
+                    text: "Click me!",
+                    click: function () {
+                        $(this).toggleClass("test");
+                    }
+                }).appendTo("body");
+            });
+        });
+    </script>
+</body>
+</html>

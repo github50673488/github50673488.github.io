@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            border: 2px solid blue;
+        }
+
+        p {
+            background: yellow;
+            margin: 4px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+<p>--------------
+
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("p").wrapAll("<div></div>");
+                // wrap() 方法把每个被选元素放置在指定的HTML 内容或元素中。 wrapAll() 在指定的HTML 内容或元素中放置所有被选的元素。
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function ($) {
+        //首先检查jquery版本是否支持 cssHooks
+        if (!$.cssHooks) {
+            //如果不支持输出错误提醒
+            throw(new Error("该功能需要jQuery版本大于或等于1.4.3"));
+        }
+        // 封装在Dom文档加载完毕的事件里, 要再这个时候写入cssHooks,避免该cssHooks在其他地方被重写
+        $(function () {
+            $.cssHooks.height = {
+                get: function (elem, computed, extra) {
+                    // 处理获取该CSS属性
+                }, set: function (elem, value) {
+                    // 处理设置CSS属性
+                    alert('执行处理');
+                }
+            };
+            $('body').css('height', '100%');
+        });
+    })(jQuery)
+</script>
+
+</body>
+</html>

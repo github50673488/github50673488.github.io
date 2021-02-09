@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function fn1( value ) {
+            alert( value );
+            return false;
+        }
+
+        function fn2( value ) {
+            fn1( "fn2 says: " + value );
+            return false;
+        }
+
+        var topics = {};
+
+        jQuery.Topic = function( id ) {
+            var callbacks,
+                method,
+                topic = id && topics[ id ];
+
+            if ( !topic ) {
+                callbacks = jQuery.Callbacks();
+                topic = {
+                    publish: callbacks.fire,
+                    subscribe: callbacks.add,
+                    unsubscribe: callbacks.remove
+                };
+                if ( id ) {
+                    topics[ id ] = topic;
+                }
+            }
+            return topic;
+        };
+
+        // 订阅 mailArrived 通知
+        $.Topic( "mailArrived" ).subscribe( fn1 );
+        // 创建一个新对象替代延迟$.Deferreds
+        var dfd = $.Deferred();
+        // 定义一个新的文章 (不直接发布)
+        var topic = $.Topic( "mailArrived" );
+        // 当延迟被受理, 发布一个通知给订阅者
+        dfd.done( topic.publish );
+
+        /*这里将被回传给订阅者的消息延迟被受理，
+        它尽可能整合了复杂的程序（例如等待一个
+        Ajax调用完成），所以事实上消息只发布了
+        一次。*/
+
+        // 完成。
+        dfd.resolve( "它已经被发布!" );
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function fn1( value ) {
+            alert( value );
+        }
+        function fn2( value ) {
+            fn1("fn2 says: " + value);
+            return false;
+        }
+        var callbacks = $.Callbacks( "once" );
+        callbacks.add( fn1 );
+        callbacks.fire( "foo" );
+        callbacks.add( fn2 );
+        callbacks.fire( "bar" );
+        callbacks.remove( fn2 );
+        callbacks.fire( "foobar" );
+        /*只输出:foo*/
+
+
+        // 其他的参数
+        // once	确保这个回调列表只执行一次
+        // memory	缓存上一次fire时的参数值，当add()添加回调函数时，直接用上一次的参数值立刻调用新加入的回调函数
+        // unique	一个回调只会被添加一次，不会重复添加
+        // stopOnFalse	某个回调函数返回false之后中断后面的回调函数
+    })
+</script>
+
+</body>
+</html>

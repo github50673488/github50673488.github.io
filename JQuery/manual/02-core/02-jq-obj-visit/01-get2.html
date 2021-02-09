@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            color: red;
+        }
+
+        div {
+            background: yellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<span>&nbsp;</span>
+<p>In this paragraph is an <span>important</span> section</p>
+<div><input type="text"></div>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("*", document.body).click(function (event) {
+                event.stopPropagation();
+                var domElement = $(this).get(0);//get()方法返回的是DOM对象组成的数组，也就是[object HTMLLIElement];
+                $("span").first().text("Clicked on - " + domElement.nodeName);
+            });
+        });
+    });
+</script>
+</body>
+</html>

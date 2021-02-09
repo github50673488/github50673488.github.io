@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.demo {
+            background: #ccc none repeat scroll 0 0;
+            border: 3px solid #666;
+            margin: 5px;
+            padding: 5px;
+            position: relative;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        p {
+            margin: 10px;
+            padding: 5px;
+            border: 2px solid #666;
+            width: 1000px;
+            height: 1000px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div class="demo"><h1>lalala</h1>
+    <p>Hello</p></div>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("div.demo").scrollTop(300);
+            $("div.demo").scrollLeft(100);
+        });
+    });
+</script>
+</body>
+</html>

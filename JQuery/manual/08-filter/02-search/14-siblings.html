@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div><span>Hello</span></div>
+<p class="selected">Hello Again</p>
+<p>And Again</p>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("p").siblings(".selected").css("background", "yellow");
+
+
+//             $(selector).siblings(filter)
+//             iblings() 方法返回被选元素的所有同级元素。
+//
+// 同级元素是共享相同父元素的元素。
+//
+// DOM 树：该方法沿着 DOM 元素的同级元素向前和向后遍历。
+        });
+    });
+</script>
+</body>
+</html>

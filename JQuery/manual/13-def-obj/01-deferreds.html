@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function fn1(value) {
+            alert(value);
+            return false;
+        }
+
+        function fn2(value) {
+            fn1("fn2 says: " + value);
+            return false;
+        }
+
+        var topics = {};
+
+        jQuery.Topic = function (id) {
+            var callbacks,
+                method,
+                topic = id && topics[id];
+
+            if (!topic) {
+                callbacks = jQuery.Callbacks();
+                topic = {
+                    my_publish: callbacks.fire,
+                    my_subscribe: callbacks.add,
+                    my_unsubscribe: callbacks.remove
+                };
+                if (id) {
+                    topics[id] = topic;
+                }
+            }
+            return topic;
+        };
+
+
+        $.Topic("mailArrived").my_subscribe(fn1); // 订阅 mailArrived 通知 ,（内部的callbacks数组（队列）添加了f1)
+        var topic = $.Topic("mailArrived"); // 定义一个新的文章 (不直接发布)，取出topic对象，内部的成员是可以操作callbacks数组的三个公开方法 ，my_publish，my_subscribe，my_unsubscribe
+
+        var dfd = $.Deferred(); // 创建一个新对象替代延迟$.Deferreds
+
+        // $.Deferred() 是一个构造函数，用来返回一个链式实用对象方法来注册多个回调，并且调用回调队列，传递任何同步或异步功能成功或失败的状态。
+
+
+
+
+        dfd.done(topic.my_publish); // 当延迟被受理, 发布一个通知给订阅者 (定义该延迟对象resolve(受理)后干啥)
+
+        /*这里将被回传给订阅者的消息延迟被受理，
+        它尽可能整合了复杂的程序（例如等待一个
+        Ajax调用完成），所以事实上消息只发布了
+        一次。*/
+
+        dfd.resolve("它已经被发布!"); // 完成。
+    })
+
+
+
+    // Deferred  这个功能很重要，未来将成为jQuery的核心方法，它彻底改变了如何在jQuery中使用ajax。
+
+
+
+//     提示：1. $.Deferred() 构造函数创建一个新的 Deferred（延迟）对象， jQuery.Deferred 可传递一个可选的函数，
+    //     该函数在构造方法返回之前被调用并传递一个新的 Deferred 对象作为函数的第一个参数。
+    //     例如被调用的函数可以使用 deferred.then（）来附加回调函数。
+
+    // 2. 一个 Deferred 对象开始于挂起状态。任何使用 deferred.then(),
+    //         deferred.always(), deferred.done(),
+    //         或者 deferred.fail() 添加到这个对象的回调函数都是排队等待执行的。
+
+    //     调用 deferred.resolve() 或 deferred.resolveWith() 转换延迟到解决状态后立即执行设置的 doneCallbacks
+    //     。调用 deferred.reject() 或 deferred.rejectWith() 转换延迟到拒绝状态后立即执行设置的 failCallbacks 。
+    //     一旦对象已经进入了解决或拒绝状态，它保持该状态。
+    //     回调仍然可以添加到已解决或已拒绝的 Deferred 对象——它们会立即执行。
+    //
+    // 语法
+    //     $.Deferred( [beforeStart ] )
+    //
+    //     参数	描述
+    //     beforeStart	Function( Deferred deferred )类型 一个在构造函数返回之前调用的函数
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div id="log"></div>
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        jQuery.extend({
+            min: function (a, b) {
+                return a < b ? a : b;
+            },
+            max: function (a, b) {
+                return a > b ? a : b;
+            }
+        });
+
+        $("#btnTest").click(function () {
+            $("#log").append(jQuery.min(2, 3));
+        });
+    });
+</script>
+</body>
+</html>

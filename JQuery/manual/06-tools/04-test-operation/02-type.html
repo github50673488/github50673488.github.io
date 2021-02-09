@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.type demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+Is it a RegExp? <b></b>
+
+<script>
+    $("b").append("" + jQuery.type(/test/));
+
+
+    // $.type( true ) === "boolean"
+    //
+    // $.type( 3 ) === "number"
+    //
+    // $.type( "test" ) === "string"
+    //
+    // $.type( function(){} ) === "function"
+    //
+    // $.type( [] ) === "array"
+    //
+    // $.type( new Date() ) === "date"
+    //
+    // $.type( new Error() ) === "error" // jQuery 1.9 新增支持
+    //
+    // $.type( /test/ ) === "regexp"
+
+    // $.type( obj )
+    // obj	任意类型 需要确定类型的任意对象
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>event.pageX demo</title>
+    <style>
+        body {
+            background-color: #eef;
+        }
+
+        div {
+            padding: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<div id="log"></div>
+
+<script>
+    $(document).on("mousemove", function (event) {
+        $("#log").text("pageX: " + event.pageX + ", pageY: " + event.pageY);
+
+        // event.pageX 属性返回鼠标指针的位置，相对于文档的左边缘。
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>remove demo</title>
+    <style>
+        p {
+            background: yellow;
+            margin: 6px 0;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<p>Hello</p>
+how are
+<p>you?</p>
+<button>Call remove() on paragraphs</button>
+
+<script>
+    $("button").click(function () {
+        $("p").remove();
+        // jquery中empty()和remove()的区别。 相同点：两个方法都是Jquery中用来删除DOM节点的。 区别：empty()是移除指定标签内的所有节点，包括文本节点。 remove()是移除指定的当前节点。
+    });
+</script>
+
+</body>
+</html>

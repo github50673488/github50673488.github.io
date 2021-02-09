@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>event.isPropagationStopped demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<button>click me</button>
+<div id="stop-log"></div>
+
+<script>
+    function propStopped(event) {
+        var msg = "";
+        if (event.isPropagationStopped()) {
+// event.isPropagationStopped() 方法检查指定的事件上是否调用了 event.stopPropagation()。（阻止事件冒泡到父元素）
+// 如果 event.stopPropagation() 被调用则该方法返回 true，否则返回 false。
+
+            msg = "called";
+        } else {
+            msg = "not called";
+        }
+        $("#stop-log").append("<div>" + msg + "</div>");
+    }
+
+    $("button").click(function (event) {
+        propStopped(event);
+        event.stopPropagation();
+        propStopped(event);
+    });
+</script>
+
+</body>
+</html>

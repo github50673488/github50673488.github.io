@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function fn1( value ) {
+            alert( value );
+        }
+        function fn2( value ) {
+            fn1("fn2 says: " + value);
+            return false;
+        }
+
+        var callbacks = $.Callbacks();
+        callbacks.add( fn1 );
+        // 输出: foo!
+        callbacks.fire( "foo!" );
+        callbacks.add( fn2 );
+        // 输出: bar!, fn2 says: bar!
+        callbacks.fire( "bar!" );
+        callbacks.remove( fn2 );
+        // 只输出 foobar, fn2 已经被移除。
+        callbacks.fire( "foobar" );
+    })
+</script>
+
+</body>
+</html>

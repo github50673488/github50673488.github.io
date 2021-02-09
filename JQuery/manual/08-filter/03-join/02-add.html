@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            float: left;
+        }
+
+        p {
+            clear: left;
+            font-weight: bold;
+            font-size: 16px;
+            color: blue;
+            margin: 0 10px;
+            padding: 2px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("div").css("border", "2px solid red")
+                .add("p")
+                .css("background", "yellow");
+
+//             $(selector).add(element,context)
+//
+//             add() 方法把元素添加到已存在的元素组合中。
+//
+// 该方法把元素添加到整个文档上，如果规定了 context 参数则只添加到上下文元素内部。
+
+        });
+    });
+</script>
+</body>
+</html>

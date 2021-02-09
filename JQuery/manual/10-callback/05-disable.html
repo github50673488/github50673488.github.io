@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        $(function () {
+            // 一个将被添加到列表的简单的函数
+            var foo = function (value) {
+                alert(value);
+            };
+            var callbacks = $.Callbacks();
+            // 添加上面的函数到回调列表
+            callbacks.add(foo);
+            // 传入参数调用所有回调列表函数
+            callbacks.fire("foo");
+            // 输出: foo
+            // 禁用回调函数
+            callbacks.disable();
+            // 尝试用 "foobar" 作为参数
+            callbacks.fire("foobar");
+            // foobar 不会被输出
+        })
+    })
+
+//     callbacks.disable() 函数用于禁用回调列表中的回调。
+    //
+    // 提示：此方法返回一个回调对象到它绑定的回调列表。
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.proxy demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<p>
+    <button type="button" id="test">Test</button>
+</p>
+<div id="log"></div>
+
+<script>
+    var me = {
+        type: "zombie",
+        test: function (event) {
+
+            var element = event.target;
+            $(element).css("background-color", "red");
+
+
+            $("#log").append("Hello " + this.type + "<br>");
+            $("#test").off("click", this.test);
+        }
+    };
+
+    var you = {
+        type: "person",
+        test: function (event) {
+            $("#log").append(this.type + " ");
+        }
+    };
+
+
+    var youClick = $.proxy(you.test, you);
+
+
+    $("#test")
+
+        .on("click", $.proxy(me.test, me))
+
+        // // this === "person"
+        // .on("click", youClick)
+        //
+        // // this === "zombie"
+        // .on("click", $.proxy(you.test, me))
+        //
+        // // this === "<button> element"
+        // .on("click", you.test)
+    ;
+</script>
+
+</body>
+</html>

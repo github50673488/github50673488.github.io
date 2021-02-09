@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>
+    The values stored were
+    <span></span>
+    and
+    <span></span>
+</div>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("div").data("test", {first: 16, last: "pizza!"});
+            $("span").first().text($("div").data("test").first);
+            $("span").last().text($("div").data("test").last);
+
+
+//             $.data() 函数用于在指定的元素上存取数据，返回设置值。
+//
+// 提示： 1.这是一个底层方法，.data() 方法更方便使用。
+// 2.通过 data() 函数存取的数据都是临时数据，一旦页面刷新，之前存放的数据都将被移除。
+        });
+    });
+</script>
+</body>
+</html>

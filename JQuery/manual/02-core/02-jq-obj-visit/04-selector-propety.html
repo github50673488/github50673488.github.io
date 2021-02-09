@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<ul>
+    <li></li>
+</ul>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            console.log($("ul").selector);
+            // $("ul")
+            //     .append("<li>" + $("ul").selector + "</li>")
+            //     .append("<li>" + $("ul li").selector + "</li>")
+            //     .append("<li>" + $("div#foo ul:not([class])").selector + "</li>");
+        });
+
+        // ul
+        // ul li
+        // div#foo ul:not([class])
+
+        // As of jQuery 3.0, `this.selector` is depreciated & removed - br  ???
+//         返回传给jQuery()的原始选择器。
+//
+// 换句话说，就是返回你用什么选择器来找到这个元素的。可以与context一起使用，用于精确检测选择器查询情况。这两个属性对插件开发人员很有用。
+    });
+</script>
+</body>
+</html>

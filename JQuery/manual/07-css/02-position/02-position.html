@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            padding: 15px;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div>
+    <p>Hello</p>
+</div>
+<p></p>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            var p = $("p").first();
+            var position = p.position();
+            $("p").last().text("left: " + position.left + ", top: " + position.top);
+//             一、position()获取相对于它最近的具有相对位置(position:relative或position:absolute)的父级元素的距离，如果未能找到这样的父元素或祖先元素，那么会计算相对于文档（即视区左上角）的位置. 返回的对象包含两个整形属性：top 和 left。为精确计算结果，请在补白、边框和填充属性上使用像素单位。
+// 二、offset()始终返回相对于浏览器文档的距离，它会忽略外层元素。
+            
+        });
+    });
+</script>
+</body>
+</html>

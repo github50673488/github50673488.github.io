@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: blue;
+        }
+
+        p {
+            color: green;
+            margin: 0;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div></div>
+<p></p>
+<span></span>
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            var arr = [1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1];
+            $("div").text(arr.join(", "));
+
+            arr = jQuery.grep(arr, function (n, i) {
+                //其一为当前迭代的数组元素，其二是当前迭代元素在数组中的索引。
+                return (n !== 5 && i > 4);
+            });
+            $("p").text(arr.join(", "));
+
+            arr = jQuery.grep(arr, function (a) {
+                return a !== 9;
+            });
+
+            $("span").text(arr.join(", "));
+        });
+
+//         $.grep() 函数使用指定的函数过滤数组中的元素，并返回过滤后的数组。
+//
+// 提示：源数组不会受到影响，过滤结果只反映在返回的结果数组中。
+//
+//         $.grep( array, function [, invert ] )
+//         nvert	可选。 Boolean类型 默认值为false，指定是否反转过滤结果。
+    });
+</script>
+</body>
+</html>

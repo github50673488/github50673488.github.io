@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+输入你的名字: <input type="text">
+<p>按键的次数: <span>0</span></p>
+<script>
+    i = 0;
+    $(function () {
+        $("input").keypress(function () {
+            $("span").text(i += 1);
+        });
+    });
+</script>
+</body>
+</html>

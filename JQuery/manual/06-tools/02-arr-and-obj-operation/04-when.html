@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        $.when({testing: 123}).done(
+            function (x) {
+                alert(x.testing);
+            } /* alerts "123" */
+        );
+
+
+//         $.when() 函数提供一种方法来执行一个或多个对象的回调函数。
+//
+// 提示:如果向 jQuery.when 传入一个延迟对象，那么会返回它的 Promise 对象(延迟方法的一个子集)。
+//         可以继续绑定 Promise 对象的其它方法，例如， defered.then 。当延迟对象已经被受理（resolved） 或被拒绝(rejected）（通常是由创建延迟对象的最初代码执行的），
+//         那么就会调用相应的回调函数。
+    })
+</script>
+
+</body>
+</html>

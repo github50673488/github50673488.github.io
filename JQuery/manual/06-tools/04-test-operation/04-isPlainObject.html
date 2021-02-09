@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function fun(html) {
+            document.body.innerHTML += "<br>" + html;
+        }
+
+        fun($.isPlainObject({}));
+        fun($.isPlainObject("test"));
+        fun($.isPlainObject(document.location)); //在 IE 8 中返回 true
+
+
+        //$.isPlainObject() 函数用于判断指定参数是否是一个纯粹的对象
+    })
+</script>
+
+</body>
+</html>

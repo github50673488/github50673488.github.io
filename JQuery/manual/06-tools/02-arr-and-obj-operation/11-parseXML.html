@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<p id="someElement"></p>
+<p id="anotherElement"></p>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>",
+                xmlDoc = $.parseXML(xml),
+                $xml = $(xmlDoc),
+                $title = $xml.find("title");
+
+            $("#someElement").append($title.text());// Append "RSS Title" to #someElement
+
+
+            $title.text("XML Title");// Change the title to "XML Title"
+
+
+            $("#anotherElement").append($title.text());// Append "XML Title" to #anotherElement
+        });
+    });
+</script>
+</body>
+</html>

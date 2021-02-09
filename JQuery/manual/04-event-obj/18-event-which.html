@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>event.which demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<input id="whichkey" value="type something">
+<div id="log"></div>
+
+<script>
+    $( "#whichkey" ).on( "keydown", function( event ) {
+        $( "#log" ).html( event.type + ": " +  event.which );
+        // event.which 属性返回指定事件上哪个键盘键或鼠标按钮被按下。
+        // 当你在以上输入框中输入内容时，div 中会陷入输入键的数字码。
+    });
+</script>
+
+</body>
+</html>

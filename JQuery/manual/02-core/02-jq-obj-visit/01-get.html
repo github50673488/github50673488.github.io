@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<p><b>Values: </b></p>
+<form>
+    <input type="text" name="name" value="John">
+    <input type="text" name="password" value="password">
+    <input type="text" name="url" value="https://johnresig.com/">
+</form>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("p")
+                .append($("input").map(function () {
+                    return $(this).val();
+                })
+                    .get()//get()方法返回的是DOM对象组成的数组，也就是[object HTMLLIElement];
+                    .join(", "));
+        });
+    });
+</script>
+</body>
+</html>

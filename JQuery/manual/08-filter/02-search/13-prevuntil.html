@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<dl>
+    <dt id="term-1">term 1</dt>
+    <dd>definition 1-a</dd>
+    <dd>definition 1-b</dd>
+    <dd>definition 1-c</dd>
+    <dd>definition 1-d</dd>
+
+    <dt id="term-2">term 2</dt>
+    <dd>definition 2-a</dd>
+    <dd>definition 2-b</dd>
+    <dd>definition 2-c</dd>
+
+    <dt id="term-3">term 3</dt>
+    <dd>definition 3-a</dd>
+    <dd>definition 3-b</dd>
+</dl>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            $("#term-2").prevUntil("dt")
+                .css("background-color", "red");
+
+            var term1 = document.getElementById("term-1");
+            $("#term-3").prevUntil(term1, "dd")
+                .css("color", "green");
+        });
+
+
+//         $(selector).prevUntil(stop,filter)
+//         prevUntil() 方法返回 selector 与 stop 之间的每个元素之前的所有同级元素。
+//
+// 同级元素是共享相同父元素的元素。
+//
+// DOM 树：该方法沿着 DOM 元素的同级元素向后遍历。
+//
+// 注意：如果两个参数都为空，该方法将返回元素之前的所有同级元素（与 prevAll() 方法相同）
+
+    });
+</script>
+</body>
+</html>

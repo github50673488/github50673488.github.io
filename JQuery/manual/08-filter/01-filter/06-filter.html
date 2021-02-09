@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            float: left;
+            border: 2px white solid;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div></div>
+<div class="middle"></div>
+<div class="middle"></div>
+<div class="middle"></div>
+<div class="middle"></div>
+<div></div>
+<p>--------------
+<p>
+    <button id="btnTest">test</button>
+    <script>
+        $(function () {
+            $("#btnTest").click(function () {
+                $("div")
+                    .css("background", "#c8ebcc")
+                    .filter(".middle")
+                    .css("border-color", "red");
+//                 该方法让您规定一个条件。不符合条件的元素将从选择中移除，符合条件的元素将被返回。
+// 该方法通常用于缩小在被选元素组合中搜索元素的范围。
+                //filter() 方法是与 not() 方法相对的。
+            });
+        });
+    </script>
+</body>
+</html>

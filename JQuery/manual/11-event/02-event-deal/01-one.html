@@ -17,7 +17,7 @@
 
 <script>
     $(function () {
-        // Using .one() so the handler is executed at most once
+        // Using .one() so the handler is executed at most once  当使用 one() 方法时，每个元素只能运行一次!!!!事件处理器函数
 // per element per event type
         $("div[id]").one("click", function () {//one() 方法为被选元素附加一个或多个事件处理程序，并规定当事件发生时运行的函数。
             var idString = $(this).text() + " = " + $(this).attr("id");

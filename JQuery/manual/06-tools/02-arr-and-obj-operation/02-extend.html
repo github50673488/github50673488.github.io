@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<div id="log"></div>
+
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            var object1 = {
+                apple: 0,
+                banana: {weight: 52, price: 100},
+                cherry: 97
+            };
+            var object2 = {
+                banana: {price: 200},
+                durian: 100
+            };
+
+// Merge object2 into object1
+            $.extend(object1, object2);
+
+// Assuming JSON.stringify - not available in IE<8
+            $("#log").append(JSON.stringify(object1));
+        });
+    });
+</script>
+</body>
+</html>

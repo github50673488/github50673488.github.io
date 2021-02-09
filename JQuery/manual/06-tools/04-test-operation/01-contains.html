@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function funcontain( html ){
+            document.body.innerHTML += "<br>" + html;
+        }
+        funcontain($.contains( document.documentElement, document.body )); // true
+        funcontain($.contains( document.body, document.documentElement )); // false
+    })
+
+//     $.contains() 方法用于判断指定元素内是否包含另一个元素。即判断另一个DOM元素是否是指定DOM元素的后代。
+    // $.contains( container, contained )
+    //     container	Element类型 指定可能包含其他元素的祖辈容器元素。
+    // contained	Element类型 指定可能被其他元素包含的后代元素。
+</script>
+
+</body>
+</html>

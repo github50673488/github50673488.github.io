@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            margin: 20px 0 0;
+        }
+
+        b {
+            color: blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+<p id="show-result"></p>
+
+<script>
+    $(function () {
+        $("input").change(function () {
+            var $input = $(this);
+            $("#show-result").html(
+                ".attr( \"checked\" ): <b>" + $input.attr("checked") + "</b><br>" +
+                ".prop( \"checked\" ): <b>" + $input.prop("checked") + "</b><br>" +
+                ".is( \":checked\" ): <b>" + $input.is(":checked") + "</b>"); //is() 方法用于查看选择的元素是否匹配选择器。
+        }).change();
+    });
+</script>
+</body>
+</html>

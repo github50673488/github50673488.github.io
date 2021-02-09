@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dequeue demo</title>
+    <style>
+        div {
+            margin: 3px;
+            width: 50px;
+            position: absolute;
+            height: 50px;
+            left: 10px;
+            top: 30px;
+            background-color: yellow;
+        }
+        div.red {
+            background-color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<button>Start</button>
+<div></div>
+
+<script>
+    $( "button" ).click(function() {
+        $( "div" )
+            .animate({ left:"+=200px" }, 2000 )
+            .animate({ top:"0px" }, 600 )
+            .queue(function() {
+                $( this ).toggleClass( "red" ).dequeue();
+            })
+            .animate({ left:"10px", top:"30px" }, 700 );
+
+
+
+//         dequeue() 方法从队列中移除下一个函数，然后执行函数。
+//
+// 队列是一个或多个等待运行的函数。
+//
+// dequeue() 方法通常与 queue() 方法一起使用。
+//
+// 一个元素可以有若干队列。大部分通常只有一个，"fx" 队列，即默认的 jQuery 队列。
+//
+// 注意：您应该确保 dequeue() 方法在通过 queue() 添加一个函数之后被调用，以便允许要继续的进程。
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<span></span>
+<script>
+    $(function () {
+        var arr = $.merge([0, 1, 2], [2, 3, 4]);
+        $("span").text(arr.join(", "));
+
+        // $.merge() 函数用于合并两个数组内容到第一个数组。
+    })
+</script>
+
+</body>
+</html>

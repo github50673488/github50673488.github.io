@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label {
+            display: block;
+            margin: .5em;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<label><input type="checkbox" name="foo"> Foo</label>
+<label><input type="checkbox" name="bar"> Bar</label>
+
+
+<button id="btnCheck">check</button>
+<button id="btnUncheck">uncheck</button>
+<script>
+    $(function () {
+        jQuery.fn.extend({
+            check: function () {
+                return this.each(function () {
+                    this.checked = true;
+                });
+            },
+            uncheck: function () {
+                return this.each(function () {
+                    this.checked = false;
+                });
+            }
+        });
+        $("#btnCheck").click(function () {
+            $("input[type='checkbox']").check();
+        });
+        $("#btnUncheck").click(function () {
+            $("input[type='checkbox']").uncheck();
+        });
+    });
+</script>
+</body>
+</html>

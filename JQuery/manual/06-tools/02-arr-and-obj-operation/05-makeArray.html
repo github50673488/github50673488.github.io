@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+
+<div>First</div>
+<div>Second</div>
+<div>Third</div>
+<div>Fourth</div>
+
+<button id="btnTest">test</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            // Returns a NodeList
+            var elems = document.getElementsByTagName("div");
+// Convert the NodeList to an Array
+            var arr = $.makeArray(elems);//将一个HTML元素集合转换成对应的数组
+// Use an Array method on list of dom elements
+            arr.reverse();
+            $(arr).appendTo(document.body);
+
+
+        });
+    });
+</script>
+</body>
+</html>
