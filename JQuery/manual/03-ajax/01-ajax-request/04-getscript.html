@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.getScript demo</title>
+    <style>
+        .block {
+            background-color: blue;
+            width: 150px;
+            height: 70px;
+            margin: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<button id="go">&raquo; Run</button>
+<div class="block"></div>
+
+<script>
+    var url = "https://code.jquery.com/color/jquery.color.js";
+    $.getScript( url, function() {
+        $( "#go" ).click(function() {
+            $( ".block" )
+                .animate({
+                    backgroundColor: "rgb(255, 180, 180)"
+                }, 1000 )
+                .delay( 500 )
+                .animate({
+                    backgroundColor: "olive"
+                }, 1000 )
+                .delay( 500 )
+                .animate({
+                    backgroundColor: "#00f"
+                }, 1000 );
+        });
+    });
+
+    // Load the official jQuery Color Animation plugin dynamically and bind some color animations to occur once the new functionality is loaded.
+
+//     定义和用法
+//     getScript() 方法使用 AJAX 的 HTTP GET 请求获取和执行 JavaScript。
+//
+// 语法
+//     $(selector).getScript(url,success(response,status))
+//
+//     参数	描述
+//     url	必需。规定将请求发送到哪个 URL。
+// success(response,status)	可选。规定当请求成功时运行的函数。
+// 额外的参数：
+// response - 包含来自请求的结果数据
+//     status - 包含请求的状态（"success"、"notmodified"、"error"、"timeout"、"parsererror"）
+
+</script>
+
+</body>
+</html>

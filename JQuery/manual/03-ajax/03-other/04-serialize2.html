@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").text($("form").serialize());
+            });
+        });
+
+        序列化表单值，是为了方便ajax传递表单值给服务端。不然你只能自己收集表单的值。。
+$.post(url, $(form).serialize(), function () {
+});
+
+//
+        //         序列化表单值，是为了方便ajax传递表单值给服务端。不然你只能自己收集表单的值。。
+        // $.post(url, $(form).serialize(), function(){});
+
+
+        //
+        // 序列化表单值的作用是将表单中的值拼装成字符串形式的key-value键值对提交给后台服务器程序解析，来获取用户的输入值
+        // 最总看到的效果如下
+        // name=124&company=baidu.com&fav=1,2,3
+
+
+    </script>
+</head>
+<body>
+
+<form action="">
+    第一个名称: <input type="text" name="FirstName" value="Mickey"/><br>
+    最后一个名称: <input type="text" name="LastName" value="Mouse"/><br>
+</form>
+<button>序列化表单值</button>
+<div></div>
+
+</body>
+</html>

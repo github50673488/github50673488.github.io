@@ -48,7 +48,8 @@
 
         // $.Deferred() 是一个构造函数，用来返回一个链式实用对象方法来注册多个回调，并且调用回调队列，传递任何同步或异步功能成功或失败的状态。
 
-
+        // http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html
+        // 以上的链接是最棒的讲解
 
 
         dfd.done(topic.my_publish); // 当延迟被受理, 发布一个通知给订阅者 (定义该延迟对象resolve(受理)后干啥)
@@ -62,12 +63,10 @@
     })
 
 
-
     // Deferred  这个功能很重要，未来将成为jQuery的核心方法，它彻底改变了如何在jQuery中使用ajax。
 
 
-
-//     提示：1. $.Deferred() 构造函数创建一个新的 Deferred（延迟）对象， jQuery.Deferred 可传递一个可选的函数，
+    //     提示：1. $.Deferred() 构造函数创建一个新的 Deferred（延迟）对象， jQuery.Deferred 可传递一个可选的函数，
     //     该函数在构造方法返回之前被调用并传递一个新的 Deferred 对象作为函数的第一个参数。
     //     例如被调用的函数可以使用 deferred.then（）来附加回调函数。
 
@@ -85,6 +84,21 @@
     //
     //     参数	描述
     //     beforeStart	Function( Deferred deferred )类型 一个在构造函数返回之前调用的函数
+
+
+    //     八、普通操作的回调函数接口（中）
+    //
+    // 另一种防止执行状态被外部改变的方法，是使用deferred对象的建构函数$.Deferred()。
+    //
+    // 这时，wait函数还是保持不变，我们直接把它传入$.Deferred()：
+    //
+    // 　　$.Deferred(wait)
+    //
+    //       .done(function(){ alert("哈哈，成功了！"); })
+    //
+    //       .fail(function(){ alert("出错啦！"); });
+
+
 </script>
 
 </body>

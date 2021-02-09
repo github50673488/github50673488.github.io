@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(document).ajaxError(function () {
+                alert("一个错误发生!");
+            });
+            $("button").click(function () {
+                $("div").load("wrongfile.txt");
+            });
+        });
+
+//         jQuery load() 方法
+        //         jQuery load() 方法是简单但强大的 AJAX 方法。
+        //
+        // load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
+        //
+        // 语法:
+        //
+        //     $(selector).load(URL,data,callback);
+        //         必需的 URL 参数规定您希望加载的 URL。
+        //
+        // 可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+        //
+        // 可选的 callback 参数是 load() 方法完成后所执行的函数名称。
+
+//         这是示例文件（"demo_test.txt"）的内容：
+        //
+        // <h2>jQuery AJAX 是个非常棒的功能！</h2>
+        //         <p id="p1">这是段落的一些文本。</p>
+    </script>
+</head>
+<body>
+
+<div><h2>使用 AJAX 修改文本</h2></div>
+<button>修改内容</button>
+
+</body>

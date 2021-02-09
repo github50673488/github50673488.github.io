@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(document).ajaxStop(function(){
+                alert("所有 AJAX 请求已完成");
+            });
+            $("button").click(function(){
+                $("div").load("demo_ajax_load.txt");
+                $("div").load("demo_ajax_load.php");
+            });
+        });
+
+//         定义和用法
+        //         ajaxStop() 方法规定所有的 AJAX 请求完成时运行的函数。
+        //
+        // 当 AJAX 请求完成时，jQuery 会检查是否存在更多的 AJAX 请求。如果没有其他请求正在等待运行，ajaxStop()方法会运行指定的函数。
+        //
+        // 注意：自 jQuery 版本 1.8 起，该方法只被附加到文档。
+        //
+        // 语法
+        //         $(document).ajaxStop(function())
+        //
+        //         参数	描述
+        //         function()	必需。规定所有的 AJAX 请求完成时运行的函数。
+
+    </script>
+</head>
+<body>
+
+<div><h2>使用 AJAX 修改文本</h2></div>
+<button>修改内容</button>
+
+</body>
+</html>

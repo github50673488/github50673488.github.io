@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                $("#wait").css("display", "block");
+            });
+            $(document).ajaxComplete(function () {
+                $("#wait").css("display", "none");
+            });
+
+            $("button").click(function () {
+                $("#txt").load("http://localhost/static_test/ajax/php_jquery_study/06-ajaxcomplete.php");
+            });
+        });
+
+        //         定义和用法
+        //         ajaxComplete() 方法规定 AJAX 请求完成时运行的函数。
+        //
+        // 注意：自 jQuery 版本 1.8 起，该方法只被附加到文档。
+        //
+        // 不像 ajaxSuccess()，通过 ajaxComplete() 方法规定的函数将在请求完成时运行，即使请求并未成功。
+        //
+        // 语法
+        //         $(document).ajaxComplete(function(event,xhr,options))
+        //
+        //         参数	描述
+        //         function(event,xhr,options)	必需。规定当请求完成时运行的函数。
+        // 额外的参数：
+        // event - 包含 event 对象
+        //         xhr - 包含 XMLHttpRequest 对象
+        //         options - 包含 AJAX 请求中使用的选项
+
+    </script>
+</head>
+<body>
+<!--http://localhost/github50673488.github.io/JQuery/manual/03-ajax/02-ajax-event/01-ajaxcomplete.html-->
+
+<div id="txt"><h2>使用 AJAX 修改文本</h2></div>
+<button>修改内容</button>
+<div id="wait"
+     style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;">
+    <img src='demo_wait.gif' width="64" height="64"/><br>Loading..
+</div>
+
+</body>
+</html>

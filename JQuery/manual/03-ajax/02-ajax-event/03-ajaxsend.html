@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(document).ajaxSend(function (e, xhr, opt) {
+                $("div").append("<p>Requesting " + opt.url + "</p>");
+            });
+            $("button").click(function () {
+                $("div").load("demo_ajax_load.php");
+            });
+        });
+
+//
+        //         定义和用法
+        //         ajaxSend() 方法规定 AJAX 请求即将发送时运行的函数。
+        //
+        // 注意：自 jQuery 版本 1.8 起，该方法只被附加到文档。
+        //
+        // 语法
+        //         $(document).ajaxSend(function(event,xhr,options))
+        //
+        //         参数	描述
+        //         function(event,xhr,options)	必需。规定当请求成功时运行的函数。
+        // 额外的参数：
+        // event - 包含 event 对象
+        //         xhr - 包含 XMLHttpRequest 对象
+        //         options - 包含 AJAX 请求中使用的选项
+
+    </script>
+</head>
+<body>
+
+<div><h2>使用 AJAX 修改文本</h2></div>
+<button>修改内容</button>
+
+</body>
+</html>

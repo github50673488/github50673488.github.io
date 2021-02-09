@@ -43,6 +43,16 @@
             }
         );
     })
+
+//     我在代码的尾部加了一行dtd.resolve()，这就改变了dtd对象的执行状态，因此导致done()方法立刻执行，跳出"哈哈，成功了！"的提示框，等5秒之后再跳出"执行完毕！"的提示框。
+//
+// 为了避免这种情况，
+//     jQuery提供了deferred.promise()方法。
+//     它的作用是，在原来的deferred对象上返回另一个deferred对象，后者只开放与改变执行状态无关的方法（比如done()方法和fail()方法），
+//     屏蔽与改变执行状态有关的方法（比如resolve()方法和reject()方法），从而使得执行状态不能被改变。
+
+
+
 //     deferred.then( doneCallbacks, failCallbacks [, progressCallbacks ] )
     //     参数	描述
     //     doneFilter	Function类型 可选 当Deferred（延迟）对象得到解决时被调用的一个函数。

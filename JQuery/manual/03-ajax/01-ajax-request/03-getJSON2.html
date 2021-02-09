@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("http://localhost/static_test/ajax/php_jquery_study/03-getJSON.php", function (result) {
+                    $.each(result, function (i, field) {
+                        $("div").append(field + " ");
+                    });
+                });
+            });
+        });
+
+
+        //         定义和用法
+        //         getJSON() 方法使用 AJAX 的 HTTP GET 请求获取 JSON 数据。
+        //
+        // 语法
+        //         $(selector).getJSON(url,data,success(data,status,xhr))
+        //
+        //         参数	描述
+        //         url	必需。规定将请求发送到哪个 URL。
+        // data	可选。规定发送到服务器的数据。
+        // success(data,status,xhr)	可选。规定当请求成功时运行的函数。
+        // 额外的参数：
+        // data - 包含从服务器返回的数据
+        //         status - 包含请求的状态（"success"、"notmodified"、"error"、"timeout"、"parsererror"）
+        // xhr - 包含 XMLHttpRequest 对象
+    </script>
+</head>
+<body>
+
+<!--http://localhost/github50673488.github.io/JQuery/manual/03-ajax/01-ajax-request/03-getJSON2.html-->
+
+<button>获取 JSON 数据</button>
+<div></div>
+
+</body>
+</html>
