@@ -7,7 +7,7 @@
     <script>
         function initialize() {
             var mapProp = {
-                center: new google.maps.LatLng(35.5, 139.5),
+                center: new google.maps.LatLng(32.806, 130.705),// kumamoto castle
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
@@ -68,24 +68,30 @@
             drawingManager.setMap(map);
 
             //Marker
-            google.maps.event.addListener(drawingManager, 'markercomplete', function(marker) {
+            google.maps.event.addListener(drawingManager, 'markercomplete', function (marker) {
+
                 alert('Marker complete');
+                console.log(marker);
             });
 //Circle
-            google.maps.event.addListener(drawingManager, 'circlecomplete', function(circle) {
+            google.maps.event.addListener(drawingManager, 'circlecomplete', function (circle) {
                 alert('Circle complete');
+                console.log(circle);
             });
 //Polygon
-            google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+            google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
                 alert('Polygon complete');
+                console.log(polygon);
             });
 //Polyline
-            google.maps.event.addListener(drawingManager, 'polylinecomplete', function(polyline) {
-                alert('Polyline complete');
+            google.maps.event.addListener(drawingManager, 'polylinecomplete', function (polyline) {
+                //alert('Polyline complete');
+                console.log(polyline);
             });
 //Rectangle
-            google.maps.event.addListener(drawingManager, 'rectanglecomplete', function(rectangle) {
-                alert('Rectangle complete');
+            google.maps.event.addListener(drawingManager, 'rectanglecomplete', function (rectangle) {
+                //alert('Rectangle complete');
+                console.log(rectangle);
             });
 
         }
