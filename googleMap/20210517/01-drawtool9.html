@@ -5,7 +5,16 @@
     </script>
 
     <script>
-        var oneObj;
+	var drawingManager_p;
+	var map_p;
+function buttonClick(){
+    drawingManager_p.setMap(map_p);
+}	
+	
+ function showArrays(event) {
+		drawingManager_p.setMap(map_p);
+      }
+	  
         function initialize() {
             var mapProp = {
                 center: new google.maps.LatLng(32.806, 130.705),// kumamoto castle
@@ -13,7 +22,25 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
+map_p = map;
+// Define the LatLng coordinates for the polygon's path.
+  const triangleCoords = [
+    { lat: 32.816604173856526, lng: 130.69993598937987 },
+    { lat: 32.81563037392366, lng: 130.71525676727293 },
+    { lat: 32.81047266299805, lng: 130.70208175659178 },
+  ];
+  // Construct the polygon.
+  const bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+  });
+  bermudaTriangle.setMap(map);
+  bermudaTriangle.addListener("click", showArrays);
+  
             // DrawingManagerを生成
             var drawingManager = new google.maps.drawing.DrawingManager({
                 drawingMode: google.maps.drawing.OverlayType.PAN,
@@ -25,16 +52,16 @@
                 //マーカーのプション
                 markerOptions: {
                     icon: {
-                        url: './pin.png',
+                        url: '../common/img/ms/pin_02.png',
                         scaledSize: new google.maps.Size(40, 40)
                     }
                 },
                 //円のオプション
                 circleOptions: {
                     fillColor: '#ffff00',
-                    fillOpacity: 0.1,
+                    fillOpacity: 1,
                     strokeWeight: 5,
-                    clickable: true,
+                    clickable: false,
                     editable: true,
                     zIndex: 1
                 },
@@ -42,8 +69,9 @@
                 polygonOptions: {
                     fillColor: '#ff00ff',
                     fillOpacity: 0.1,
+					strokeColor: '#ff00ff',
                     strokeWeight: 5,
-                    clickable: true,
+                    clickable: false,
                     editable: true,
                     zIndex: 1
                 },
@@ -59,62 +87,55 @@
                 //ポリラインのオプション
                 polylineOptions: {
                     strokeColor: '#ff0000',
-                    strokeWeight: 3,
-                    clickable: true,
+                    strokeWeight: 5,
+                    clickable: false,
                     editable: true,
                     zIndex: 1
                 }
             });
             // Mapに割り当て
             drawingManager.setMap(map);
+drawingManager_p = drawingManager;
+
+
 
             //Marker
             google.maps.event.addListener(drawingManager, 'markercomplete', function (marker) {
 
                 alert('Marker complete');
                 console.log(marker);
-                oneObj.setMap(null);
-                oneObj = marker;
             });
 //Circle
             google.maps.event.addListener(drawingManager, 'circlecomplete', function (circle) {
                 alert('Circle complete');
                 console.log(circle);
-                oneObj.setMap(null);
-                oneObj = circle;
-
             });
 //Polygon
             google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
                 alert('Polygon complete');
+				var contentString = '';
+				var vertices = polygon.getPath();
+				// Iterate over the vertices.
+				  for (let i = 0; i < vertices.getLength(); i++) {
+					const xy = vertices.getAt(i);
+					contentString +=
+					  "<br>" + "Coordinate " + i + ":<br>" + xy.lat() + "," + xy.lng();
+				  }				
+				                  alert(contentString);
                 console.log(polygon);
-                // drawingManager.setOptions({
-                //
-                //     drawingControl: false
-                // });
-                //polygon.setMap(null);
-
-                //oneObj.setMap(null);
-                oneObj = polygon;
-
-                var radius = polygon.getPath().getArray();
-                console.log(radius);
-
+				//drawingManager.drawingControl = false;
+				//drawingManager.drawingMode = null;
+				drawingManager.setMap(null);
             });
 //Polyline
             google.maps.event.addListener(drawingManager, 'polylinecomplete', function (polyline) {
-                alert('Polyline complete');
+                //alert('Polyline complete');				
                 console.log(polyline);
-                oneObj.setMap(null);
-                oneObj = polyline;
             });
 //Rectangle
             google.maps.event.addListener(drawingManager, 'rectanglecomplete', function (rectangle) {
-                alert('Rectangle complete');
+                //alert('Rectangle complete');
                 console.log(rectangle);
-                var prvobj = oneObj;
-                oneObj = rectangle;
-                prvobj.setMap(null);
             });
 
         }
@@ -124,7 +145,9 @@
 </head>
 
 <body>
-<div id="googleMap" style="width:1500px;height:900px;"></div>
+<div><button onclick="buttonClick()">删除（显示画图工具）</button></div>
+<div id="googleMap" style="width:1500px;height:900px;">
+</div>
 
 </body>
 </html>
