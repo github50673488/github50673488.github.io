@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div id="target" class="animated jello">
+    <h1>
+        鐵人萬歲!
+    </h1>
+</div>
+<div id="state"></div>
+<button id="button">
+    套用jello特效
+</button>
+<script>
+    $(document).ready(function () {
+        $('#button').click(function () {
+            $('#state').html('特效中...');
+            $('#target').addClass('animated jello');
+            $('#button').attr('disabled', true);
+        });
+
+        $('#target').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#target').removeClass('animated jello');
+            $('#state').html('特效結束');
+            $('#button').attr('disabled', false);
+        });
+    });
+
+</script>
+</body>
+</html>

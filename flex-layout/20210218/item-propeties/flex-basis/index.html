@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex 布局示例</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<h2>项目的属性</h2>
+
+
+<h3>4、flex-basis属性</h3>
+<p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+<p>
+    .item {
+    flex-basis: &lt;length&gt;; | auto; /* default auto */
+    }
+</p>
+<div class="box box-25">
+    <div class="box-item">1</div>
+    <div class="box-item">2</div>
+    <div class="box-item basis-400">3</div>
+</div>
+
+
+</body>
+</html>
