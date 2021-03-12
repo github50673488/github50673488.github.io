@@ -7,14 +7,22 @@
 <body>
 <script>
 
-    const pipe = (func1, func2) => x => func2(func1(x))
+    const addOne = x => x + 1
+    const addTwo = x => x + 2
+    //const pipe = (func1, func2) => x => func2(func1(x))
+    const pipe = (func1, func2) => (x => func2(func1(x)))
 
-    const addThree = pipe(
+    // const addThree = pipe(
+    //     addOne,
+    //     addTwo
+    // )
+
+    //console.log(addThree(1));
+
+    console.log(pipe(
         addOne,
         addTwo
-    )
-
-    addThree(1)
+    )(1));
 </script>
 </body>
 </html>
