@@ -13,9 +13,12 @@
         'Beryllium'
     ];
 
-    // elements.map(function (element) {
+    // console.log(elements.map(function (element) {
     //     return element.length;
-    // }); // 返回数组：[8, 6, 7, 9]
+    // }));
+
+
+    // 返回数组：[8, 6, 7, 9]
     //
     // // 上面的普通函数可以改写成如下的箭头函数
     // elements.map((element) => {
@@ -35,7 +38,23 @@
     // // 可以替换成任意合法的变量名
     // [8, 6, 7, 9]
 
-    console.log(elements.map(({"length": l}) => l));
+    // console.log(elements.map(({"length": l}) => l));
+
+    // 相当于以下写法的简写形式
+    // console.log(elements.map((e) => {
+    //     const lengthFooBArX = e.length
+    //     return lengthFooBArX
+    // }));
+    
+    // console.log(elements.map((element) => {
+    //     const {length: lengthFooBarX} = element
+    //     return lengthFooBarX;
+    // }));
+
+    console.log(elements.map((element) => {
+        const {length} = element
+        return length;
+    }));
 
 </script>
 </body>

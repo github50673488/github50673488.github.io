@@ -5,185 +5,153 @@
     <title>Title</title>
 </head>
 <body>
-"<br/>↵<font size='1'>
-    <table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>↵
-        <tr>
-            <th align='left' bgcolor='#f57900' colspan="5"><span
-                    style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice:
-                Undefined index: use_icon_script in
-                C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\AreaKind\UpdateKindAction.php
-                on line <i>478</i></th>
-        </tr>
-        ↵
-        <tr>
-            <th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th>
-        </tr>
-        ↵
-        <tr>
-            <th align='center' bgcolor='#eeeeec'>#</th>
-            <th align='left' bgcolor='#eeeeec'>Time</th>
-            <th align='left' bgcolor='#eeeeec'>Memory</th>
-            <th align='left' bgcolor='#eeeeec'>Function</th>
-            <th align='left' bgcolor='#eeeeec'>Location</th>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>1</td>
-            <td bgcolor='#eeeeec' align='center'>0.0218</td>
-            <td bgcolor='#eeeeec' align='right'>392464</td>
-            <td bgcolor='#eeeeec'>{main}( )</td>
-            <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>2</td>
-            <td bgcolor='#eeeeec' align='center'>0.4073</td>
-            <td bgcolor='#eeeeec' align='right'>5026808</td>
-            <td bgcolor='#eeeeec'>Zend\Mvc\Application->run( )</td>
-            <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>32</td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>3</td>
-            <td bgcolor='#eeeeec' align='center'>0.4156</td>
-            <td bgcolor='#eeeeec' align='right'>5046848</td>
-            <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php'
-                bgcolor='#eeeeec'>...\Application.php<b>:</b>314
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>4</td>
-            <td bgcolor='#eeeeec' align='center'>0.4156</td>
-            <td bgcolor='#eeeeec' align='right'>5046848</td>
-            <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
-                bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>5</td>
-            <td bgcolor='#eeeeec' align='center'>0.4163</td>
-            <td bgcolor='#eeeeec' align='right'>5048648</td>
-            <td bgcolor='#eeeeec'><a
-                    href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
-                    target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>↵(
-                ???, ??? )
-            </td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
-                bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>6</td>
-            <td bgcolor='#eeeeec' align='center'>0.4163</td>
-            <td bgcolor='#eeeeec' align='right'>5048648</td>
-            <td bgcolor='#eeeeec'>Zend\Mvc\DispatchListener->onDispatch( ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
-                bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>7</td>
-            <td bgcolor='#eeeeec' align='center'>0.4226</td>
-            <td bgcolor='#eeeeec' align='right'>5228448</td>
-            <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->dispatch( ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php'
-                bgcolor='#eeeeec'>...\DispatchListener.php<b>:</b>93
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>8</td>
-            <td bgcolor='#eeeeec' align='center'>0.4228</td>
-            <td bgcolor='#eeeeec' align='right'>5228808</td>
-            <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php'
-                bgcolor='#eeeeec'>...\AbstractController.php<b>:</b>118
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>9</td>
-            <td bgcolor='#eeeeec' align='center'>0.4228</td>
-            <td bgcolor='#eeeeec' align='right'>5228808</td>
-            <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
-                bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>10</td>
-            <td bgcolor='#eeeeec' align='center'>0.4249</td>
-            <td bgcolor='#eeeeec' align='right'>5239736</td>
-            <td bgcolor='#eeeeec'><a
-                    href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
-                    target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>↵(
-                ???, ??? )
-            </td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
-                bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>11</td>
-            <td bgcolor='#eeeeec' align='center'>0.4249</td>
-            <td bgcolor='#eeeeec' align='right'>5239736</td>
-            <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->onDispatch( ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
-                bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>12</td>
-            <td bgcolor='#eeeeec' align='center'>0.4250</td>
-            <td bgcolor='#eeeeec' align='right'>5239784</td>
-            <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->updateKindAction( )</td>
-            <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php'
-                bgcolor='#eeeeec'>...\AbstractActionController.php<b>:</b>82
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>13</td>
-            <td bgcolor='#eeeeec' align='center'>0.4250</td>
-            <td bgcolor='#eeeeec' align='right'>5239864</td>
-            <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->restApiAction( ???, ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\AreaKindController.php'
-                bgcolor='#eeeeec'>...\AreaKindController.php<b>:</b>250
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>14</td>
-            <td bgcolor='#eeeeec' align='center'>1.6044</td>
-            <td bgcolor='#eeeeec' align='right'>8679000</td>
-            <td bgcolor='#eeeeec'>Application\Model\Action\AreaKind\UpdateKindAction->execute( ???, ???, ??? )</td>
-            <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\BaseController.php'
-                bgcolor='#eeeeec'>...\BaseController.php<b>:</b>96
-            </td>
-        </tr>
-        ↵
-        <tr>
-            <td bgcolor='#eeeeec' align='center'>15</td>
-            <td bgcolor='#eeeeec' align='center'>10.9081</td>
-            <td bgcolor='#eeeeec' align='right'>9155592</td>
-            <td bgcolor='#eeeeec'>Application\Model\Action\AreaKind\UpdateKindAction->updateAreaKind( ???, ???, ???,
-                ???, ???, ??? )
-            </td>
-            <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\AreaKind\UpdateKindAction.php'
-                bgcolor='#eeeeec'>...\UpdateKindAction.php<b>:</b>167
-            </td>
-        </tr>
-        ↵
-    </table>
-</font>↵{"auth":true,"result":true,"msg":"","data":[]}"
+<tr>
+    <th align='left' bgcolor='#f57900' colspan="5"><span
+            style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span>
+        Common\Model\Exception\So3Exception: A2701-190 in
+        C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\AreaKind\GetListAction.php on line
+        <i>190</i></th>
+</tr>
+<tr>
+    <th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th>
+</tr>
+<tr>
+    <th align='center' bgcolor='#eeeeec'>#</th>
+    <th align='left' bgcolor='#eeeeec'>Time</th>
+    <th align='left' bgcolor='#eeeeec'>Memory</th>
+    <th align='left' bgcolor='#eeeeec'>Function</th>
+    <th align='left' bgcolor='#eeeeec'>Location</th>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>1</td>
+    <td bgcolor='#eeeeec' align='center'>0.0300</td>
+    <td bgcolor='#eeeeec' align='right'>391680</td>
+    <td bgcolor='#eeeeec'>{main}( )</td>
+    <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>2</td>
+    <td bgcolor='#eeeeec' align='center'>0.6270</td>
+    <td bgcolor='#eeeeec' align='right'>5028640</td>
+    <td bgcolor='#eeeeec'>Zend\Mvc\Application->run( )</td>
+    <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>32</td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>3</td>
+    <td bgcolor='#eeeeec' align='center'>0.6377</td>
+    <td bgcolor='#eeeeec' align='right'>5048680</td>
+    <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php'
+        bgcolor='#eeeeec'>...\Application.php<b>:</b>314
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>4</td>
+    <td bgcolor='#eeeeec' align='center'>0.6378</td>
+    <td bgcolor='#eeeeec' align='right'>5048680</td>
+    <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
+        bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>5</td>
+    <td bgcolor='#eeeeec' align='center'>0.6394</td>
+    <td bgcolor='#eeeeec' align='right'>5050480</td>
+    <td bgcolor='#eeeeec'><a
+            href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
+            target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>
+        ( ???, ??? )
+    </td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
+        bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>6</td>
+    <td bgcolor='#eeeeec' align='center'>0.6394</td>
+    <td bgcolor='#eeeeec' align='right'>5050480</td>
+    <td bgcolor='#eeeeec'>Zend\Mvc\DispatchListener->onDispatch( ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
+        bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>7</td>
+    <td bgcolor='#eeeeec' align='center'>0.6513</td>
+    <td bgcolor='#eeeeec' align='right'>5230280</td>
+    <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->dispatch( ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php'
+        bgcolor='#eeeeec'>...\DispatchListener.php<b>:</b>93
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>8</td>
+    <td bgcolor='#eeeeec' align='center'>0.6517</td>
+    <td bgcolor='#eeeeec' align='right'>5230640</td>
+    <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php'
+        bgcolor='#eeeeec'>...\AbstractController.php<b>:</b>118
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>9</td>
+    <td bgcolor='#eeeeec' align='center'>0.6518</td>
+    <td bgcolor='#eeeeec' align='right'>5230640</td>
+    <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
+        bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>10</td>
+    <td bgcolor='#eeeeec' align='center'>0.6561</td>
+    <td bgcolor='#eeeeec' align='right'>5241568</td>
+    <td bgcolor='#eeeeec'><a
+            href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
+            target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>
+        ( ???, ??? )
+    </td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
+        bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>11</td>
+    <td bgcolor='#eeeeec' align='center'>0.6562</td>
+    <td bgcolor='#eeeeec' align='right'>5241568</td>
+    <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->onDispatch( ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
+        bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>12</td>
+    <td bgcolor='#eeeeec' align='center'>0.6564</td>
+    <td bgcolor='#eeeeec' align='right'>5241608</td>
+    <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->getListAction( )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php'
+        bgcolor='#eeeeec'>...\AbstractActionController.php<b>:</b>82
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>13</td>
+    <td bgcolor='#eeeeec' align='center'>0.6565</td>
+    <td bgcolor='#eeeeec' align='right'>5241688</td>
+    <td bgcolor='#eeeeec'>Application\Controller\AreaKindController->restApiAction( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\AreaKindController.php'
+        bgcolor='#eeeeec'>...\AreaKindController.php<b>:</b>190
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>14</td>
+    <td bgcolor='#eeeeec' align='center'>3.9242</td>
+    <td bgcolor='#eeeeec' align='right'>8507736</td>
+    <td bgcolor='#eeeeec'>Application\Model\Action\AreaKind\GetListAction->execute( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\BaseController.php'
+        bgcolor='#eeeeec'>...\BaseController.php<b>:</b>96
+    </td>
+</tr>
+
 </body>
 </html>
