@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Polygon</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <title>Simple Polylines</title>
+  
     <style type="text/css">
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -19,30 +19,29 @@
         }
     </style>
     <script>
-        // This example creates a simple polygon representing the Bermuda Triangle.
+        // This example creates a 2-pixel-wide red polyline showing the path of
+        // the first trans-Pacific flight between Oakland, CA, and Brisbane,
+        // Australia which was made by Charles Kingsford Smith.
         function initMap() {
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 5,
-                center: {lat: 32.806, lng: 130.705},
+                zoom: 3,
+                center: {lat: 0, lng: -180},
                 mapTypeId: "terrain",
             });
-            // Define the LatLng coordinates for the polygon's path.
-            const triangleCoords = [
-                {lat: 25.774, lng: -80.19},
-                {lat: 18.466, lng: -66.118},
-                {lat: 32.321, lng: -64.757},
-                {lat: 25.774, lng: -80.19},
+            const flightPlanCoordinates = [
+                {lat: 37.772, lng: -122.214},
+                {lat: 21.291, lng: -157.821},
+                {lat: -18.142, lng: 178.431},
+                {lat: -27.467, lng: 153.027},
             ];
-            // Construct the polygon.
-            const bermudaTriangle = new google.maps.Polygon({
-                paths: triangleCoords,
+            const flightPath = new google.maps.Polyline({
+                path: flightPlanCoordinates,
+                geodesic: true,
                 strokeColor: "#FF0000",
-                strokeOpacity: 0.8,
+                strokeOpacity: 1.0,
                 strokeWeight: 2,
-                fillColor: "#FF0000",
-                fillOpacity: 0.35,
             });
-            bermudaTriangle.setMap(map);
+            flightPath.setMap(map);
         }
     </script>
 </head>

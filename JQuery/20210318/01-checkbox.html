@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<input type="checkbox" name="x" id="x" checked="checked">
+
+
+<button id="btnTest">on</button>
+<button id="btnOff">off</button>
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+            // Check #x
+            $("#x").prop("checked", true);
+
+
+        });
+        $("#btnOff").click(function () {
+
+
+// Uncheck #x
+            $("#x").prop("checked", false);
+        });
+    });
+</script>
+</body>
+</html>
