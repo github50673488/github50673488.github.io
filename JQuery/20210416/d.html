@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>模拟实现带复选框的下拉列表</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <style type="text/css">
+        body {
+            margin: 20px;
+        }
+
+        input {
+            width: 150px;
+            height: 30px;
+        }
+
+        ul {
+            display: none;
+            list-style: none;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            height: 20px;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin: 5px 5px 0 0;
+            vertical-align: top;
+        }
+
+        #id_div {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="id_div">
+    <input id="id_select" readonly onclick="show_options();">
+    <ul id="id_select_options">
+        <li><input type="checkbox" name="select_checkbox" onclick="chk_changed();" value="000000"/>000000</li>
+        <li><input type="checkbox" name="select_checkbox" onclick="chk_changed();" value="111111"/>111111</li>
+        <li><input type="checkbox" name="select_checkbox" onclick="chk_changed();" value="222222"/>222222</li>
+        <li><input type="checkbox" name="select_checkbox" onclick="chk_changed();" value="333333"/>333333</li>
+        <li><input type="checkbox" name="select_checkbox" onclick="chk_changed();" value="444444"/>444444</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    //显示 - 隐藏下拉列表
+    $("#id_div").mouseleave(function () {
+        $("#id_select_options").hide();
+    });
+
+    function show_options() {
+        if ($("#id_select_options").is(":hidden"))
+            $("#id_select_options").show();
+        else
+            $("#id_select_options").hide();
+    }
+
+    //复选框勾选，更新显示
+    function chk_changed() {
+        var str_selected = "";
+        var lstChk = document.getElementsByName("select_checkbox");
+        for (var n = 0; n < lstChk.length; n++) {
+            if (lstChk[n].checked)
+                str_selected = str_selected + "/" + lstChk[n].value;
+        }
+        $("#id_select").val(str_selected.substring(1, str_selected.length));
+    }
+</script>
+</body>
+</html>

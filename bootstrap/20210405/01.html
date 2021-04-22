@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>二级联动下拉框</title>
+
+
+</head>
+
+<body>
+
+<select name="country" οnchange="getCountry(this)">
+    <option value="none">--选择国家--</option>
+    <option value="中国">中国</option>
+    <option value="美国">美国</option>
+    <option value="日本">日本</option>
+</select>
+<br><br>
+<hr/>
+<br>
+<div id="seleDiv">
+    <select id="province" οnchange="selectCity(this)">
+        <option>--选择省市--</option>
+        <option>北京市</option>
+        <option>河北省</option>
+        <option>辽宁省</option>
+        <option>山东省</option>
+    </select>
+    <select id="city">
+        <option>--选择城市--</option>
+    </select>
+</div>
+<!--引入jquery库-->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    var data = {
+        "北京市": ["海淀区", "朝阳区", "丰台区"],
+        "河北省": ["石家庄", "唐山", "秦皇岛"],
+        "辽宁省": ["沈阳", "大连", "鞍山"],
+        "山东省": ["青岛", "济南", "烟台"]
+    }
+
+    //当选项切换时, 触发onchange事件, 执行getCountry函数, 在函数中获取当前选中的国家并弹出!
+    function getCountry(thisobj) {
+        alert(thisobj.value);
+    }
+
+    //通过jQuery实现二级联动下拉框
+    function selectCity(thisobj) {
+        var prov = $(thisobj).val();//获取用户选中的省份
+        var citys = data[prov];//再根据省份获取对应的市区
+        $("#city").html("<option>--选择城市--</option>");//清空之前的数据
+        for (var i = 0; i < citys.length; i++) {
+            $("#city").append("<option>" + [citys[i]] + "</option>");
+        }
+    }
+
+</script>
+</body>
+
+</html>

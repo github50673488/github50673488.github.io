@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>defertest</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        var wait_1_sec = function () {
+            var dtd = $.Deferred();// 正确的用法
+            var tasks = function () {
+                alert("wait...over!");
+                dtd.resolve();// 程序告诉通过延时对象外部延时正常结束
+            };
+            setTimeout(tasks, 1000);
+            console.log("after Deferred2");
+            return dtd.promise();// 要返回
+        };
+
+
+        function AjaxRequest3_sec() {
+            console.log("AjaxRequest3_sec");
+
+            //f return $.ajax("http://localhost/phptest/3sec.php");// 正确的写法
+
+            var defer = $.Deferred();// // 错误的写法 应该jquery的ajax内部已经写好
+            $.ajax({
+                url: "http://localhost/phptest/3sec.php"
+                , success: function (data) {
+                    if (!data.result) {
+                        defer.reject(null, 'error', data);// 错误的写法 应该jquery的ajax内部已经写好
+                    } else {
+                        defer.resolve(data);// // 错误的写法 应该jquery的ajax内部已经写好
+                    }
+                }
+                , error: function (jqXHR, textStatus, errorThrown) {
+                    defer.reject(jqXHR, textStatus, errorThrown);
+                }
+            });
+            return defer.promise();// // 错误的写法 应该jquery的ajax内部已经写好
+
+
+            //         <?php
+            //     sleep(3);
+            //     $arr = array("info"=>"hello","message"=>"hi");
+            // echo json_encode($arr);
+
+        }
+
+        function AjaxRequest10_sec() {
+            console.log("delay10");
+            return $.ajax("http://localhost/phptest/10sec.php");// 正确的写法
+
+
+            //  <?php
+            //     sleep(10);
+            //     $arr = array("info"=>"hello","message"=>"hi");
+            // echo json_encode($arr);
+        }
+
+
+        function callback1(value) {
+            alert(value);
+            return false;
+        }
+
+        function callback2(value) {
+            callback1("callback2 says: " + value);
+            return false;
+        }
+
+        $.when(wait_1_sec(), AjaxRequest3_sec(), AjaxRequest10_sec())
+            .then(function () {
+                callback2("parafor2")
+            })
+            .then(function () {
+                callback1("parafor1")
+            });
+
+    })
+
+</script>
+
+</body>
+</html>

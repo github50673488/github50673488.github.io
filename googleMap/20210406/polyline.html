@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Simple Polylines</title>
-  
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style type="text/css">
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -42,12 +42,31 @@
                 strokeWeight: 2,
             });
             flightPath.setMap(map);
-            var myPosition = new google.maps.LatLng(37.772, -121.214);
-            if (google.maps.geometry.poly.isLocationOnEdge(myPosition, flightPath, 10e-1)) {
-                alert("Relocate!");
-            } else {
-                alert("not!");
-            }
+
+            //shadow
+            const flightPath1 = new google.maps.Polyline({
+                path: flightPlanCoordinates,
+                geodesic: true,
+                //strokeColor: "#00FF00",
+                //strokeOpacity: 0.5,
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.01,
+                strokeWeight: 2,
+            });
+            flightPath1.setMap(map);
+
+            infoWindow = new google.maps.InfoWindow();
+
+            flightPath1.addListener('click', function (event) {
+                //alert('click on track');
+                // Replace the info window's content and position.
+
+                console.log(event.latLng);
+
+                infoWindow.setContent('click on track');
+                infoWindow.setPosition(event.latLng);
+                infoWindow.open(map);
+            });
         }
     </script>
 </head>
@@ -56,7 +75,7 @@
 
 <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTZzgCKHwBI7R1yKccFsS0N1Mo2KlQSgc&callback=initMap&libraries=geometry&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTZzgCKHwBI7R1yKccFsS0N1Mo2KlQSgc&callback=initMap&libraries=&v=weekly"
         async
 ></script>
 </body>

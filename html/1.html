@@ -8,12 +8,9 @@
 <tr>
     <th align='left' bgcolor='#f57900' colspan="5"><span
             style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span>
-        Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (42P01 - 7 - ERROR: missing
-        FROM-clause entry for table "t_item"
-        LINE 1: ...ed" = $1 AND "t_area"."m_area_kind_id" = $2 AND (("t_item"."...
-        ^) in
-        C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php
-        on line <i>244</i></th>
+        Common\Model\Exception\So3Exception: A1220-494 in
+        C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Item\AddSrchConditionAction.php on
+        line <i>494</i></th>
 </tr>
 <tr>
     <th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th>
@@ -27,22 +24,22 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>1</td>
-    <td bgcolor='#eeeeec' align='center'>0.0077</td>
-    <td bgcolor='#eeeeec' align='right'>393392</td>
+    <td bgcolor='#eeeeec' align='center'>0.0064</td>
+    <td bgcolor='#eeeeec' align='right'>395232</td>
     <td bgcolor='#eeeeec'>{main}( )</td>
     <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>2</td>
-    <td bgcolor='#eeeeec' align='center'>0.3067</td>
-    <td bgcolor='#eeeeec' align='right'>5031496</td>
+    <td bgcolor='#eeeeec' align='center'>0.4759</td>
+    <td bgcolor='#eeeeec' align='right'>5034352</td>
     <td bgcolor='#eeeeec'>Zend\Mvc\Application->run( )</td>
     <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>32</td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>3</td>
-    <td bgcolor='#eeeeec' align='center'>0.3160</td>
-    <td bgcolor='#eeeeec' align='right'>5051520</td>
+    <td bgcolor='#eeeeec' align='center'>0.4851</td>
+    <td bgcolor='#eeeeec' align='right'>5054384</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php'
         bgcolor='#eeeeec'>...\Application.php<b>:</b>314
@@ -50,8 +47,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>4</td>
-    <td bgcolor='#eeeeec' align='center'>0.3161</td>
-    <td bgcolor='#eeeeec' align='right'>5051520</td>
+    <td bgcolor='#eeeeec' align='center'>0.4851</td>
+    <td bgcolor='#eeeeec' align='right'>5054384</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
@@ -59,8 +56,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>5</td>
-    <td bgcolor='#eeeeec' align='center'>0.3171</td>
-    <td bgcolor='#eeeeec' align='right'>5053320</td>
+    <td bgcolor='#eeeeec' align='center'>0.4859</td>
+    <td bgcolor='#eeeeec' align='right'>5056184</td>
     <td bgcolor='#eeeeec'><a
             href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
             target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>
@@ -72,8 +69,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>6</td>
-    <td bgcolor='#eeeeec' align='center'>0.3171</td>
-    <td bgcolor='#eeeeec' align='right'>5053320</td>
+    <td bgcolor='#eeeeec' align='center'>0.4859</td>
+    <td bgcolor='#eeeeec' align='right'>5056184</td>
     <td bgcolor='#eeeeec'>Zend\Mvc\DispatchListener->onDispatch( ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
@@ -81,17 +78,17 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>7</td>
-    <td bgcolor='#eeeeec' align='center'>0.3235</td>
-    <td bgcolor='#eeeeec' align='right'>5226888</td>
-    <td bgcolor='#eeeeec'>Application\Controller\AreaController->dispatch( ???, ??? )</td>
+    <td bgcolor='#eeeeec' align='center'>0.4963</td>
+    <td bgcolor='#eeeeec' align='right'>5229832</td>
+    <td bgcolor='#eeeeec'>Application\Controller\ItemController->dispatch( ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php'
         bgcolor='#eeeeec'>...\DispatchListener.php<b>:</b>93
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>8</td>
-    <td bgcolor='#eeeeec' align='center'>0.3237</td>
-    <td bgcolor='#eeeeec' align='right'>5227248</td>
+    <td bgcolor='#eeeeec' align='center'>0.4967</td>
+    <td bgcolor='#eeeeec' align='right'>5230192</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php'
         bgcolor='#eeeeec'>...\AbstractController.php<b>:</b>118
@@ -99,8 +96,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>9</td>
-    <td bgcolor='#eeeeec' align='center'>0.3237</td>
-    <td bgcolor='#eeeeec' align='right'>5227248</td>
+    <td bgcolor='#eeeeec' align='center'>0.4968</td>
+    <td bgcolor='#eeeeec' align='right'>5230192</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
@@ -108,8 +105,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>10</td>
-    <td bgcolor='#eeeeec' align='center'>0.3258</td>
-    <td bgcolor='#eeeeec' align='right'>5238176</td>
+    <td bgcolor='#eeeeec' align='center'>0.5021</td>
+    <td bgcolor='#eeeeec' align='right'>5241120</td>
     <td bgcolor='#eeeeec'><a
             href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
             target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>
@@ -121,81 +118,60 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>11</td>
-    <td bgcolor='#eeeeec' align='center'>0.3258</td>
-    <td bgcolor='#eeeeec' align='right'>5238176</td>
-    <td bgcolor='#eeeeec'>Application\Controller\AreaController->onDispatch( ??? )</td>
+    <td bgcolor='#eeeeec' align='center'>0.5021</td>
+    <td bgcolor='#eeeeec' align='right'>5241120</td>
+    <td bgcolor='#eeeeec'>Application\Controller\ItemController->onDispatch( ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>12</td>
-    <td bgcolor='#eeeeec' align='center'>0.3260</td>
-    <td bgcolor='#eeeeec' align='right'>5238216</td>
-    <td bgcolor='#eeeeec'>Application\Controller\AreaController->getListAction( )</td>
+    <td bgcolor='#eeeeec' align='center'>0.5024</td>
+    <td bgcolor='#eeeeec' align='right'>5241168</td>
+    <td bgcolor='#eeeeec'>Application\Controller\ItemController->addSrchConditionAction( )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php'
         bgcolor='#eeeeec'>...\AbstractActionController.php<b>:</b>82
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>13</td>
-    <td bgcolor='#eeeeec' align='center'>0.3260</td>
-    <td bgcolor='#eeeeec' align='right'>5238296</td>
-    <td bgcolor='#eeeeec'>Application\Controller\AreaController->restApiAction( ???, ???, ??? )</td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\AreaController.php'
-        bgcolor='#eeeeec'>...\AreaController.php<b>:</b>54
+    <td bgcolor='#eeeeec' align='center'>0.5024</td>
+    <td bgcolor='#eeeeec' align='right'>5241248</td>
+    <td bgcolor='#eeeeec'>Application\Controller\ItemController->restApiAction( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\ItemController.php'
+        bgcolor='#eeeeec'>...\ItemController.php<b>:</b>241
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>14</td>
-    <td bgcolor='#eeeeec' align='center'>1.3774</td>
-    <td bgcolor='#eeeeec' align='right'>8602128</td>
-    <td bgcolor='#eeeeec'>Application\Model\Action\Area\GetListAction->execute( ???, ???, ??? )</td>
+    <td bgcolor='#eeeeec' align='center'>1.8550</td>
+    <td bgcolor='#eeeeec' align='right'>8648760</td>
+    <td bgcolor='#eeeeec'>Application\Model\Action\Item\AddSrchConditionAction->execute( ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\BaseController.php'
         bgcolor='#eeeeec'>...\BaseController.php<b>:</b>96
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>15</td>
-    <td bgcolor='#eeeeec' align='center'>6.2398</td>
-    <td bgcolor='#eeeeec' align='right'>8985912</td>
-    <td bgcolor='#eeeeec'>Application\Model\Action\Area\GetListAction->getArea( ???, ???, ???, ???, ???, ???, ???, ???,
-        ???, ???, ???, ???, ???, ??? )
-    </td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Area\GetListAction.php'
-        bgcolor='#eeeeec'>...\GetListAction.php<b>:</b>145
+    <td bgcolor='#eeeeec' align='center'>6.3104</td>
+    <td bgcolor='#eeeeec' align='right'>8651744</td>
+    <td bgcolor='#eeeeec'>Application\Model\Action\Item\AddSrchConditionAction->validateAndSetEntity( ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Item\AddSrchConditionAction.php'
+        bgcolor='#eeeeec'>...\AddSrchConditionAction.php<b>:</b>45
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>16</td>
-    <td bgcolor='#eeeeec' align='center'>7.3595</td>
-    <td bgcolor='#eeeeec' align='right'>9566024</td>
-    <td bgcolor='#eeeeec'>Table\Model\Table\AreaTable->getRecordByKindSearch( ???, ???, ???, ???, ???, ???, ???, ???,
-        ???, ???, ???, ???, ???, ???, ???, ???, ???, ???, ???, ??? )
+    <td bgcolor='#eeeeec' align='center'>6.3323</td>
+    <td bgcolor='#eeeeec' align='right'>8730312</td>
+    <td bgcolor='#eeeeec'>Application\Model\Action\Item\AddSrchConditionAction->ampersandGroupValidateAndSetEntity( ???,
+        ??? )
     </td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Area\GetListAction.php'
-        bgcolor='#eeeeec'>...\GetListAction.php<b>:</b>469
-    </td>
-</tr>
-<tr>
-    <td bgcolor='#eeeeec' align='center'>17</td>
-    <td bgcolor='#eeeeec' align='center'>8.3410</td>
-    <td bgcolor='#eeeeec' align='right'>10160568</td>
-    <td bgcolor='#eeeeec'>Table\Model\Table\AreaTable->getResultSetArray( ???, ??? )</td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Table\src\Table\Model\Table\AreaTable.php' bgcolor='#eeeeec'>
-        ...\AreaTable.php<b>:</b>2585
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Item\AddSrchConditionAction.php'
+        bgcolor='#eeeeec'>...\AddSrchConditionAction.php<b>:</b>296
     </td>
 </tr>
-<tr>
-    <td bgcolor='#eeeeec' align='center'>18</td>
-    <td bgcolor='#eeeeec' align='center'>8.3574</td>
-    <td bgcolor='#eeeeec' align='right'>10163552</td>
-    <td bgcolor='#eeeeec'>Zend\Db\Adapter\Driver\Pdo\Statement->execute( ??? )</td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Common\src\Common\Model\TableBase.php' bgcolor='#eeeeec'>
-        ...\TableBase.php<b>:</b>65
-    </td>
-</tr>
-
 
 </body>
 </html>
