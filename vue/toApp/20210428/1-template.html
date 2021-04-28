@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE Test</title>
+    <style>
+        .inputClass {
+            border-style: dashed;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <span v-show="isShow">{{msg}}</span>
+    <input v-model="msg" placeholder="edit me" v-if="isShow" :title="msg" :class="{inputClass:isShow}"
+           @keyup.enter="onEnter($event,'mypara')">
+    <input type="button" value="testBtn" @click="onClick" :style="styleObject">
+    <ul>
+        <li v-for="(item, index) in items">
+            {{ index }} - {{ item.message }}
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'test msg',
+            isShow: true,
+            styleObject: {
+                color: 'blue'
+            },
+            items: [
+                {message: 'Foo'},
+                {message: 'Bar'}
+            ]
+        },
+        methods: {
+            onClick: function (e) {
+                console.log(e.target.tagName)
+                this.isShow = !this.isShow
+            },
+            onEnter: function (...arg) {
+                alert(arg[1]);
+                console.log(arg[0])
+            }
+        }
+    })
+</script>
+</body>
+</html>

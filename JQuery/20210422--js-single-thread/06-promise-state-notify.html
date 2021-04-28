@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>异步状态传递</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(function () {
+        function asyncEvent() {
+            var dfd = new jQuery.Deferred();
+
+            setTimeout(function () {// 在一个随机的时间间隔之后 Resolve （解决状态）
+                dfd.resolve("欢呼");
+            }, Math.floor(400 + Math.random() * 2000));
+
+            setTimeout(function () { // 在一个随机的时间间隔之后 reject （拒绝状态）
+                dfd.reject("对不起");
+            }, Math.floor(400 + Math.random() * 2000));
+
+            setTimeout(function working() { // 每半秒显示一个"working..."消息
+                if (dfd.state() === "pending") {
+                    dfd.notify("working... ");
+                    setTimeout(working, 500);
+                }
+            }, 1);
+            // 返回 Promise 对象，调用者不能改变延迟对象
+            return dfd.promise();
+        }
+
+        // 为异步函数附加一个done, fail, 和 progress 处理程序
+        $.when(asyncEvent()).then(
+            function (status) {
+                alert(status + ', 事情进展顺利');
+            },
+            function (status) {
+                alert(status + ', 这次你失败了');
+            },
+            function (status) {
+                $("body").append(status);
+            }
+        );
+    })
+
+    //     我在代码的尾部加了一行dtd.resolve()，这就改变了dtd对象的执行状态，因此导致done()方法立刻执行，跳出"哈哈，成功了！"的提示框，等5秒之后再跳出"执行完毕！"的提示框。
+    //
+    // 为了避免这种情况，
+    //     jQuery提供了deferred.promise()方法。
+    //     它的作用是，在原来的deferred对象上返回另一个deferred对象，后者只开放与改变执行状态无关的方法（比如done()方法和fail()方法），
+    //     屏蔽与改变执行状态有关的方法（比如resolve()方法和reject()方法），从而使得执行状态不能被改变。
+
+
+    //     deferred.then( doneCallbacks, failCallbacks [, progressCallbacks ] )
+    //     参数	描述
+    //     doneFilter	Function类型 可选 当Deferred（延迟）对象得到解决时被调用的一个函数。
+    // failFilter	Function类型 可选 当Deferred（延迟）对象拒绝时被调用的一个函数。
+    // progressFilter	Function类型 可选 当Deferred（延迟）对象生成进度通知时被调用的一个函数。
+
+    //         $.when() 函数提供一种方法来执行一个或多个对象的回调函数。
+    //
+    // 提示:如果向 jQuery.when 传入一个延迟对象，那么会返回它的 Promise 对象(延迟方法的一个子集)。
+    //         可以继续绑定 Promise 对象的其它方法，例如， defered.then 。当延迟对象已经被受理（resolved） 或被拒绝(rejected）（通常是由创建延迟对象的最初代码执行的），
+    //         那么就会调用相应的回调函数。
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE Test</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="button" value="跑起来" @click="run">
+    <input type="button" value="停下来" @click="stop">
+    <div>{{msg}}</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '跑马灯试一试',
+            inteverlId: null
+        },
+        methods: {
+
+            change: function () {
+                var firstchar = this.msg.substring(0, 1);
+                this.msg = this.msg.substring(1) + firstchar;
+                console.log("msg", this.msg);
+            },
+
+            run: function () {
+
+                if (!this.inteverlId) {
+                    this.inteverlId = window.setInterval(
+                        // () => {
+                        //     var firstchar = this.msg.substring(0, 1);
+                        //     this.msg = this.msg.substring(1) + firstchar;
+                        //     console.log("msg", this.msg);
+                        // }
+                        this.change
+                        , 1000
+                    )
+                }
+            },
+            stop: function () {
+                if (this.inteverlId) {
+                    window.clearInterval(this.inteverlId);
+                    this.inteverlId = null;
+                }
+                console.log("stop");
+            }
+        }
+    })
+</script>
+</body>
+</html>
