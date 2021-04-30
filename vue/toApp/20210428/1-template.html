@@ -11,12 +11,19 @@
             border-style: dashed;
             border-color: red;
         }
+
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <div id="app">
-    <span v-show="isShow">{{msg}}</span>
+
+    
+
+    <span v-show="isShow" v-cloak>{{msg}}</span>
     <input v-model="msg" placeholder="edit me" v-if="isShow" :title="msg" :class="{inputClass:isShow}"
            @keyup.enter="onEnter($event,'mypara')">
     <input type="button" value="testBtn" @click="onClick" :style="styleObject">
@@ -43,11 +50,11 @@
             ]
         },
         methods: {
-            onClick: function (e) {
+            onClick(e) {
                 console.log(e.target.tagName)
                 this.isShow = !this.isShow
             },
-            onEnter: function (...arg) {
+            onEnter(...arg) {
                 alert(arg[1]);
                 console.log(arg[0])
             }

@@ -8,9 +8,10 @@
 <tr>
     <th align='left' bgcolor='#f57900' colspan="5"><span
             style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span>
-        Common\Model\Exception\So3Exception: A1220-494 in
-        C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Item\AddSrchConditionAction.php on
-        line <i>494</i></th>
+        Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (22P02 - 7 - ERROR: invalid
+        input syntax for type numeric: "") in
+        C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php
+        on line <i>244</i></th>
 </tr>
 <tr>
     <th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th>
@@ -24,22 +25,22 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>1</td>
-    <td bgcolor='#eeeeec' align='center'>0.0064</td>
-    <td bgcolor='#eeeeec' align='right'>395232</td>
+    <td bgcolor='#eeeeec' align='center'>0.0065</td>
+    <td bgcolor='#eeeeec' align='right'>391584</td>
     <td bgcolor='#eeeeec'>{main}( )</td>
     <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>2</td>
-    <td bgcolor='#eeeeec' align='center'>0.4759</td>
-    <td bgcolor='#eeeeec' align='right'>5034352</td>
+    <td bgcolor='#eeeeec' align='center'>0.3515</td>
+    <td bgcolor='#eeeeec' align='right'>5030704</td>
     <td bgcolor='#eeeeec'>Zend\Mvc\Application->run( )</td>
     <td title='C:\wamp64\www\sococa_git\web\public\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>32</td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>3</td>
-    <td bgcolor='#eeeeec' align='center'>0.4851</td>
-    <td bgcolor='#eeeeec' align='right'>5054384</td>
+    <td bgcolor='#eeeeec' align='center'>0.3625</td>
+    <td bgcolor='#eeeeec' align='right'>5050728</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php'
         bgcolor='#eeeeec'>...\Application.php<b>:</b>314
@@ -47,8 +48,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>4</td>
-    <td bgcolor='#eeeeec' align='center'>0.4851</td>
-    <td bgcolor='#eeeeec' align='right'>5054384</td>
+    <td bgcolor='#eeeeec' align='center'>0.3626</td>
+    <td bgcolor='#eeeeec' align='right'>5050728</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
@@ -56,8 +57,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>5</td>
-    <td bgcolor='#eeeeec' align='center'>0.4859</td>
-    <td bgcolor='#eeeeec' align='right'>5056184</td>
+    <td bgcolor='#eeeeec' align='center'>0.3634</td>
+    <td bgcolor='#eeeeec' align='right'>5052528</td>
     <td bgcolor='#eeeeec'><a
             href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
             target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>
@@ -69,8 +70,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>6</td>
-    <td bgcolor='#eeeeec' align='center'>0.4859</td>
-    <td bgcolor='#eeeeec' align='right'>5056184</td>
+    <td bgcolor='#eeeeec' align='center'>0.3634</td>
+    <td bgcolor='#eeeeec' align='right'>5052528</td>
     <td bgcolor='#eeeeec'>Zend\Mvc\DispatchListener->onDispatch( ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
@@ -78,17 +79,17 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>7</td>
-    <td bgcolor='#eeeeec' align='center'>0.4963</td>
-    <td bgcolor='#eeeeec' align='right'>5229832</td>
-    <td bgcolor='#eeeeec'>Application\Controller\ItemController->dispatch( ???, ??? )</td>
+    <td bgcolor='#eeeeec' align='center'>0.3713</td>
+    <td bgcolor='#eeeeec' align='right'>5216144</td>
+    <td bgcolor='#eeeeec'>Application\Controller\SpotController->dispatch( ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php'
         bgcolor='#eeeeec'>...\DispatchListener.php<b>:</b>93
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>8</td>
-    <td bgcolor='#eeeeec' align='center'>0.4967</td>
-    <td bgcolor='#eeeeec' align='right'>5230192</td>
+    <td bgcolor='#eeeeec' align='center'>0.3714</td>
+    <td bgcolor='#eeeeec' align='right'>5216504</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->trigger( ???, ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php'
         bgcolor='#eeeeec'>...\AbstractController.php<b>:</b>118
@@ -96,8 +97,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>9</td>
-    <td bgcolor='#eeeeec' align='center'>0.4968</td>
-    <td bgcolor='#eeeeec' align='right'>5230192</td>
+    <td bgcolor='#eeeeec' align='center'>0.3715</td>
+    <td bgcolor='#eeeeec' align='right'>5216504</td>
     <td bgcolor='#eeeeec'>Zend\EventManager\EventManager->triggerListeners( ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>205
@@ -105,8 +106,8 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>10</td>
-    <td bgcolor='#eeeeec' align='center'>0.5021</td>
-    <td bgcolor='#eeeeec' align='right'>5241120</td>
+    <td bgcolor='#eeeeec' align='center'>0.3742</td>
+    <td bgcolor='#eeeeec' align='right'>5227432</td>
     <td bgcolor='#eeeeec'><a
             href='http://www.php.net/function.call-user-func:{C:\wamp64\www\sococa-git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}'
             target='_new'>call_user_func:{C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php:444}</a>
@@ -118,60 +119,97 @@
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>11</td>
-    <td bgcolor='#eeeeec' align='center'>0.5021</td>
-    <td bgcolor='#eeeeec' align='right'>5241120</td>
-    <td bgcolor='#eeeeec'>Application\Controller\ItemController->onDispatch( ??? )</td>
+    <td bgcolor='#eeeeec' align='center'>0.3742</td>
+    <td bgcolor='#eeeeec' align='right'>5227432</td>
+    <td bgcolor='#eeeeec'>Application\Controller\SpotController->onDispatch( ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php'
         bgcolor='#eeeeec'>...\EventManager.php<b>:</b>444
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>12</td>
-    <td bgcolor='#eeeeec' align='center'>0.5024</td>
-    <td bgcolor='#eeeeec' align='right'>5241168</td>
-    <td bgcolor='#eeeeec'>Application\Controller\ItemController->addSrchConditionAction( )</td>
+    <td bgcolor='#eeeeec' align='center'>0.3743</td>
+    <td bgcolor='#eeeeec' align='right'>5227472</td>
+    <td bgcolor='#eeeeec'>Application\Controller\SpotController->addSpotAction( )</td>
     <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php'
         bgcolor='#eeeeec'>...\AbstractActionController.php<b>:</b>82
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>13</td>
-    <td bgcolor='#eeeeec' align='center'>0.5024</td>
-    <td bgcolor='#eeeeec' align='right'>5241248</td>
-    <td bgcolor='#eeeeec'>Application\Controller\ItemController->restApiAction( ???, ???, ??? )</td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\ItemController.php'
-        bgcolor='#eeeeec'>...\ItemController.php<b>:</b>241
+    <td bgcolor='#eeeeec' align='center'>0.3743</td>
+    <td bgcolor='#eeeeec' align='right'>5227552</td>
+    <td bgcolor='#eeeeec'>Application\Controller\SpotController->restApiAction( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\SpotController.php'
+        bgcolor='#eeeeec'>...\SpotController.php<b>:</b>117
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>14</td>
-    <td bgcolor='#eeeeec' align='center'>1.8550</td>
-    <td bgcolor='#eeeeec' align='right'>8648760</td>
-    <td bgcolor='#eeeeec'>Application\Model\Action\Item\AddSrchConditionAction->execute( ???, ???, ??? )</td>
+    <td bgcolor='#eeeeec' align='center'>1.4983</td>
+    <td bgcolor='#eeeeec' align='right'>8509320</td>
+    <td bgcolor='#eeeeec'>Application\Model\Action\Spot\AddSpotAction->execute( ???, ???, ??? )</td>
     <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Controller\BaseController.php'
         bgcolor='#eeeeec'>...\BaseController.php<b>:</b>96
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>15</td>
-    <td bgcolor='#eeeeec' align='center'>6.3104</td>
-    <td bgcolor='#eeeeec' align='right'>8651744</td>
-    <td bgcolor='#eeeeec'>Application\Model\Action\Item\AddSrchConditionAction->validateAndSetEntity( ???, ??? )</td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Item\AddSrchConditionAction.php'
-        bgcolor='#eeeeec'>...\AddSrchConditionAction.php<b>:</b>45
+    <td bgcolor='#eeeeec' align='center'>1.7030</td>
+    <td bgcolor='#eeeeec' align='right'>9063432</td>
+    <td bgcolor='#eeeeec'>Application\Model\Common\SpotProcess->executeAddSpot( ???, ???, ???, ???, ???, ???, ???, ???,
+        ???, ???, ???, ???, ???, ??? )
+    </td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Spot\AddSpotAction.php'
+        bgcolor='#eeeeec'>...\AddSpotAction.php<b>:</b>108
     </td>
 </tr>
 <tr>
     <td bgcolor='#eeeeec' align='center'>16</td>
-    <td bgcolor='#eeeeec' align='center'>6.3323</td>
-    <td bgcolor='#eeeeec' align='right'>8730312</td>
-    <td bgcolor='#eeeeec'>Application\Model\Action\Item\AddSrchConditionAction->ampersandGroupValidateAndSetEntity( ???,
-        ??? )
-    </td>
-    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Action\Item\AddSrchConditionAction.php'
-        bgcolor='#eeeeec'>...\AddSrchConditionAction.php<b>:</b>296
+    <td bgcolor='#eeeeec' align='center'>30.2147</td>
+    <td bgcolor='#eeeeec' align='right'>10018496</td>
+    <td bgcolor='#eeeeec'>Application\Model\Common\SpotProcess->addSpotData( ???, ???, ???, ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Common\SpotProcess.php'
+        bgcolor='#eeeeec'>...\SpotProcess.php<b>:</b>90
     </td>
 </tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>17</td>
+    <td bgcolor='#eeeeec' align='center'>30.3571</td>
+    <td bgcolor='#eeeeec' align='right'>10038128</td>
+    <td bgcolor='#eeeeec'>Table\Model\Table\SpotDataTable->insertNewData( ???, ???, ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Application\src\Application\Model\Common\SpotProcess.php'
+        bgcolor='#eeeeec'>...\SpotProcess.php<b>:</b>900
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>18</td>
+    <td bgcolor='#eeeeec' align='center'>30.3590</td>
+    <td bgcolor='#eeeeec' align='right'>10057760</td>
+    <td bgcolor='#eeeeec'>Zend\Db\TableGateway\TableGateway->insert( ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\module\Table\src\Table\Model\Table\SpotDataTable.php' bgcolor='#eeeeec'>
+        ...\SpotDataTable.php<b>:</b>260
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>19</td>
+    <td bgcolor='#eeeeec' align='center'>30.3592</td>
+    <td bgcolor='#eeeeec' align='right'>10058760</td>
+    <td bgcolor='#eeeeec'>Zend\Db\TableGateway\TableGateway->executeInsert( ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php'
+        bgcolor='#eeeeec'>...\AbstractTableGateway.php<b>:</b>263
+    </td>
+</tr>
+<tr>
+    <td bgcolor='#eeeeec' align='center'>20</td>
+    <td bgcolor='#eeeeec' align='center'>30.4903</td>
+    <td bgcolor='#eeeeec' align='right'>10061944</td>
+    <td bgcolor='#eeeeec'>Zend\Db\Adapter\Driver\Pdo\Statement->execute( ??? )</td>
+    <td title='C:\wamp64\www\sococa_git\web\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php'
+        bgcolor='#eeeeec'>...\AbstractTableGateway.php<b>:</b>307
+    </td>
+</tr>
+
 
 </body>
 </html>

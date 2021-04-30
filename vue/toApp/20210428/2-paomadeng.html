@@ -6,13 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VUE Test</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
 <div id="app">
     <input type="button" value="跑起来" @click="run">
     <input type="button" value="停下来" @click="stop">
-    <div>{{msg}}</div>
+    <div v-cloak>{{msg}}</div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -25,7 +31,8 @@
         },
         methods: {
 
-            change: function () {
+            // change: function () {
+            change() {
                 var firstchar = this.msg.substring(0, 1);
                 this.msg = this.msg.substring(1) + firstchar;
                 console.log("msg", this.msg);
