@@ -21,8 +21,6 @@
 
 <div id="app">
 
-    
-
     <span v-show="isShow" v-cloak>{{msg}}</span>
     <input v-model="msg" placeholder="edit me" v-if="isShow" :title="msg" :class="{inputClass:isShow}"
            @keyup.enter="onEnter($event,'mypara')">
