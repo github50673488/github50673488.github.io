@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <child :level=1>hello Vue</child>
+    <child :level=6>
+        <span slot="footer">span</span>
+        <p slot="header">header slot<span>span</span></p>
+    </child>
+</div>
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+<script>
+    Vue.component('child', {
+        render: function (createElement) {
+            return createElement('h' + this.level, {
+                    'class': {
+                        foo: true,
+                        bar: true
+                    },
+                    style: {
+                        color: "blue"
+                    },
+                    attrs: {
+                        id: 'foo',
+                        'data-id': 'bar'
+                    },
+                    domProps: {
+                        //
+                    },
+                    on: {
+                        click: this.clickit
+                    },
+                },
+                [this.$slots.default]
+            )
+        },
+        template: '<div v-if="level===1"><slot></slot></div>',
+        props: {
+            level: {
+                type: Number,
+                required: true
+            }
+        },
+        methods: {
+            clickit: function () {
+                console.log('click')
+            }
+        }
+    })
+    new Vue({
+        el: "#app"
+    })
+</script>
+</body>
+
+</html>

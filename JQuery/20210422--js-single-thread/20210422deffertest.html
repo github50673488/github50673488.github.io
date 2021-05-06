@@ -24,23 +24,23 @@
         function AjaxRequest3_sec() {
             console.log("AjaxRequest3_sec");
 
-            //f return $.ajax("http://localhost/phptest/3sec.php");// 正确的写法
+            return $.ajax("http://localhost/phptest/3sec.php");// 正确的写法
 
-            var defer = $.Deferred();// // 错误的写法 应该jquery的ajax内部已经写好
-            $.ajax({
-                url: "http://localhost/phptest/3sec.php"
-                , success: function (data) {
-                    if (!data.result) {
-                        defer.reject(null, 'error', data);// 错误的写法 应该jquery的ajax内部已经写好
-                    } else {
-                        defer.resolve(data);// // 错误的写法 应该jquery的ajax内部已经写好
-                    }
-                }
-                , error: function (jqXHR, textStatus, errorThrown) {
-                    defer.reject(jqXHR, textStatus, errorThrown);
-                }
-            });
-            return defer.promise();// // 错误的写法 应该jquery的ajax内部已经写好
+            // var defer = $.Deferred();// // 错误的写法 应该jquery的ajax内部已经写好
+            // $.ajax({
+            //     url: "http://localhost/phptest/3sec.php"
+            //     , success: function (data) {
+            //         if (!data.result) {
+            //             defer.reject(null, 'error', data);// 错误的写法 应该jquery的ajax内部已经写好
+            //         } else {
+            //             defer.resolve(data);// // 错误的写法 应该jquery的ajax内部已经写好
+            //         }
+            //     }
+            //     , error: function (jqXHR, textStatus, errorThrown) {i
+            //         defer.reject(jqXHR, textStatus, errorThrown);
+            //     }
+            // });
+            // return defer.promise();// // 错误的写法 应该jquery的ajax内部已经写好
 
 
             //         <?php
@@ -73,13 +73,8 @@
         }
 
         $.when(wait_1_sec(), AjaxRequest3_sec(), AjaxRequest10_sec())
-            .then(function () {
-                callback2("parafor2")
-            })
-            .then(function () {
-                callback1("parafor1")
-            });
-
+            .then(() => callback2("parafor2"))
+            .then(() => callback1("parafor1"));
     })
 
 </script>
