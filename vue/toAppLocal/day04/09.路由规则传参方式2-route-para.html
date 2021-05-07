@@ -14,7 +14,7 @@
   <div id="app">
 
     <!-- 如果在路由中，使用 查询字符串，给路由传递参数，则 不需要修改 路由规则的 path 属性 -->
-    <router-link to="/login?id=10&name=zs">登录</router-link>
+    <router-link to="/login/12/ls">登录</router-link>
     <router-link to="/register">注册</router-link>
 
     <router-view></router-view>
@@ -24,15 +24,15 @@
   <script>
 
     var login = {
-      template: '<h1>登录 --- {{ $route.query.id }} --- {{ $route.query.name }}</h1>',
+      template: '<h1>登录 --- {{ $route.params.id }} --- {{ $route.params.name }}</h1>',
       data(){
         return {
           msg: '123'
         }
       },
       created(){ // 组件的生命周期钩子函数
-        // console.log(this.$route)
-        // console.log(this.$route.query.id)
+          console.log(this.$route)
+          console.log(this.$route.params.id)
       }
     }
 
@@ -42,8 +42,9 @@
 
     var router = new VueRouter({
       routes: [
-        { path: '/login', component: login },
-        { path: '/register', component: register }
+          {path: '/login/:id/:name', component: login},// 注意，如果浏览器 地址 只有 /login/12，是匹配不到这个路由而显示 login的！
+          // 用querystring 或者 para形式那种都可以，看喜欢
+          {path: '/register', component: register}
       ]
     })
 

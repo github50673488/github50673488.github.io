@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <mycom3></mycom3>
+    <!-- <login></login> -->
+  </div>
+
+
+  <div id="app2">
+    <mycom3></mycom3>
+    <login></login>
+  </div>
+
+  <!-- 在 被控制的 #app 外面,使用 template 元素,定义组件的HTML模板结构  -->
+  <template id="tmpl">
+    <div>
+      <h1>这是通过 template 元素,在外部定义的组件结构,这个方式,有代码的只能提示和高亮</h1>
+      <h4>好用,不错!</h4>
+    </div>
+  </template>
+
+  <template id="tmpl2">
+    <h1>这是私有的 login 组件</h1>
+  </template>
+
+  <script>
+      Vue.component('mycom3', {// 这里 mycom3 相当于 selector了
+          template: '#tmpl'
+      })
+
+      // 创建 Vue 实例，得到 ViewModel
+      var vm = new Vue({
+          el: '#app',
+          data: {},
+          methods: {}
+      });
+
+      var login = {// 注意，这里的 var login 中的login并不是选择器名字，选择器名字是下面 component中的属性 login
+          template: '#tmpl2'
+      }
+
+      var vm2 = new Vue({
+          el: '#app2',
+          data: {},
+          methods: {},
+          filters: {},
+          directives: {},
+          components: { // 定义实例内部私有组件的
+
+              // 方式1，直接写对象字面量（这时候不写外面的那个 var login）
+              // login: {// 这里 login 相当于 selector了
+              //     template: '#tmpl2'
+              // }
+
+
+              // 方式2，写外部的组件定义对象的变量名
+              //login: login
+
+              // 方式3，方式2可以简写成
+              login
+
+
+          },
+
+          beforeCreate() {
+          },
+          created() {
+          },
+          beforeMount() {
+          },
+          mounted() {
+          },
+          beforeUpdate() {
+          },
+          updated() {
+          },
+          beforeDestroy() {
+          },
+          destroyed() {
+          }
+      })
+  </script>
+</body>
+
+</html>

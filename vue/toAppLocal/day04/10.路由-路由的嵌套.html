@@ -50,14 +50,14 @@
         {
           path: '/account',
           component: account,
-          // 使用 children 属性，实现子路由，同时，子路由的 path 前面，不要带 / ，否则永远以根路径开始请求，这样不方便我们用户去理解URL地址
+          // 使用 children 属性，实现子路由，同时，子路由的 path 前面，不要带 /  ！！，否则永远以根路径开始请求，这样不方便我们用户去理解URL地址
           children: [
             { path: 'login', component: login },
             { path: 'register', component: register }
           ]
         }
-        // { path: '/account/login', component: login },
-        // { path: '/account/register', component: register }
+          // { path: '/account/login', component: login },// 这个是同级的，匹配的是div app的那个  <router-view> ， 显示login就不能显示 account了！
+          // { path: '/account/register', component: register }
       ]
     })
 
