@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const arr1 = [1, 2, 3, , 4]
+    
+    console.log("arr1", arr1);
+    const arr_reduce = arr1.reduce((a, b) => a * b, 2)// 后面的是多加一次迭代，对象是 2的意思
+    console.log("arr_reduce", arr_reduce)// expect  ((((1*2)*3)*4)  *2)= 48
+   
+</script>
+</body>
+</html>

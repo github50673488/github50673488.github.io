@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const array1 = [1, 2, 3, 4];
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    // 1 + 2 + 3 + 4
+    console.log(array1.reduce(reducer));
+    // expected output: 10
+
+    // 5 + 1 + 2 + 3 + 4
+    console.log(array1.reduce(reducer, 5));
+    // expected output: 15
+
+
+    // [0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array){
+    //     return accumulator + currentValue;
+    // });
+
+
+//     callback 被调用四次，每次调用的参数和返回值如下表：
+    //
+    // callback	accumulator	currentValue	currentIndex	array	return value
+    //     first call	0	1	1	[0, 1, 2, 3, 4]	1
+    //     second call	1	2	2	[0, 1, 2, 3, 4]	3
+    //     third call	3	3	3	[0, 1, 2, 3, 4]	6
+    //     fourth call	6	4	4	[0, 1, 2, 3, 4]	10
+
+</script>
+</body>
+</html>
