@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    // let tom = 'abc'
+    let foo = function () {
+        console.log('method ok')
+    }
+    foo()
+    console.log("foo", foo)
+    console.log("typeof foo", typeof foo);
+
+    sessionStorage.setItem('saved', foo)
+    let saved = sessionStorage.getItem('saved')
+    console.log("saved", saved)
+    console.log("typeof saved", typeof saved);
+
+    saved()
+
+</script>
+</body>
+</html>

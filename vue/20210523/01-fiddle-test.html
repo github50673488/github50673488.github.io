@@ -7,37 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VUE Test</title>
     <style>
-        .all {
-            height: 900px;
-        }
-
-        .top {
-            height: 100px;
-            background-color: #0f6674;
-        }
-
-        .middle {
-            height: calc(100% - 200px);
-            background-color: #033cad;
-        }
-
-        .bottom {
-            height: 200px;
-            background-color: #ad1103;
-        }
 
     </style>
 </head>
 <body>
 
 <div id="app">
-    <div class="all">
-        <div class="top"></div>
-        <div class="middle"></div>
-        <div class="bottom"></div>
-    </div>
-
-
+    <textArea ref="mytextarea" rows="30" cols="100" v-model="textval"></textArea>
+    <button ref="btnTest" @click="replace()">replace</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -45,16 +22,11 @@
     new Vue({
         el: "#app",
         data: {
-            todos: [
-                {text: "Learn JavaScript", done: false},
-                {text: "Learn Vue", done: false},
-                {text: "Play around in JSFiddle", done: true},
-                {text: "Build something awesome", done: true}
-            ]
+            textval: ''
         },
         methods: {
-            toggle: function (todo) {
-                todo.done = !todo.done
+            replace() {
+                this.textval = this.textval.replace(/\+/g, "").replace(/\👈/g, "").replace(/-/g, "");
             }
         }
     })
