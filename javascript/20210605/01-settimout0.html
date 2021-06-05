@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // setImmediate(function () {
+    //     console.log('1---------setImmediate------macro-task');
+    // }, 0);
+    setTimeout(function () {
+        console.log('2-------setTimeout----macro-task');
+    }, 0);
+    new Promise(function (resolve) {
+        console.log('3----------new promise');
+        resolve();
+        console.log('4------after resolve');
+    }).then(function () {
+        console.log('5----------then');
+    });
+    console.log('6-----in script');
+    // process.nextTick(function () {
+    //     console.log('7-------------nextTick');
+    // });
+    console.log('8------------script end');
+
+    // macro-task: script (整体代码)，setTimeout, setInterval, setImmediate, I/O, UI rendering.
+    // 注：此处的 I/O 是一个抽象的概念，并不是说一定指输入/输出，应该包括DOM事件的触发，例如click事件，mouseover事件等等。这是我的理解，如果有误，还请指出
+    // micro-task: process.nextTick, Promise(原生)，Object.observe(已废弃)，MutationObserver(监听DOM改变)
+
+    // 除了script整体代码，micro-task的任务优先级高于macro-task的任务优先级。
+    // 其中，script(整体代码) ，可以理解为待执行的所有代码。
+
+    // //输出结果是3 4 6 8  5 2
+</script>
+</body>
+</html>
