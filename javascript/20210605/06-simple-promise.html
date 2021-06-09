@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function delay() {
+        return new Promise(function (resolve, reject) {
+            console.log('resolve -->', resolve)
+            setTimeout(function () {
+                resolve('我是傳下去的值');
+            }, 10000);
+        });
+    }
+
+    delay().then(function (value) {
+        console.log(value);    // '我是傳下去的值'
+    }).catch(function (error) {
+        console.log(error);
+    });
+</script>
+</body>
+</html>
