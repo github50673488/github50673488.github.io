@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE Test</title>
+
+</head>
+<body>
+<!--需求，输出1,2,3......10 , 每隔一秒在界面上追加输出-->
+<div id="app">
+    <span>{{msg}}</span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            msg: ''
+        },
+        methods: {},
+        mounted() {
+            // setTimeOut不用 clear 也很方便
+            // for (let counter = 1; counter <= 10; counter++) { // 在这里要用 let，如果用var 那么会输出一堆 11
+            //     setTimeout(() => {
+            //         this.msg += counter + ' '
+            //     }, counter * 1000)
+            // }
+
+            for (var counter = 1; counter <= 10; counter++) { // 一定要用var的话，那就用闭包把 counter给存起来,还要传指针进闭包。。。。
+                (function (paraCounter, that) {
+                    setTimeout(() => {
+                        that.msg += paraCounter + ' '
+                    }, paraCounter * 1000)
+                })(counter, this)
+            }
+
+
+        }
+    })
+</script>
+</body>
+</html>
+
+

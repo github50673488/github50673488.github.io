@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE Test</title>
+
+</head>
+<body>
+<!--需求，输出1,2,3......10 , 每隔一秒在界面上追加输出-->
+<div id="app">
+    <span>{{msg}}</span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '',
+            timer: 0,
+            counter: 0
+        },
+        methods: {},
+        mounted() {
+            this.timer = setInterval(() => {
+                this.counter++
+                if (this.counter >= 10) {
+                    clearInterval(this.timer)
+                }
+                this.msg += this.counter + ' '
+            }, 1000)
+        },
+        destroyed() {
+            if (timer)
+                clearInterval(timer)
+        }
+    })
+</script>
+</body>
+</html>
+
+
