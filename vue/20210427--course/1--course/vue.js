@@ -7642,7 +7642,7 @@
       } else if (
         // skip the update if old and new VDOM state is the same.
         // `value` is handled separately because the DOM value may be temporarily
-        // out of sync with VDOM state due to focus, composition and modifiers.
+        // out of async with VDOM state due to focus, composition and modifiers.
         // This  #4521 by skipping the unnecesarry `checked` update.
         cur !== oldProps[key]
       ) {
@@ -8492,7 +8492,7 @@
       if (vnode.tag === 'select') {
         setSelected(el, binding, vnode.context);
         // in case the options rendered by v-for have changed,
-        // it's possible that the value is out-of-sync with the rendered options.
+        // it's possible that the value is out-of-async with the rendered options.
         // detect such cases and filter out values that no longer has a matching
         // option in the DOM.
         var prevOptions = el._vOptions;

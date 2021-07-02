@@ -7803,7 +7803,7 @@ var directive = {
     if (vnode.tag === 'select') {
       setSelected(el, binding, vnode.context);
       // in case the options rendered by v-for have changed,
-      // it's possible that the value is out-of-sync with the rendered options.
+      // it's possible that the value is out-of-async with the rendered options.
       // detect such cases and filter out values that no longer has a matching
       // option in the DOM.
       var prevOptions = el._vOptions;

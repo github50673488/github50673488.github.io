@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout-is-single-thread</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    // 很显然，从下面的代码看出，js引擎并没有跑出一个线程,提供给settimeout定义的操作,由于主线程（UI线程）陷入死循环，settimeout定义的操作永远等着
+
+    // setTimeout(function () {
+    //     alert("i want to pop up after 1000d");
+    // }, 1000);
+    // while (true) {
+    //     //die loop
+    // }
+
+    // 所有在js中的“异步”操作，都是耗时操作加入事件循环，并在特定时机执行一个函数的模式。---伪异步
+
+    // 下面的代码只是展示如何用jq的defer来实现伪异步
+    var wait3s = function () {
+        var defer = $.Deferred();
+        setTimeout(
+            function () {
+                defer.resolve();
+            },
+            3000
+        );
+        return defer.promise();// // 错误的写法 应该jquery的ajax内部已经写好
+    }
+
+    $.when(wait3s())
+        .then(function () {
+            alert("i want to pop up after 3s");
+        })
+
+</script>
+</body>
+</html>
