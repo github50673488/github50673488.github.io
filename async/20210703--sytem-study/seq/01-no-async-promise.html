@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*弄清楚最基本的顺序*/
+    const dbupAsync1 = (sql) => {
+        return new Promise((resolve, reject) => {
+
+            console.log('1 -->')
+            resolve(sql + " .ok");
+
+        });
+    };
+    const dbupAsync2 = (sql) => {
+        return new Promise((resolve, reject) => {
+            console.log('3 -->')
+            setTimeout(() => {
+
+                console.log('6 -->')// 两秒后
+                resolve(sql + " .ok");
+            }, 2000);
+        });
+    };
+
+
+    console.log('0 -->',)
+    dbupAsync1('sql1').then(res => console.log('5 -->',))// 关于 5---，即使1 --> 之后马上resolve了，  5---并不会紧跟 1---
+
+    //因为 在本轮 事件循环 运行完成之前，回调函数是不会被调用的。 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises
+    // 换一句话说， 为了避免意外，即使是一个已经变成 resolve 状态的 Promise，传递给 then() 的函数也总是会被异步调用：
+    // 传递到 then() 中的函数被置入到一个微任务队列中，而不是立即执行，这意味着它是在 JavaScript 事件队列的所有运行时结束了，且事件队列被清空之后，才开始执行
+
+    console.log('2 -->')
+
+
+    dbupAsync2('sql2').then(res => console.log('7 -->'))
+    console.log('4 -->')
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 错误示例，包含 3 个问题！
+
+    // doSomething().then(function(result) {
+    //     doSomethingElse(result) // 没有返回 Promise 以及没有必要的嵌套 Promise
+    //         .then(newResult => doThirdThing(newResult));
+    // }).then(() => doFourthThing());
+    // 最后，是没有使用 catch 终止 Promise 调用链，可能导致没有捕获的异常
+
+    // doSomething()
+    //     .then(function(result) {
+    //         return doSomethingElse(result);
+    //     })
+    //     .then(newResult => doThirdThing(newResult))
+    //     .then(() => doFourthThing())
+    //     .catch(error => console.log(error));
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // 什么是Permise ， 对于 C#和 java 程序员来说，用 相当于 thread 来理解，会简单得多 (当然，在单线程的JS执行环境中，我知道他不是thread)，
+
+    // 定义个一个异步操作 (java ‘  抛一个线程 处理)
+    // function myAsync(somePara) {
+    // ... // use somePara //注意， new Permise后马上就开始执行定义的异步处理内容了
+
+    //     return new Permise((resolve, reject) => {
+    //     ...
+    //         resolve(successPara) // java: 线程处理正常结束
+    //     ...或者
+    //         reject(errPara)// java: 线程处理异常
+    //     })
+    //
+    //
+    // }
+
+    // 调用
+    // myAsync('./files/111.txt').then( function(successPara){ // use successPara  } ,function(errPara){  //use errPara } )
+
+    // then后面是回调，就是异步操作（java 线程结束 ）后要做的事情 ,可以有两个 对应着上面 的 resolve 和 reject
+</script>
+</body>
+</html>

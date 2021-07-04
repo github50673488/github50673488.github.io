@@ -736,7 +736,7 @@
     // stabilize the subscriber list first
     var subs = this.subs.slice();
     if (!config.async) {
-      // subs aren't sorted in scheduler if not running async
+      // subs aren't sorted in scheduler if not running async-await
       // we need to sort them now to make sure they fire in correct
       // order
       subs.sort(function (a, b) { return a.id - b.id; });
@@ -1862,7 +1862,7 @@
     try {
       res = args ? handler.apply(context, args) : handler.call(context);
       if (res && !res._isVue && isPromise(res) && !res._handled) {
-        res.catch(function (e) { return handleError(e, vm, info + " (Promise/async)"); });
+        res.catch(function (e) { return handleError(e, vm, info + " (Promise/async-await)"); });
         // issue #9511
         // avoid catch triggering multiple times when nested calls
         res._handled = true;
@@ -1916,7 +1916,7 @@
     }
   }
 
-  // Here we have async deferring wrappers using microtasks.
+  // Here we have async-await deferring wrappers using microtasks.
   // In 2.5 we used (macro) tasks (in combination with microtasks).
   // However, it has subtle problems when state is changed right before repaint
   // (e.g. #6813, out-in transitions).
@@ -3191,7 +3191,7 @@
       Ctor = baseCtor.extend(Ctor);
     }
 
-    // if at this stage it's not a constructor or an async component factory,
+    // if at this stage it's not a constructor or an async-await component factory,
     // reject.
     if (typeof Ctor !== 'function') {
       {
@@ -3200,15 +3200,15 @@
       return
     }
 
-    // async component
+    // async-await component
     var asyncFactory;
     if (isUndef(Ctor.cid)) {
       asyncFactory = Ctor;
       Ctor = resolveAsyncComponent(asyncFactory, baseCtor);
       if (Ctor === undefined) {
-        // return a placeholder node for async component, which is rendered
+        // return a placeholder node for async-await component, which is rendered
         // as a comment node but preserves all the raw information for the node.
-        // the information will be used for async server-rendering and hydration.
+        // the information will be used for async-await server-rendering and hydration.
         return createAsyncPlaceholder(
           asyncFactory,
           data,
@@ -3661,7 +3661,7 @@
         // cache resolved
         factory.resolved = ensureCtor(res, baseCtor);
         // invoke callbacks only if this is not a synchronous resolve
-        // (async resolves are shimmed as synchronous during SSR)
+        // (async-await resolves are shimmed as synchronous during SSR)
         if (!sync) {
           forceRender(true);
         } else {
@@ -3671,7 +3671,7 @@
 
       var reject = once(function (reason) {
         warn(
-          "Failed to resolve async component: " + (String(factory)) +
+          "Failed to resolve async-await component: " + (String(factory)) +
           (reason ? ("\nReason: " + reason) : '')
         );
         if (isDef(factory.errorComp)) {
@@ -5470,7 +5470,7 @@
   };
 
   var isBooleanAttr = makeMap(
-    'allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,' +
+    'allowfullscreen,async-await,autofocus,autoplay,checked,compact,controls,declare,' +
     'default,defaultchecked,defaultmuted,defaultselected,defer,disabled,' +
     'enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,' +
     'muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,' +
@@ -7512,7 +7512,7 @@
     capture,
     passive
   ) {
-    // async edge case #6566: inner click event triggers patch, event handler
+    // async-await edge case #6566: inner click event triggers patch, event handler
     // attached to outer element during patch, and triggered again. This
     // happens because browsers fire microtask ticks between event propagation.
     // the solution is simple: we save the timestamp when a handler is attached,
@@ -7642,7 +7642,7 @@
       } else if (
         // skip the update if old and new VDOM state is the same.
         // `value` is handled separately because the DOM value may be temporarily
-        // out of async with VDOM state due to focus, composition and modifiers.
+        // out of async-await with VDOM state due to focus, composition and modifiers.
         // This  #4521 by skipping the unnecesarry `checked` update.
         cur !== oldProps[key]
       ) {
@@ -8492,7 +8492,7 @@
       if (vnode.tag === 'select') {
         setSelected(el, binding, vnode.context);
         // in case the options rendered by v-for have changed,
-        // it's possible that the value is out-of-async with the rendered options.
+        // it's possible that the value is out-of-async-await with the rendered options.
         // detect such cases and filter out values that no longer has a matching
         // option in the DOM.
         var prevOptions = el._vOptions;

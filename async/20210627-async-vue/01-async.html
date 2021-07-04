@@ -27,12 +27,12 @@
             items: [],
         },
         methods: {
-            dbupd(sql, callback) {
-                setTimeout(() => {
-                    this.items.push({msg: sql + "...耗时2秒"});
-                    callback(sql + " ok!");
-                }, 2000);
-            },
+            // dbupd(sql, callback) {
+            //     setTimeout(() => {
+            //         this.items.push({msg: sql + "...耗时2秒"});
+            //         callback(sql + " ok!");
+            //     }, 2000);
+            // },
             dbupAsync(sql) {
                 return new Promise((resolve, reject) => {
                     setTimeout(() => {

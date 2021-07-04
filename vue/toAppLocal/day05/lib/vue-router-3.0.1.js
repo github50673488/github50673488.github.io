@@ -1741,8 +1741,8 @@ function resolveAsyncComponents (matched) {
 
     flatMapComponents(matched, function (def, _, match, key) {
       // if it's a function and doesn't have cid attached,
-      // assume it's an async component resolve function.
-      // we are not using Vue's default async resolving mechanism because
+      // assume it's an async-await component resolve function.
+      // we are not using Vue's default async-await resolving mechanism because
       // we want to halt the navigation until the incoming component has been
       // resolved.
       if (typeof def === 'function' && def.cid === undefined) {
@@ -1753,7 +1753,7 @@ function resolveAsyncComponents (matched) {
           if (isESModule(resolvedDef)) {
             resolvedDef = resolvedDef.default;
           }
-          // save resolved on async factory in case it's used elsewhere
+          // save resolved on async-await factory in case it's used elsewhere
           def.resolved = typeof resolvedDef === 'function'
             ? resolvedDef
             : _Vue.extend(resolvedDef);
@@ -1765,7 +1765,7 @@ function resolveAsyncComponents (matched) {
         });
 
         var reject = once(function (reason) {
-          var msg = "Failed to resolve async component " + key + ": " + reason;
+          var msg = "Failed to resolve async-await component " + key + ": " + reason;
           "development" !== 'production' && warn(false, msg);
           if (!error) {
             error = isError(reason)
@@ -1936,7 +1936,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     extractUpdateHooks(updated),
     // in-config enter guards
     activated.map(function (m) { return m.beforeEnter; }),
-    // async components
+    // async-await components
     resolveAsyncComponents(activated)
   );
 
@@ -1978,7 +1978,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
   runQueue(queue, iterator, function () {
     var postEnterCbs = [];
     var isValid = function () { return this$1.current === route; };
-    // wait until async components are resolved before
+    // wait until async-await components are resolved before
     // extracting in-component enter guards
     var enterGuards = extractEnterGuards(activated, postEnterCbs, isValid);
     var queue = enterGuards.concat(this$1.router.resolveHooks);
@@ -2157,7 +2157,7 @@ var HTML5History = (function (History$$1) {
       var current = this$1.current;
 
       // Avoiding first `popstate` event dispatched in some browsers but first
-      // history route not updated since async guard at the same time.
+      // history route not updated since async-await guard at the same time.
       var location = getLocation(this$1.base);
       if (this$1.current === START && location === initLocation) {
         return

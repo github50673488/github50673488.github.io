@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises
+    // Catch 的后续链式操作
+    // 有可能会在一个回调失败之后继续使用链式操作，即，使用一个 catch，这对于在链式操作中抛出一个失败之后，再次进行新的操作会很有用。请阅读下面的例子：
+    new Promise((resolve, reject) => {
+        console.log('初始化');
+
+        resolve();
+    })
+        .then(() => {
+            throw new Error('有哪里不对了');
+
+            console.log('执行「这个」”');
+        })
+        .catch(() => {
+            console.log('执行「那个」');
+        })
+        .then(() => {
+            console.log('执行「这个」，无论前面发生了什么');
+        });
+
+//     输出结果如下：
+    //
+    // 初始化
+    //     执行“那个”
+    // 执行“这个”，无论前面发生了什么
+</script>
+</body>
+</html>

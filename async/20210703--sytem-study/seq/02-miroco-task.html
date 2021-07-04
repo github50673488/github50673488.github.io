@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //https://shiguanghai.top/blogs/%E5%A4%A7%E5%89%8D%E7%AB%AF/JavaScript%20%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90/JavaScript%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B.html#promise%E6%89%A7%E8%A1%8C%E6%97%B6%E5%BA%8F
+
+    // 微任务
+
+    console.log('global start')
+
+    // setTimeout 的回调是 宏任务，进入回调队列排队
+    setTimeout(() => {
+        console.log('setTimeout')
+    }, 0)
+
+    // Promise 的回调是 微任务，本轮调用末尾直接执行
+    Promise.resolve()
+        .then(() => {
+            console.log('promise')
+        })
+        .then(() => {
+            console.log('promise 2')
+        })
+        .then(() => {
+            console.log('promise 3')
+        })
+
+    console.log('global end')
+
+
+    // 宏任务/微任务
+    // 回调队列中的任务称之为宏任务执行过程中可以临时加上一些额外需求，对于这些需求，可以选择作为一个新的宏任务进到队列中排队。例如：setTimeout
+    // 也可以做为当前任务的微任务直接在当前任务执行过后立即执行，而不是到整个队伍的末尾去重新排队。例如：Promise
+    // #微任务的目的
+    // 提高整体的响应能力
+    // Promise & MutationObserver & node中的process.nextTick
+</script>
+</body>
+</html>

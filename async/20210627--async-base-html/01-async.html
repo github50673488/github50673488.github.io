@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log("开始... ");
+
+
+    //     当 Promise 被拒绝时，会有下文所述的两个事件之一被派发到全局作用域（通常而言，就是window；如果是在 web worker 中使用的话，就是 Worker 或者其他 worker-based 接口）。这两个事件如下所示：
+    // rejectionhandled
+    //     当 Promise 被拒绝、并且在 reject 函数处理该 rejection 之后会派发此事件。
+    // unhandledrejection
+    //     当 Promise 被拒绝，但没有提供 reject 函数来处理该 rejection 时，会派发此事件。
+    // 以上两种情况中，PromiseRejectionEvent 事件都有两个属性，一个是 promise 属性，该属性指向被驳回的 Promise，另一个是 reason (en-US) 属性，该属性用来说明 Promise 被驳回的原因
+    window.addEventListener("unhandledrejection", event => {
+        /* 你可以在这里添加一些代码，以便检查
+           event.promise 中的 promise 和
+           event.reason 中的 rejection 原因 */
+        console.log('event.reason -->', event.reason)
+        event.preventDefault();// event 的 preventDefault() 方法是为了告诉 JavaScript 引擎当 Promise 被拒绝时不要执行默认操作，默认操作一般会包含把错误打印到控制台
+    }, false);
+
+    // 传统回调写法，容易回调地狱, 调用的时候，要把回调函数写入（有时候还要写两个 ok回调和err回调 ）也很难看
+    // const dbupd = (sql, callback, failcallback) => {
+    //     // let isOk = false // just for test
+    //     let isOk = true
+    //     setTimeout(() => {
+    //
+    //         console.log(sql + "...耗时2秒");
+    //         if (isOk) {
+    //             callback(sql + " ok!");
+    //         } else {
+    //             failcallback(sql + " NG!");
+    //         }
+    //     }, 2000);
+    // };
+    // dbupd("1.sql", (result) => {// 成功回调，后面又要调。。。就回调地狱了
+    //         console.log(result);
+    //         dbupd("2.sql", (result) => {
+    //             console.log(result);
+    //             dbupd("3.sql", (result) => {
+    //                 console.log(result);
+    //             });
+    //         });
+    //     },
+    //     (err) => {// 失败回调
+    //         console.log('err -->', err)
+    //     });
+
+
+    // 用Promise来定义异步内容的函数，调用的时候很干净，不用写回调函数，还可以写成链式调用甚至和同步一样的 async-await await
+    const dbupAsync = (sql) => {
+        let isOk = true // just for test
+        // let isOk = false
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(sql + "...耗时2秒.");
+                if (isOk) {
+                    resolve(sql + " ok!");
+                } else {
+                    reject(sql + " NG!");
+                }
+            }, 2000);
+        });
+    };
+
+
+    // 调用写法A---- then
+
+    // dbupAsync("1.sql")
+    //     .then((result) => {
+    //         console.log(result);
+    //         return dbupAsync("2.sql");
+    //         // 注意，后面还有then的话，一定 return 返回值，有时候你看到 没有返回值后面也能then的错觉，其实是语法不熟而已 ，如
+    //         // .then(result => doSomethingElse(result))
+    //         //         .then(newResult => doThirdThing(newResult))
+    //         //     上面的代码其实也是有返回值的注意了
+    //     })
+    //     .then((result) => {
+    //         console.log(result);
+    //         return dbupAsync("3.sql");
+    //     })
+    //
+    //     .then((result) => {
+    //         console.log(result);
+    //     })
+    //     .catch((err) => console.log(err + "!"))
+
+    // 一遇到异常抛出，浏览器就会顺着 Promise 链寻找下一个 onRejected 失败回调函数或者由 .catch() 指定的回调函数
+    // !! catch(failureCallback) 是 then(null, failureCallback) 的缩略形式
+    // 如果发生异常也没有上面的cathe ，那么就要靠 unhandledrejection 来处理
+
+
+    // 写法B -----代码更加简洁的async/await， ,在这个 例子中由于是需要处理由多个 Promise 组成的 then 链，用  async await会让代码清晰很多，很舒服，几乎和同步是一样的。
+    // 如果只是一个 promise，用 then反而清晰
+    (async () => {
+        try {// await 命令后面的 Promise 对象，运行结果可能是 rejected，所以最好把 await 命令放在 try...catch 代码块中
+            console.log(await dbupAsync("1.sql"));
+            console.log(await dbupAsync("2.sql"));
+            console.log(await dbupAsync("3.sql"));
+        } catch (e) {
+            console.log(e + "!")
+        }
+    })();
+
+    // 如果需要抽出result来干其他活甚至是传给另外的异步函数，那就基本上更应该用 async-await了， 用 比 then清晰太多了！！！
+    // 因为 Promise方案 有死穴—— 参数传递太麻烦了，看着就晕
+    // (async () => {
+    //     const result1 = await dbupAsync("1.sql");
+    //     console.log(result1);
+    //     const result2 = await dbupAsync("2.sql");
+    //     console.log(result2);
+    //     const result3 = await dbupAsync(result2); // 这里和上面不同特别的吧上一个异步操作的结果给了下一个异步操作
+    //     console.log(result3);
+    // })();
+
+    console.log("异步定义结束，下面他们开始干活了... ");
+</script>
+</body>
+</html>

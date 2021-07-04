@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async getPhotoInfo() {
-      // 当调用一个异步的方法，同时，这个异步方法的返回值是 Promise 对象的时候，才可以使用 await 和 async
+      // 当调用一个异步的方法，同时，这个异步方法的返回值是 Promise 对象的时候，才可以使用 await 和 async-await
       const { data } = await this.$http.get("/api/getimageInfo/" + this.id);
       if (data.status === 0) return (this.photoinfo = data.message[0]);
     },

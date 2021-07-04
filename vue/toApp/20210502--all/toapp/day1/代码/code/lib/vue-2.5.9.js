@@ -1723,7 +1723,7 @@ function flushCallbacks () {
   }
 }
 
-// Here we have async deferring wrappers using both micro and macro tasks.
+// Here we have async-await deferring wrappers using both micro and macro tasks.
 // In < 2.4 we used micro tasks everywhere, but there are some scenarios where
 // micro tasks have too high a priority and fires in between supposedly
 // sequential events (e.g. #4521, #6690) or even between bubbling of the same
@@ -2282,7 +2282,7 @@ function resolveAsyncComponent (
       // cache resolved
       factory.resolved = ensureCtor(res, baseCtor);
       // invoke callbacks only if this is not a synchronous resolve
-      // (async resolves are shimmed as synchronous during SSR)
+      // (async-await resolves are shimmed as synchronous during SSR)
       if (!sync) {
         forceRender();
       }
@@ -2290,7 +2290,7 @@ function resolveAsyncComponent (
 
     var reject = once(function (reason) {
       "development" !== 'production' && warn(
-        "Failed to resolve async component: " + (String(factory)) +
+        "Failed to resolve async-await component: " + (String(factory)) +
         (reason ? ("\nReason: " + reason) : '')
       );
       if (isDef(factory.errorComp)) {
@@ -4098,7 +4098,7 @@ function createComponent (
     Ctor = baseCtor.extend(Ctor);
   }
 
-  // if at this stage it's not a constructor or an async component factory,
+  // if at this stage it's not a constructor or an async-await component factory,
   // reject.
   if (typeof Ctor !== 'function') {
     {
@@ -4107,15 +4107,15 @@ function createComponent (
     return
   }
 
-  // async component
+  // async-await component
   var asyncFactory;
   if (isUndef(Ctor.cid)) {
     asyncFactory = Ctor;
     Ctor = resolveAsyncComponent(asyncFactory, baseCtor, context);
     if (Ctor === undefined) {
-      // return a placeholder node for async component, which is rendered
+      // return a placeholder node for async-await component, which is rendered
       // as a comment node but preserves all the raw information for the node.
-      // the information will be used for async server-rendering and hydration.
+      // the information will be used for async-await server-rendering and hydration.
       return createAsyncPlaceholder(
         asyncFactory,
         data,
@@ -4994,7 +4994,7 @@ var mustUseProp = function (tag, type, attr) {
 var isEnumeratedAttr = makeMap('contenteditable,draggable,spellcheck');
 
 var isBooleanAttr = makeMap(
-  'allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,' +
+  'allowfullscreen,async-await,autofocus,autoplay,checked,compact,controls,declare,' +
   'default,defaultchecked,defaultmuted,defaultselected,defer,disabled,' +
   'enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,' +
   'muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,' +
@@ -7803,7 +7803,7 @@ var directive = {
     if (vnode.tag === 'select') {
       setSelected(el, binding, vnode.context);
       // in case the options rendered by v-for have changed,
-      // it's possible that the value is out-of-async with the rendered options.
+      // it's possible that the value is out-of-async-await with the rendered options.
       // detect such cases and filter out values that no longer has a matching
       // option in the DOM.
       var prevOptions = el._vOptions;

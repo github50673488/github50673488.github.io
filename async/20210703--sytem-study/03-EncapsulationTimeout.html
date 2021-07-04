@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 详细的说明 https://segmentfault.com/a/1190000007535316
+
+
+    // 旧式回调代码
+    // setTimeout(() => console.log('"2 seconds passed" -->'), 2000);
+
+    // 定义异步函数 wait，参数毫秒数 , new Promise 表示这是一个异步操作
+    // 我试图 new Promise(resolve => setTimeout(resolve(ms), ms)) 失败了，因为 setTimeout的第一个个参数必须是一个没有返回值的函数？？
+    const wait = ms =>
+        new Promise(resolve => setTimeout(resolve, ms)) // wait 的意思 就是 一个 myTimeoutEncaption 的意思
+    // 研究了很久，虽然我知道 Promise.resolve(x) 可以看作是 new Promise(resolve => resolve(x)) 的简写
+    //  但是不知道 上面的如何用 Promise.resolve(x) 来简写
+    // 上面的函数定义 没有申明为 async。 wait 这个函数 本身就是返回的 Promise 对象，加不加 async 结果都一样，加也可以，声明一下这个是异步
+
+
+    // then 用法
+    wait(2000).then(() => console.log('2000 seconds passed -->')).catch(err => console.log('err -->', err))
+
+
+    // async 函数用法
+    // const asyFn = async (time) => {  // async 表示函数里有异步操作
+    //     try {
+    //         await wait(time)  //await 表示紧跟在后面的表达式需要等待结果
+    //         console.log(time + ' seconds passed -->')
+    //     } catch (e) {
+    //         console.log('e -->', e)
+    //     }
+    // }
+    // asyFn(2000)
+
+    // 又一个疑问产生了，这两段代码，两种方式对异步调用的处理（实际就是对 Promise 对象的处理）差别并不明显，甚至使用 async/await 还需要多写一些代码，那它的优势到底在哪
+    // 单一的 Promise 链并不能发现 async/await 的优势，但是，如果需要处理由多个 Promise 组成的 then 链的时候，优势就能体现出来了
+    // （很有意思，Promise 通过 then 链来解决多层回调的问题，现在又用 async/await 来进一步优化它）
+
+    //??? 下面的自执行函数不知道为什不行。可能被浏览器认为结束，回收了？
+    //         (async (time) => {
+    //             try {
+    //                 await wait(time)
+    //                 console.log(time + ' seconds passed -->')
+    //             } catch (e) {
+    //                 console.log('e -->', e)
+    //             }
+    //         })(2000)
+
+    //setTimeout(() => console.log(" 33"), 5000)
+
+
+</script>
+</body>
+</html>

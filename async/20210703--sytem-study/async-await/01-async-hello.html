@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Asynchronous/Async_await
+    // async function hello() {//// async 表示函数里有异步操作
+    //     return "Hello" // 如果在函数中 return 一个直接量，async 会把这个直接量通过 Promise.resolve() 封装成 Promise 对象
+    // };
+    const hello = async () => "Hello!!!"
+
+    // console.log('hello() -->', hello()) // 如果执行这句，我们会看到了返回值是一个 ·promise
+    // 哈。现在调用该函数会返回一个 promise。这是异步函数的特征之一 —— 它保证函数的返回值为 promise。
+
+    // 要实际使用promise完成时返回的值，我们可以使用.then()块
+    // hello().then((value) => console.log(value))
+
+    //甚至只是简写如
+    hello().then(console.log)
+
+
+    // 多余的说，上面的东西由于是直接resove，可以用
+    // Promise.resolve("Hello!!!").then(console.log)
+    // 代替上面的两个
+
+</script>
+</body>
+</html>
