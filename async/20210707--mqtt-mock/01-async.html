@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log("开始... ");
+
+    const dbupd = (sql, callback, failcallback) => {
+        // let isOk = false // just for test
+        let isOk = true
+        if (sql === '1.mqtt') {
+            isOk = false
+        }
+        setTimeout(() => {
+            console.log(sql + "...mqtt返回");
+            if (isOk) {
+                callback(sql + " ok!");
+            } else {
+                failcallback(sql + " NG!");
+            }
+        }, 3000);
+    };
+
+    // let waitCount = 0
+    // for (i = 0; i < 3; i++) {
+    //     waitCount++
+    //     dbupd(i + ".mqtt", (result) => {// 成功回调，后面又要调。。。就回调地狱了
+    //             waitCount--
+    //             console.log(result + ' save to DB')
+    //             if (waitCount === 0) {
+    //                 console.log('wait three call back ----- i want to response OK')
+    //             }
+    //         },
+    //         (err) => {// 失败回调
+    //             waitCount--
+    //             console.log('err -->', err + 'waitconnt' + waitCount)
+    //             if (waitCount === 0) {
+    //                 console.log('wait three call back ----- i want to response err')
+    //             }
+    //         });
+    // }
+
+
+    const dbupAsync = (sql) => {
+        let isOk = true
+        if (sql === '1.mqtt') {
+            isOk = false
+        }
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (isOk) {
+                    resolve(sql + " ok!");
+                } else {
+                    reject(sql + " NG!");
+                }
+            }, 1000);
+        });
+    };
+
+
+    // 调用写法A---- then
+
+    let promArr = []
+    for (i = 0; i < 3; i++) {
+        let p = dbupAsync(i + ".mqtt")
+
+        p.then((result) => {
+            console.log(result + "save db");
+        })
+            .catch((err) => {
+                console.log(err + "!")
+            })
+        promArr.push(p)
+    }
+    Promise.all(promArr)
+        .then(() => {
+            console.log("i can resonse");
+        })
+        .catch(reason => {
+            console.log(reason)
+        });
+
+    console.log("异步定义结束，下面他们开始干活了... ");
+</script>
+</body>
+</html>

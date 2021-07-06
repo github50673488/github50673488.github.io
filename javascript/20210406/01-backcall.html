@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function test(a, b, f1, f2, pf3) {
+        pf3(f1(b) + f2(a));
+    }
+
+    test(2, 3, a => a * a, b => b * b * b, c => console.log(c));
+</script>
+
+</body>
+</html>
