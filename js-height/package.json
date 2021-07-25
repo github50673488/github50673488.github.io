@@ -1,0 +1,15 @@
+{
+  "name": "js-height",
+  "version": "1.0.0",
+  "description": "js 进阶，20210725 开始 拉勾高薪训练营学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
