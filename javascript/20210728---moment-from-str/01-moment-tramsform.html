@@ -1,0 +1,40 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+<script>
+
+    // js Date对象的问题
+    //美国本地格式
+    var dateObj1 = new Date('1/1/2016');
+    //ISO 8601
+    var dateObj2 = new Date('2016-01-01');
+    console.log('Date.parse(dateObj1) -->', Date.parse(dateObj1));
+    console.log('Date.parse(dateObj2) -->', Date.parse(dateObj2));
+    console.log('Date.parse(dateObj1) === Date.parse(dateObj2)-->', Date.parse(dateObj1) === Date.parse(dateObj2)); // false 这就是原生js date的问题 ，明明同样的时间却因为字符串的格式问题被解释成了不同的时间，
+
+    // https://runebook.dev/zh-CN/docs/moment/guides/index
+    // 在Moment中,日期总是被解释为当地时间,除非您另外指定。这一点不会随着ES2015的采用而改变
+    const moment1Obj = moment('1/1/2016');
+    const moment2Obj = moment('2016-01-01');
+    console.log('moment1Obj.valueOf()=== moment2Obj.valueOf()-->', moment1Obj.valueOf() === moment2Obj.valueOf()); // true
+
+    console.log(' moment1Obj.format()-->', moment1Obj.format()) // same output:  moment1Obj.format()--> 2016-01-01T00:00:00+09:00
+    console.log(' moment2Obj.format()-->', moment2Obj.format())//  same output: moment2Obj.format()--> 2016-01-01T00:00:00+09:00
+
+</script>
+
+
+</body>
+</html>
