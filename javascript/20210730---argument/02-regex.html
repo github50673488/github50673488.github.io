@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log('', /^\d*$/.test('012345678912'))
+    console.log('', /\d{13}/.test('012345678912'))
+    console.log('', /\d{13}/.test('0123456789123'))
+
+    console.log('', /^$|\d{13}/.test(''))
+    console.log('', /^$|\^d{13}$/.test('0123456789123'))
+    console.log('14', /^$|^\d{13}$/.test('0123456789123'))
+
+    console.log('', /^$|\d{13}/.test('012345678912'))
+
+    console.log('--------------------')
+    console.log('', /^$|^\w+(,\w+)*$/.test(''))
+    console.log('', /^$|^\w+(,\w+)*$/.test('connected'))
+    console.log('', /^$|^\w+(,\w+)*$/.test('connected,'))
+    console.log('', /^$|^\w+(,\w+)*$/.test('connected,,'))
+    console.log('', /^$|^\w+(,\w+)*$/.test('connected,ddd'))
+    console.log('', /^$|^connected|disconnected(,connected|disconnected)*$/.test('connected,ddd'))
+
+
+    // connected,disconnected
+    // console.log('' ,/^\d*$/.test('123'))
+    //  ^\w+(,\w+)*$
+
+
+    // connected,disconnected
+    // console.log('' ,/^\d*$/.test('123'))
+    //  ^\w+(,\w+)*$
+
+    //   / / ----- 正则字面量
+    //   / /.test() --- 是否匹配
+    //   ^----- 匹配开始
+    //   $----- 匹配结束
+    //   ^$|----- 匹配可以为空
+    // \d--------数字
+    //   {13}  --------- 13次
+    //   *  -------------- 0 匹配前一个表达式 0 次或多次。等价于 {0,}。
+    // +------------------  匹配前面一个表达式 1 次或者多次。等价于 {1,}。
+    //   |  --------------
+</script>
+</body>
+</html>

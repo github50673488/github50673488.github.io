@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+    // 箭头函数
+    // 箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或new.target。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。
+
+
+    function fun1() {
+        // fun1  () => { 写成箭头函数不能用 arguments
+        console.log('arguments -->', arguments)
+    }
+
+    fun1(1, 'sdf', [4, 5])
+
+</script>
+
+</body>
+</html>

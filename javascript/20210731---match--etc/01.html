@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 感叹号是什么 https://blog.csdn.net/baidu_31333625/article/details/71215412?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.base&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.base
+    // !function execDemo() {
+    //     var r, re; // 声明变量。
+    //     var s = "The rain in Spain falls mainly in the plain";
+    //     re = /[\w]*(ai)n/ig;
+    //     r = re.exec(s);
+    //     document.write(r + "<br/>");
+    //     for (key in r) {
+    //         document.write(key + "-" + r[key] + "<br/>");
+    //     }
+    // }()f
+
+    // 还不如这个好理解
+    (() => {
+        var r, re; // 声明变量。
+        var s = "The rain in Spain falls mainly in the plain";
+        re = /[\w]*(ai)n/ig;
+        r = re.exec(s);
+        document.write(r + "<br/>");
+        for (key in r) {
+            document.write(key + "-" + r[key] + "<br/>");
+        }
+    })()
+
+
+</script>
+</body>
+</html>
