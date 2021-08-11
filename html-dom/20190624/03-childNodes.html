@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+        <style>
+			p:first-of-type{
+				color:indianred;
+			}
+		</style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+		<p id="p1">
+			aaaaaaaaa
+		</p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelector('#btn1').addEventListener('click', function () {
+				   //alert(document.querySelector("#p1").childNodes[0].nodeValue );
+				   alert(document.querySelector("#p1").innerHTML );
+				   
+                });
+            }
+            );
+        </script>
+        <!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+    </body>
+</html>

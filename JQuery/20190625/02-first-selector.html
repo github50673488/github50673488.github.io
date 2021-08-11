@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+		 /* ul li:first-child{
+			 background-color: hotpink;
+			 
+		 } */
+		 background-color: yellow;
+		</style>
+	</head>
+	<body>
+		<div><button id="btn1">run</button></div>
+		<ul>
+			<li>ul_1 item 1</li>
+			<li>ul_1 item 2</li>
+			<li>ul_1 item 3</li>
+			<li>ul_1 item 4</li>
+			<li>ul_1 item 5</li>
+		</ul>
+		<ul>
+			<li>ul_2 item 1</li>
+			<li>ul_2 item 2</li>
+			<li>ul_2 item 3</li>
+			<li>ul_2 item 4</li>
+			<li>ul_2 item 5</li>
+		</ul>
+		<script>
+			$(function() {
+				$("#btn1").click(function() {
+					$("ul li:first")// CSS と同じではない
+					.css("background-color","hotpink");
+					
+					$("ul li:first-child")// CSSと同じ
+					.css("background-color","hotpink");
+					
+					$("ul li").first()//$("ul li:first") とは同じ
+					.css("background-color","hotpink");
+				});
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>

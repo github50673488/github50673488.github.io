@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" type="text/css" href="xxxx"/>-->
+		<style>
+			/* tr:nth-child(even){
+			   background-color: hotpink;	
+			} */
+		</style>
+	</head>
+	<body>
+		<div><button id="btn1">run</button></div>
+		<table border="1">
+			<tr>
+				<td>Row with Index #0</td>
+			</tr>
+			<tr>
+				<td>Row with Index #1</td>
+			</tr>
+
+			<tr>
+				<td>Row with Index #2</td>
+			</tr>
+			<tr>
+				<td>Row with Index #3</td>
+			</tr>
+		</table>
+
+		<script src="https://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			$(function() {
+				$("#btn1").click(function() {// jqueryのselectorとCSSのselectorは完璧同じではない!!
+					//$("tr:even").css("background-color","hotpink");//推薦ではないコード
+					$("tr:nth-child(odd)").css("background-color","hotpink");//このコードが推薦です
+					
+				});
+			});
+		</script>
+		<!-- <script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script> or <script data-main="../../js/script/main.js" src="../../js/lib/require.js"></script>-->
+	</body>
+</html>

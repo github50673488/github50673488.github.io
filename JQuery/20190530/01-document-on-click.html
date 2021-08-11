@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel=”stylesheet“ type="text/css" href="文件路径"/>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            function afterWinLoad()
+            {
+                document.querySelector('#btn1').addEventListener('click', function () {
+                    console.info("test");
+                });
+                $('body').on('click', 'ul>li', function () {
+               //  document.querySelector('ul>li').addEventListener('click', function () {// 这个只得第一个！！ 而且要放在.append( 的后面。。不好用  
+                    console.log($(this).html());//结果如下： 动态添加的元素也能被点击触发函数。
+                });
+                $('ul').append('<li>5</li><li>6</li>');//动态的也可以触发函数
+            }
+            window.onload = afterWinLoad;//如果代码放入body的后面，可以不这么做
+
+        </script>
+        <style></style>
+    </head>
+    <body>
+        <div><button id="btn1">run</button></div>
+        <ul>
+         <!--   <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>-->
+        </ul>
+    </body>
+</html>
