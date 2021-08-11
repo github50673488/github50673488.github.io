@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+		/*设置div下的p标签为粉红色 ，不是div下的p不能有样式*/
+		/*设置类jianlin下的p标签为蓝色 ，不是div下的p不能有样式*/
+		 
+        </style>
+    </head>
+    <body>
+     <p>王者荣耀</p>
+     <div class="jianlin">
+     	<p>王思聪</p>
+     </div>
+     <div>
+     	<p>王宝强</p>
+     </div>
+
+    
+    </body>
+</html>

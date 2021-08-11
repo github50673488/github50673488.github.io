@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			@font-face {
+			  font-family: 'icomoon1';
+			  src:  url('fonts1/icomoon.eot?7l3cka');
+			  src:  url('fonts1/icomoon.eot?7l3cka#iefix') format('embedded-opentype'),
+			    url('fonts1/icomoon.ttf?7l3cka') format('truetype'),
+			    url('fonts1/icomoon.woff?7l3cka') format('woff'),
+			    url('fonts1/icomoon.svg?7l3cka#icomoon') format('svg');
+			  font-weight: normal;
+			  font-style: normal;
+			  font-display: block;
+			}
+
+			span {
+				font-family: "icomoon1";
+				/* 一定保证和上面的 font-family: 相同 */
+				font-size: 100px;
+				color: pink;
+			}
+
+			div::before {
+				font-family: "icomoon1";
+				/* 一定保证和上面的 font-family: 相同 */
+				font-size: 100px;
+				color: hotpink;
+				content: "\e91b";
+
+			}
+		</style>
+	</head>
+	<body>
+		<span></span>
+		<span></span>
+		<div></div>
+	</body>
+</html>

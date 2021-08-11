@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style1.css">
+
+
+    <!-- 这里引用了外部样式表 -->
+    <!-- 	说说外部样式表的好处，和不方便的地方 -->
+    <!-- 	把答案写在这里 -->
+</head>
+
+<body>
+    <div>外部样式表</div>
+</body>
+
+</html>

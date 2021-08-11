@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<style>
+		div {
+			color: #0000FF;
+			/* * 选择器优先级很低，其他的样式会盖掉他 */
+		}
+
+		* {
+			/* * 代表所有选择器 */
+			color: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 这个没有作业，理解上面的注释 -->
+	<p>我是段落</p>
+	<div>我是段落</div>
+	<span>我是段落</span>
+	<em>我是段落</em>
+	<strong>我是段落</strong>
+	<h1>我是段落</h1>
+</body>
+
+</html>

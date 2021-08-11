@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css"> 
+
+            .wrapper {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: 50px 500px 50px;
+            }
+            .header {
+                background-color: #99ff66;
+                grid-column: span 12;
+            }
+            .menu {
+                background-color: #663399;
+                grid-column: span 2;
+            }
+            .content {
+                background-color: #FFBB11;
+                grid-column: span 10;
+            }
+            .footer {
+                background-color: #FFBBAA;
+                grid-column: span 12;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">HEADER</div>
+            <div class="menu">MENU</div>
+            <div class="content">CONTENT</div>
+            <div class="footer">FOOTER</div>
+        </div>
+    </body>
+</html>
+
+
+

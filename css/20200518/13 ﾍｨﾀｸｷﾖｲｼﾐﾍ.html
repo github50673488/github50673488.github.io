@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;  /* 取消列表的默认样式小点 */
+		}
+		.top {
+			height: 60px;
+			background-color: #000; 
+			/* 通栏最好不写宽,不然padding影响 */
+		}
+		.banner {
+			width: 960px;
+			height: 400px;
+			background-color: skyblue;
+			margin: 20px auto;
+			border-radius: 15px;
+		}
+		.main {
+			width: 960px;
+			margin: 0 auto;
+			height: 210px;
+		}
+		.main ul li {
+			width: 230px;
+			height: 200px;
+			background-color: pink;
+			float: left;  /* 浮动的目的让多个块级li 一行显示 而且米有缝隙呦 */
+			margin-left: 10px;
+			margin-bottom: 10px;
+		}
+		.main .no-margin
+		{
+			margin-left: 0;
+		}
+		.main ul li:nth-child(even) {  /* even 偶数  个  odd  奇数 */
+			background-color: purple;
+		}
+		.footer {
+			height: 100px;
+			background-color: #000;
+			margin-top: 10px;
+		}
+        </style>
+    </head>
+    <body>
+	<div class="top">top</div>
+	<div class="banner">banner</div>
+	<div class="main">
+		<ul>
+			<li class="no-margin">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+	</div>
+	
+	<div class="main">
+		<ul>
+			<li class="no-margin">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+	</div>
+	
+	<div class="main">
+		<ul>
+			<li class="no-margin">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+	</div>
+	<div class="footer">footer</div>
+    </body>
+</html>

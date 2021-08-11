@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			p{
+			height: 30px;
+			line-height: 2em;
+			border: 1px solid red;
+			overflow: hidden;
+			position: relative;
+			}
+			p::after{
+				content: "...";
+				padding-left: 10px;
+				padding-right: 10px;
+				background-color: #fff;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>多行文本隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏多行文本溢出隐藏</p>
+	</body>
+</html>

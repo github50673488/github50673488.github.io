@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			label img {
+  margin: 3px;
+  padding: 8px;
+}
+
+.selection-group input[type="radio"] {
+  display: none;
+}
+
+.selection-group input[type="radio"]:checked + label img {
+  background: orange;
+}
+		</style>
+    </head>
+    <body>
+        <div class="selection-group">
+  <input id="a" type="radio" name="rate" value="a">
+  <label for="a">
+    <img src="//placehold.it/90x90">
+  </label>
+
+  <input id="b" type="radio" name="rate" value="b">
+  <label for="b">
+    <img src="//placehold.it/90x90">
+  </label>
+
+  <input id="c" type="radio" name="rate" value="c" checked>
+  <label for="c">
+    <img src="//placehold.it/90x90">
+  </label>
+</div>
+    </body>
+</html>

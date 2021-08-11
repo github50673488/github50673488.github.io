@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+		/* div {
+			color: red;
+		}
+		p {
+			color: red;
+		}
+		span {
+			color: red;
+		} */
+		
+		
+		/* div标签,p标签,span标签和类daye的样式都设置为蓝色,18字号,不可象上面那样子分开写 */
+		
+        </style>
+    </head>
+    <body>
+    <div>刘德华</div>
+    <p>张学友</p>
+    <span>郭富城</span>
+    <h1>凤姐</h1>
+    <h1>风哥</h1>
+    <h1 class="daye">凤大爷</h1>
+    </body>
+</html>

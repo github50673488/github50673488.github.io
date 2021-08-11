@@ -1,0 +1,38 @@
+html {
+	font-family: sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+header {
+	background: purple;
+	height: 100px;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+	line-height: 100px;
+	margin: 0;
+}
+
+
+
+/* Add your flexbox CSS below here */
+section {/* flex 容器（flex container） */
+  display: flex;/* 就这样一个简单的声明就给了我们所需要的一切—非常不可思议，对吧？ 我们的多列布局具有大小相等的列，并且列的高度都是一样。	 */
+ flex-direction: row-reverse;/* 但是每一行元素排列的方向和原来是相反的 */
+ 
+ /* flex-direction: column; *//* flex-direction 这样一个属性，它可以指定主轴的方向（弹性盒子子类放置的地方）— 它默认值是 row */
+ /* flex-direction: column-reverse; */   /* 反向排列 flex 项目(列) */
+}
+
+
+
+article { /* flex 项（flex item） */
+	padding: 10px;
+	margin: 10px;
+	background: aqua;
+}

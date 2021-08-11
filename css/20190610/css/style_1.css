@@ -1,0 +1,19 @@
+.bold {
+    font-weight: bold;
+}
+
+.pl10 {
+    padding-left: 10px;
+}
+
+.pl30 {
+    font-weight: bold;
+    padding-left: 30px;
+}
+h4{
+    line-height: 0.1;
+
+}
+.detail_discript{
+            display: block;
+        }

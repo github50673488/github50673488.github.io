@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        body {
+            background-color: #f3f5f7;
+        }
+
+        a {
+            color: #050505;
+            text-decoration: none;
+        }
+
+        input {
+            border: 0;
+            /* 所有的表单边框为0 */
+            box-sizing: border-box;
+            /* CSS3盒子模型 border 和 padding 都包含到 width 里面去 */
+        }
+
+        header {
+            height: 100px;
+
+            overflow: hidden;
+        }
+
+        nav {
+            width: 1366px;
+            height: 42px;
+            background-color: rgb(239, 240, 232);
+            margin: 26px auto;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .navbar {
+            float: left;
+            height: 42px;
+            line-height: 42px;
+            margin-left: 42px;
+        }
+
+        .navbar li {
+            float: left;
+
+        }
+
+        .navbar li a {
+            padding: 0 10px;
+
+            display: block;
+            height: 42px;
+        }
+
+        .navbar li a:hover {
+
+            border-bottom: 2px solid #00a4ff;
+        }
+
+        .search {
+            width: 410px;
+            height: 38px;
+            border: 1px solid #00a4ff;
+            float: left;
+
+        }
+
+        .search input[type=text] {
+            /* background-color: pink; */
+            width: 360px;
+            height: 38px;
+            padding-left: 20px;
+            float: left;
+        }
+
+        .search input[type=submit] {
+            width: 50px;
+            height: 38px;
+            float: left;
+            background: #00a4ff url(images/search_06.png) center no-repeat;
+        }
+
+        .banner {
+            height: 420px;
+            background-color: #1c036c;
+
+        }
+
+        .banner-in {
+            /* background-color: pink; */
+            height: 420px;
+            background: url(images/banner_03.png) 0 0 no-repeat;
+        }
+
+        .slidebar {
+            height: 420px;
+            width: 192px;
+            background-color: rgba(0, 0, 0, 0.4);
+
+        }
+
+        .slidebar li a {
+            color: #fff;
+            font-size: 14px;
+            padding: 0 20px;
+            display: block;
+            height: 45px;
+            line-height: 45px;
+        }
+
+        .slidebar a span {
+            float: right;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .slidebar a:hover {
+            color: #00a4ff;
+        }
+/* 		hr{
+			 background-color: yellow;
+			 height: 1px;
+			 border: 0;
+		} */
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- logo -->
+            <div class="logo clearfix">
+                <img src="images/logo_03.png" alt="">
+            </div>
+            <div class="navbar ">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">课程</a></li>
+                    <li><a href="#">职业规划</a></li>
+                </ul>
+            </div>
+            <!-- 搜索框部分 -->
+            <div class="search">
+
+                <input type="text" placeholder="请输入关键词" name="" id="">
+                <input type="submit" value="">
+
+            </div>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="banner-in container">
+            <div class="slidebar">
+                <ul>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                    <li><a href="#">前端开发 <span>></span></a></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

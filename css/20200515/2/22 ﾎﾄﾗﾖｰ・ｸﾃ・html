@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        h1 {
+            color: rgba(255, 0, 0, 0.5);
+        }
+
+        /* 设置h1颜色 255,0,0 ，透明度0.2*/
+    </style>
+</head>
+
+<body>
+    <h1>文字是可以半透明的</h1>
+</body>
+
+</html>

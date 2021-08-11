@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .top-bar {
+             background-color: rgb(51, 51, 51);
+        }
+        .top-center {
+            background-color: rgb(51, 51, 51);
+            height: 50px;
+            font-size: 20px;
+            color: white;
+            width: 960px;
+            margin: 0 auto;
+          display: flex;
+        }
+        
+        .top-center>div:first-child {
+            height: 50px;
+            line-height: 50px;
+            flex: 1;
+              
+        }
+        .top-center>div:nth-child(2){
+           width: 1px;
+              
+        }
+        
+        .top-center>div:last-child  {
+            text-align: right;
+           
+            height: 50px;
+            line-height: 25px;
+            flex: 1;
+           
+         
+        }
+        
+        a {
+            margin: 5px;
+            line-height: 25px;
+            font-size: 10px;
+            color: white;
+        }
+        
+        .nav {
+            background-color: rgb(102, 187, 51);
+            height: 200px;
+        }
+        
+        .footer {
+            height: 50px;
+            background-color: rgb(102, 102, 102);
+        }
+        /* 以下为中间的body布局 */
+        
+        .body {
+            flex: 1;
+            display: flex;
+        }
+        
+        .body-main {
+            flex: 1;
+            background-color: yellow;
+        }
+        
+        .body-left,
+        .body-right {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="top-bar">
+            <div class="top-center">
+
+                <div>logo</div>
+                <div></div>
+                <div><a href="">Github</a>
+                    <a href="">Register</a>
+                    <a href="">Login</a></div>
+
+
+            </div>
+            <div class="nav"></div>
+        </div>
+        <div class="body">
+            <div class="body-left">左边导航栏</div>
+            <div class="body-main">主内容，自动伸缩</div>
+            <div class="body-right">右边提示栏</div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

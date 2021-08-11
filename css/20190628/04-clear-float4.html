@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		div {
+			border: 1px solid #808080;
+		}
+		.father {
+			background-color: hotpink;
+		}
+		.clearfix:before,.clearfix:after
+		{
+			content: "";
+			display: table;
+		}
+		.clearfix:after{
+			clear:both;
+		}
+		.clearfix{
+			*zoom: 1;
+		}
+		
+		.father div:nth-child(1) {
+			width: 200px;
+			height: 100px;
+			background-color: skyblue;
+			overflow: hidden;
+			float: left;
+			}
+		.father div:nth-child(2) {
+			width: 200px;
+			height: 100px;
+			background-color: skyblue;
+			overflow: auto;
+			float: right;
+		}
+
+		.next {
+			height: 300px;
+			background-color: forestgreen;
+		}
+	</style>
+</head>
+<body>
+	<div class="father clearfix">
+		<div>用来撑开son1的内容用来撑开son1的内容用来撑开son1的内容用来撑开son1的内容用来撑开son1的内容用来撑开son1的内容用来撑开son1的内容用来撑开son1的内容</div>
+		<div>用来撑开son2的内容用来撑开son2的内容用来撑开son2的内容用来撑开son2的内容用来撑开son2的内容用来撑开son2的内容来撑开son2的内容用来撑</div>
+	</div>
+	
+	<div class="next">
+	</div>
+</body>
+</html>

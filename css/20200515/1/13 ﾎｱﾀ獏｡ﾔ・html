@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ds</title>
+  <style>
+    /* 未访问的链接 字号16，颜色灰色，粗体 */
+    a:link {
+      font-size: 16px;
+      color: gray;
+      font-weight: 700;
+
+    }
+
+
+    /* 已访问的链接 我们已经点击过一次的状态 ， 字号14，颜色橙色，粗体 */
+    a:visited {
+      font-size: 14px;
+      color: orange;
+      font-weight: 700;
+    }
+
+
+    /* 鼠标移动到链接上 颜色红色 字号16 ，粗体*/
+    a:hover {
+      color: red;
+      font-weight: 700;
+    }
+
+    /* 选定的链接 当我们点击别松开鼠标 显示的状态 颜色绿色 字号16 ，粗体*/
+    a:active {
+      font-weight: 700;
+      color: green;
+      font-size: 16px;
+    }
+
+
+    /* 附加题 吧链接的下划线去掉*/
+    a {
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  伪类选择器其中的 链接伪类选择器 主要针对于 a ，注意顺序！
+  <div>
+    <a href="#">秒杀 </a>
+
+    <a href="#">闪购 </a>
+  </div>
+</body>
+
+</html>

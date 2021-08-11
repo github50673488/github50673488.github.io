@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* 写类选择器tou ,红色 */
+        .tou {
+            color: red;
+
+        }
+
+        #big {
+            color: pink;
+        }
+
+        /* 写id选择器big 粉红色 */
+    </style>
+</head>
+
+<body>
+    <div id="big">熊大</div> <!-- 给这个div起id 为big -->
+    <div>熊二</div>
+    <div class="tou">光头强</div><!-- 给这个div起类名 为tou -->
+</body>
+
+</html>

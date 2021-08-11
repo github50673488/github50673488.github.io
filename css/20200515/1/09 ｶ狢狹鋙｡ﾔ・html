@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>d</title>
+	<meta charset="utf-8">
+	<style>
+		/* 写类样式 要求类名是 pink fontWeight font20 font14 */
+
+		.pink {
+			color: pink;
+		}
+
+		.font-weight {
+			font-weight: 700;
+		}
+
+		.font20 {
+			font-size: 20px;
+		}
+
+		.font14 {
+			font-size: 14px;
+		}
+
+		/* 写类样式 内容为 粉红色，粗体，字号20，字号14 */
+	</style>
+</head>
+
+<body>
+	<!--
+	根据效果图写代码，效果图见
+		https://www.evernote.com/l/AYd9hJWfrndEVaB8aAVbQqAbYWUhArQi1D8/
+
+
+		亚瑟 应用pink，fontWeight，font20
+		刘备 应用font20
+		安其拉 应用font14 pink
+		貂蝉 应用font14
+		-->
+	<div class="pink font-weight font20">亚瑟</div>
+	<div class="font20">刘备</div>
+	<div class="font14 pink">安其拉</div>
+	<div>貂蝉</div>
+
+</body>
+
+</html>

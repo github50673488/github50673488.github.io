@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>d</title>
+	<style>
+		/* 	选择所有的 奇数 的li孩子标签---蓝色 */
+
+		li:nth-child(2n+1) {
+			color: blue;
+		}
+
+
+		/* 选择所有的  偶数 的li孩子标签---红色 */
+		li:nth-child(2n) {
+			color: red;
+		}
+
+
+		/* 选第 3，6 li元素  绿色，不得直接只写写数字   */
+		li:nth-child(3n) {
+			color: green;
+		}
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li>第一个孩子</li>
+		<li>第二个孩子</li>
+		<li>第三个孩子</li>
+		<li>第四个孩子</li>
+		<li>第五个孩子</li>
+		<li>第六个孩子</li>
+		<li>第七个孩子</li>
+	</ul>
+</body>
+
+</html>

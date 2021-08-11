@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* 字间距 2像素 */
+
+        /*设置英文单词间距10像素  */
+
+        div {
+            letter-spacing: 12px;
+        }
+
+        p {
+            word-spacing: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div> 我是熊大 </div>
+    <p>my name is andy </p>
+</body>
+
+</html>

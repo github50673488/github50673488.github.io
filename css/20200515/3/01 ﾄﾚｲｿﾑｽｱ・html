@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/* type 类型  css 文本 */
+		div {
+			color: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<div>内部样式表</div>
+	<!-- 说说内部样式表的好处，坏处 -->
+	<!-- 	把答案写在这里 -->
+</body>
+
+</html>

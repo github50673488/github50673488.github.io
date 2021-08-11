@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>sd</title>
+    <meta charset="utf-8">
+    <style>
+        /* 声明mingren类样式 ，颜色为橙色 */
+        .mingren {
+            color: orange;
+        }
+
+        .zuozhu {
+            color: blue;
+        }
+
+
+        /* 声明mingren类样式 ，颜色为蓝色*/
+    </style>
+</head>
+
+<body>
+    <div class="mingren">鸣人</div> <!-- 给这个div标签起类名  mingren-->
+    <div class="zuozhu">佐助</div><!-- 给这个div标签起类名  zuozhu-->
+    <div>卡卡西</div>
+</body>
+<!-- 	整理全部代码 -->
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Flex 实现圣杯布局</title>
+		<style>
+			html,
+			body {
+			  display: flex;
+			  flex-direction: column;
+			  min-height: 600px;
+			  height: 100%;
+			  font-size: 28px;
+			  font-weight: bolder;
+			}
+			
+			header,
+			footer {
+			  height: 150px;
+			  background-color: #666;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  flex: none;
+			}
+			.content {
+				flex: 1;
+				display: flex;/* 高度自适应 */
+			}
+
+			nav,
+			aside {
+				background-color: #eb6f43;
+				flex: 0 1 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			main {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex: 1;
+				/* 宽度自适应 */
+				background-color: #d6d6d6;
+			}
+
+			nav {
+				order: -1;
+				/* 调整顺序在main前面 */
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			header
+		</header>
+
+		<div class="content">
+			<main>中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间1栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中1间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏</main>
+			<nav>nav</nav>
+			<aside>aside</aside>
+		</div>
+		<footer>
+			footer
+		</footer>
+	</body>
+
+</html>

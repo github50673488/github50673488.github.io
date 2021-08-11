@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #000;
+            background-image: url("./images/king.jpg");
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+
+        #topdiv {
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topdiv"></div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .simple {
+            width: 200px;
+            margin: 20px auto;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            /*box-sizing: content-box;*/
+            box-sizing: border-box;
+        }
+        
+        .elem {
+            border: solid #6AC5AC 3px;
+            position: relative;
+        }
+        
+        .fancy {
+            width: 200px;
+            margin: 20px auto;
+            padding: 50px;
+            border-width: 10px;
+            /*box-sizing: content-box;*/ 
+            box-sizing: border-box;/*用了这个的话盒子的width不是content的width，而是到border为止的width*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="simple elem">
+        <span class="label">&lt;div class="simple"&gt;</span>
+        <p>
+            我小一些...
+        </p>
+        <span class="endlabel">&lt;/div&gt;</span>
+    </div>
+    <p>
+        <div class="fancy elem">
+            <span class="label">&lt;div class="fancy"&gt;</span>
+            <p>
+                我比它大！除非是border-box
+            </p>
+            <span class="endlabel">&lt;/div&gt;</span>
+        </div>
+</body>
+
+</html>

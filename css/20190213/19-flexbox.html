@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+
+            body {
+                margin: 0;
+                padding: 0 0 1em 0;
+                font-size: 1em;
+                line-height: 1.5em;
+                color: #414142;
+                font-family: Arial;
+                background-color: #ededed;
+            }
+
+            div {
+                display: block;
+            }
+
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                /* box-sizing: border-box; */
+            }
+
+            .elem {
+                border: solid #6AC5AC 3px;
+                position: relative;
+            }
+
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+            .elem {
+                border: solid  #6AC5AC 3px;
+                position: relative;
+            }
+
+            .elem p {
+                padding: 0 1em;
+            }
+
+            .elem-inline .label, .elem-inline .endlabel {
+                position: static;
+            }
+
+            .label, .endlabel {
+                position: absolute;
+                background-color: #6AC5AC;
+                color: #414142;
+                line-height: 1em;
+            }
+
+            .label {
+                top: 0;
+                left: 0;
+                padding: 0 3px 3px 0;
+            }
+
+            .endlabel {
+                right: 0;
+                bottom: 0;
+                padding: 3px 0 0 3px;
+            }
+
+            .elem-green {
+                border: solid #FDC72F 3px;
+            }
+            .elem-green > .label, .elem-green > .endlabel{
+                background-color: #FDC72F;
+            }
+
+            .elem-red {
+                border: solid #D64078 3px;
+            }
+            .elem-red > .label, .elem-red > .endlabel{
+                color: white;
+                background-color: #D64078;
+            }
+
+            .elem-orange {
+                border: solid #96C02E 3px;
+            }
+            .elem-orange > .label, .elem-orange > .endlabel{
+                background-color: #96C02E;
+            }
+            header, hgroup, main, nav, section {
+                display: block;
+            }
+            .ipsum {
+                color: #734161;
+                background-color: #eee;
+            }
+
+
+            
+            
+            
+            
+            
+            
+            
+            .container {
+                display: -webkit-flex;
+                display: flex;
+            }
+
+
+            .initial {
+                -webkit-flex: initial;
+                flex: initial;
+                width: 200px;
+                min-width: 100px;
+            }
+            .none {
+                -webkit-flex: none;
+                flex: none;
+                width: 200px;
+            }
+            .flex1 {
+                -webkit-flex: 1;
+                flex: 1;/* flex
+这个属性是flex-grow，flex-shrink和flex-basis属性的速记写法（简写或缩写）。 除了其他值，它也可以设置为auto(即：1 1 auto)和none(即：0 0 auto)。 */
+            }
+            .flex2 {
+                -webkit-flex: 2;
+                flex: 2;
+            }
+            
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="container elem">
+
+            <section class="elem elem-green initial">
+                <span class="label">&lt;div class="initial"&gt;</span>
+                <p>
+                    空间足够的时候，我的宽度是200px，如果空间不足，我会变窄到100px，但不会再窄了。
+                </p>
+                <span class="endlabel">&lt;/div&gt;</span>
+            </section>
+
+            <section class="elem elem-green none">
+                <span class="label">&lt;div class="none"&gt;</span>
+                <p>
+                    无论窗口如何变化，我的宽度一直是200px。
+                </p>
+                <span class="endlabel">&lt;/div&gt;</span>
+            </section>
+
+            <section class="elem elem-green flex1">
+                <span class="label">&lt;div class="flex1"&gt;</span>
+                <p>
+                    我会占满剩余宽度的1/3。
+                </p>
+                <span class="endlabel">&lt;/div&gt;</span>
+            </section>
+
+            <section class="elem elem-green flex2">
+                <span class="label">&lt;div class="flex2"&gt;</span>
+                <p>
+                    我会占满剩余宽度的2/3。
+                </p>
+                <span class="endlabel">&lt;/div&gt;</span>
+            </section>
+
+        </div>
+    </body>
+</html>

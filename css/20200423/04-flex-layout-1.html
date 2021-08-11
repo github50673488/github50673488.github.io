@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Flex 实现圣杯布局</title>
+		<style>
+			.content {
+				display: flex;
+			}
+			.left,
+			.right {
+				background-color: red;
+				flex-grow: 0;
+				/* flex-shrink:1; */
+				flex-basis: 200px;
+			}
+ 
+			.main {
+				flex-grow: 1;/* 争夺剩余空间的比重 */
+			 	/* flex-shrink:1; *//* 子容器大于父容器的情况下的收缩比重  */
+				flex-basis: 0; /* 子容器的初始width */
+				background-color: skyblue;/* 宽度自适应 */
+			}
+			.left {
+				order: -1;/* 调整顺序在main前面 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			
+			
+		<div class="main">中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间1栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中1间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏中间栏</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+			
+			
+		</div>
+		
+	</body>
+
+</html>
