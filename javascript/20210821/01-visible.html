@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击显示非显示按钮，显示非显示dom</title>
+</head>
+<body>
+<p id="p1">文本2</p>
+<input id="btn_visible" type="button" value="visible">
+<input id="btn_invisible" type="button" value="invisible">
+
+<script>
+    document.querySelector("#btn_invisible").addEventListener("click", () => {
+        // document.querySelector("#p1").style.display = "none"; // 这个不会占有布局
+        document.querySelector("#p1").style.visibility = "hidden";
+    })
+    document.querySelector("#btn_visible").addEventListener("click", () => {
+        // document.querySelector("#p1").style.display = "block";
+        document.querySelector("#p1").style.visibility = "visible"
+    })
+</script>
+</body>
+</html>
