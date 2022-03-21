@@ -8,16 +8,16 @@
 <body>
 <form>
     <label>Name:</label>
-    <input name="name"/>
+    <input id="name"/>
     <fieldset>
         <label>Newsletter:</label>
-        <input name="newsletter"/>
+        <input id="newsletter"/>
     </fieldset>
 </form>
 <input name="none"/>
 <script>
     $(function () {
-        $("form input");
+        console.log(': $("form input")', $("form input"));
     });
 </script>
 </body>

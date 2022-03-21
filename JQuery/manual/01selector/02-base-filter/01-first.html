@@ -30,7 +30,20 @@
     <button id="btnTest">test</button>
     <script>
         $(function () {
-            $("#btnTest").click(function () {
+            $("#btnTest").on('click', function () {
+                // https://www.runoob.com/jquery/sel-first.html
+                //   定义和用法
+//                     :first
+//                 选择器选取第一个元素。
+//
+// 注意：这个选择器只用于选取单个元素。使用 :first - child
+//                 选择器选取多个元素（每个父元素一个）。
+//
+// 最常见的用法：与其他选择器一起使用，选取指定组合中的第一个元素（就像上面的实例）。
+//
+// 提示：如需选取指定组合中的最后一个元素，请使用 :last
+//                 选择器。
+
                 $("tr:first").css("font-style", "italic");
             });
         });

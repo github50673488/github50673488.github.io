@@ -11,7 +11,6 @@
     <input id="name" name="name"/>
     <fieldset>
         <label>Newsletter:</label>
-        
         <input id="newsletter" name="newsletter"/>
         <input id="newsletter2" name="newsletter2"/>
     </fieldset>
@@ -19,8 +18,8 @@
 <input name="none"/>
 <script>
     $(function () {
-        console.log($("label + input"));
-    });
+        console.log($("label + input"));// 相当于next()方法
+    })
 </script>
 </body>
 </html>

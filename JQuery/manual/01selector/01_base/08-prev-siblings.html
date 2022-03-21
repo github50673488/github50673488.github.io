@@ -8,16 +8,19 @@
 <body>
 <form>
     <label>Name:</label>
-    <input name="name"/>
+    <input id="name"/>
+    <input id="name2"/>
     <fieldset>
         <label>Newsletter:</label>
-        <input name="newsletter"/>
+        <input id="newsletter1"/>
+        <input id="newsletter2"/>
     </fieldset>
 </form>
 <input id="siblings" name="none"/>
+<input id="siblings1" name="none"/>
 <script>
     $(function () {
-        console.log($("form ~ input"));
+        console.log($("label ~ input"));// 表示获取pre节点的后面的所有兄弟节点,相当于nextAll()方法
     });
 </script>
 </body>

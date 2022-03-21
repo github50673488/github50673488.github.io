@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+    <style>
+
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+            /*background-color: red;*/
+        }
+    </style>
+
+</head>
+<body>
+<h1>猜数字游戏</h1>
+<p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
+
+<div class="form">
+    <label for="guessField">请猜数:</label>
+    <input type="text" id="guessField"> <input type="submit" value="确定" class="guessSubmit">
+</div>
+
+<div class="resultParas">
+
+    <p class="guesses"></p>
+    <p class="lastResult"></p>
+    <p class="lowOrHi"></p>
+
+</div>
+
+<script>
+
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+    }
+
+
+    //  随机生成一个 100 以内的自然数。 ----  OK
+
+    // 记录玩家当前的轮数。从 1 开始。
+    // 一旦有结果提交，先将其记录下来，以便用户可以看到他们先前的猜测。 然后检查它是否正确。
+
+    //     如果正确：
+    // 显示祝贺消息。
+    // 阻止玩家继续猜测（这会使游戏混乱）。
+    // 显示控件允许玩家重新开始游戏。
+
+    //     如果出错，并且玩家有剩余轮次：
+    // 告诉玩家他们错了。
+    // 允许他们输入另一个猜测。
+    // 轮数加1
+
+    //     如果出错，并且玩家没有剩余轮次：
+    // 告诉玩家游戏结束。
+    // 阻止玩家继续猜测（这会使游戏混乱）。
+    // 显示控件允许玩家重新开始游戏。
+    // 一旦游戏重启，确保游戏的逻辑和UI完全重置，然后返回步骤1
+
+    let newNumber = getRandomIntInclusive(0, 100)//  随机生成一个 100 以内的自然数。
+    // console.log('newNumber: ', newNumber)
+
+    let userGuess = 0 //记录玩家当前的轮数
+    let txtGuessField = document.getElementById('guessField');
+    let btnGuessSubmit = document.querySelector('.guessSubmit')
+    let guesses = document.querySelector('.guesses')
+    let lowOrHi = document.querySelector('.lowOrHi')
+    let lastResult = document.querySelector('.lastResult')
+
+
+    const checkGuess = e => {
+        if (userGuess === 0) {
+            guesses.textContent = '上次猜的数：'
+        }
+        userGuess++
+
+        // console.log('userGuess: ', userGuess)
+
+        let newGuess = Number(txtGuessField.value)
+        // console.log('txtGuessField.value: ', newGuess)
+
+        if (newGuess === newNumber) {
+            lowOrHi.textContent = 'OK'
+            lastResult.style.backgroundColor = 'green'
+            lastResult.textContent = '猜对了！'
+
+        } else if (newGuess < newNumber) {
+            lowOrHi.textContent = '你刚才猜低了！'
+            lastResult.style.backgroundColor = 'red'
+            lastResult.textContent = '猜错了'
+        } else {
+            lowOrHi.textContent = '你刚才猜高了！'
+            lastResult.style.backgroundColor = 'red'
+            lastResult.textContent = '猜错了'
+
+        }
+
+        guesses.textContent += ' ' + newGuess
+        txtGuessField.value = ''
+
+    }
+
+    btnGuessSubmit.addEventListener('click', checkGuess)
+
+
+</script>
+
+</body>
+</html>

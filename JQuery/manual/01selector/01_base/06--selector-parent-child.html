@@ -8,7 +8,7 @@
 <body>
 <form>
     <label>Name:</label>
-    <input id="selected" name="name"/>
+    <input id="selected" name="name" data-valu="sd"/>
     <fieldset>
         <label>Newsletter:</label>
         <input name="newsletter"/>
@@ -18,7 +18,7 @@
 <script>
     $(function () {
         console.log($("form > input"));
-        console.log($("form > input").val());
+        console.log("val", $("form > input").data());
     });
 </script>
 </body>
